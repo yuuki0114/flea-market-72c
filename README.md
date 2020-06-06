@@ -61,10 +61,10 @@ add_index :credit-cards, :card-number, unique: true
 - has_one :address
 - has_one :profile
 - has_one :credit-card
-- has_many :items, through: user_items
+- has_many :items, through: users_items
 
 
-## User_itemsテーブル
+## Users_itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key:true|
@@ -92,7 +92,7 @@ add_index :credit-cards, :card-number, unique: true
 - belongs_to :category
 - belongs_to :brand
 - has_many :images
-- has_many :users, through: user_items
+- has_many :users, through: users_items
 
 accept_nested_attributes_for :images
 
