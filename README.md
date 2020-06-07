@@ -33,10 +33,10 @@
 - belongs_to :user
 
 
-## Credit-cards
+## Credit_cards
 |Column|Type|Options|
 |------|----|-------|
-|card-number|integer|null: false, unique: true|
+|card_number|integer|null: false, unique: true|
 |expiration_year|integer|null: false|
 |expiration_month|integer|null: false|
 |security_code|integer|null: false|
@@ -47,7 +47,7 @@
 ### Association
 - belongs_to :user
 
-add_index :credit-cards, :card-number, unique: true
+add_index :credit_cards, :card_number, unique: true
 
 
 ## Usersテーブル
@@ -60,7 +60,7 @@ add_index :credit-cards, :card-number, unique: true
 ### Association
 - has_one :address
 - has_one :profile
-- has_one :credit-card
+- has_one :credit_card
 - has_many :items
 
 ### Association
