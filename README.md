@@ -73,7 +73,7 @@ add_index :credit-cards, :card-number, unique: true
 |------|----|-------|
 |name|string|null: false|
 |detail|text|null: false|
-|status|string|null: false|
+|status|integer|null: false|
 |delivery_fee|string|null: false|
 |start_address|string|null: false|
 |shipping_date|string|null: false|
