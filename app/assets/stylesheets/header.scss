@@ -1,0 +1,82 @@
+@mixin hoverOrange() {
+  &:hover {
+    color: orange;
+  }
+}
+
+.header {
+  padding: 0 190px;
+  height: 105px;
+  &__upside {
+    display: flex;
+    padding: 15px 10px 0 20px;
+    .logo {
+      margin-right: 20px;
+    }
+    .search {
+      width: 870px;
+      margin-top: 3px;
+      display: flex;
+      position: relative;
+      &__input {
+        width: 95%;
+        height: 75%;
+      }
+      &__submit {
+        width: 36px;
+        height: 36px;
+        background: #3CCACE;
+        border: none;
+      }
+      &__image {
+        position: absolute;
+        right: 10px;
+        top: 7px;
+      }
+    }
+  }
+  &__downside {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    line-height: 30px;
+    padding-top: 5px;
+    .left {
+      display: flex;
+      padding-left: 20px;
+      &__category {
+        position: relative;
+        &--text-decoration_none {
+          text-decoration: none;
+          color: black;
+          @include hoverOrange();
+        }
+      }
+      &__brand {
+        padding-left: 35px;
+        &--text-decoration_none {
+          text-decoration: none;
+          color: black;
+          @include hoverOrange();
+        }
+      }
+    }
+    .right {
+      display: flex;
+      &__login {
+        margin-right: 20px;
+        &--text-decoration_none {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      &__signup {
+        margin-right: 18px;
+        &--text-decoration_none {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
