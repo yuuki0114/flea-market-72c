@@ -72,7 +72,7 @@
               float: left;
             }
             .price__right{
-            float: right;
+              float: right;
             }
           }
           .payment-table{
@@ -122,17 +122,17 @@
       }
     }
   }
-  .footer{
+  .sub-footer{
     text-align: center;
     z-index: 1;
     padding: 40px 0;
     ul{
       line-height: 2.0;
-    }
-    li{
-      font-size: 14px;
-      display: inline-block;
-      margin-left: 0.5rem;
+      li{
+        font-size: 14px;
+        display: inline-block;
+        margin-left: 0.5rem;
+      }
     }
   }
 }
