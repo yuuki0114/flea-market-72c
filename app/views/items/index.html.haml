@@ -107,5 +107,72 @@
         く、ポイントや売上金など多彩な方法が
         %br>/
         あります。
+.items-list
+  .items-list__title
+    商品一覧
+  .items-list__contents
+    .subtitle
+      ジャンル
+    .items
+      = link_to "#", class: "items--text-decoration_none" do
+        .items__item
+          .image
+            = image_tag src="/assets/product.png", size: "220x150"
+          .detail
+            .detail__name
+              product
+            .detail__info
+              .price
+                3000円
+              .favorite
+                = icon("fas", "star")
+                0
+            .detail__tax
+              (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag src="/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag src="/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag src="/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
 = render partial: "footer"
 = render partial: "post-btn"
