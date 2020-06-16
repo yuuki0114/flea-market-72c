@@ -124,3 +124,35 @@
     }
   }
 }
+.middle-contents {
+  height: 630px;
+  padding: 60px 100px;
+  &__text {
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+    &--underline {
+      height: 4px;
+      width: 70px;
+      background-color: #3CCACE;
+      margin: 15px 0 0 580px;
+    }
+  }
+  &__traits {
+    display: flex;
+    margin-left: 120px;
+    .trait {
+      padding: 0 20px;
+      &__image {
+        margin-left: 40px;
+      }
+      &__main-text {
+        font-size: 19px;
+        font-weight: bold;
+        margin: 38px 0 10px;
+        text-align: center;
+      }
+    }
+  }
+}
