@@ -1,3 +1,18 @@
 = render partial: "header"
+.top-image
+  .top-image__contents
+    .motto-l
+      人生を変えるフリマアプリ
+    .motto-s
+      FURIMAはだれでもかんたんに出品・購入できる
+      %br>/
+      フリマアプリです
+    .apps
+      .apps__apple
+        = link_to "#" do
+          = image_tag src="/assets/apple.svg", size: "180x53"
+      .apps__google
+        = link_to "#" do
+          = image_tag src="/assets/google.svg", size: "180x53"
 = render partial: "footer"
 = render partial: "post-btn"
