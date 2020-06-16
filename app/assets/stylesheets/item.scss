@@ -35,3 +35,62 @@
     }
   }
 }
+.top-contents {
+  height: 570px;
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+  &__text {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    &--underline {
+      height: 4px;
+      width: 70px;
+      background-color: #3CCACE;
+      margin: 15px 0 0 660px;
+    }
+  }
+  &__reasons {
+    display: flex;
+    padding: 60px 200px;
+    .reason {
+      position: relative;
+      margin: 16px 5% 0 0;
+      &__image {
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+      }
+      &__number {
+        font-size: 25px;
+        width: 50px;
+        height: 45px;
+        line-height: 45px;
+        text-align: center;
+        color: white;
+        background-color: #3CCACE;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      &__main-text {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 2px;
+        &--color_blue {
+          color: #3CCACE;
+        }
+      }
+      &__text {
+        font-size: 18px;
+        margin-top: 18px;
+        &--middle {
+          font-size: 18px;
+          margin-top: 18px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

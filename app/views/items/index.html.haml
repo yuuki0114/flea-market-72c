@@ -14,5 +14,47 @@
       .apps__google
         = link_to "#" do
           = image_tag src="/assets/google.svg", size: "180x53"
+.top-contents
+  .top-contents__text
+    FURIMAが選ばれる３つの理由
+    .top-contents__text--underline
+  .top-contents__reasons
+    .reason
+      .reason__image
+        = image_tag src="/assets/picture1.jpg", size: "306x306"
+      .reason__number
+        1
+      .reason__main-text
+        %span.reason__main-text--color_blue
+          3分
+        ですぐに出品
+      .reason__text
+        スマホで入力するだけで簡単に出品で
+        %br>/
+        きる！
+    .reason
+      .reason__image
+        = image_tag src="/assets/picture2.jpg", size: "306x306"
+      .reason__number
+        2
+      .reason__main-text
+        %span.reason__main-text--color_blue
+          シンプル
+        で使いやすい
+      .reason__text
+        めんどくさい入力は必要なく、検索も
+        %br>/
+        購入もスムーズ！
+    .reason
+      .reason__image
+        = image_tag src="/assets/picture3.jpg", size: "306x306"
+      .reason__number
+        3
+      .reason__main-text
+        手数料
+        %span.reason__main-text--color_blue
+          業界最安
+      .reason__text--middle
+        最大3%でお得に出品&購入！
 = render partial: "footer"
 = render partial: "post-btn"
