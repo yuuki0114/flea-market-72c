@@ -1,0 +1,77 @@
+@mixin hoverOrange() {
+  &:hover {
+    color: orange;
+  }
+}
+
+.category-wrapper {
+  display: flex;
+  width: 720px;
+  z-index: 1;
+  position: fixed;
+  position: absolute;
+  top: 38px;
+  .category-tree {
+    width: 240px;
+    height: 468px;
+    font-size: 12px;
+    background-color: white;
+    &__name {
+      border-bottom: solid 1px lightgray;
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        text-decoration: none;
+        color: black;
+        @include hoverOrange();
+      }
+    }
+  }
+  .sub-tree {
+    width: 240px;
+    height: 468px;
+    font-size: 12px;
+    background-color: white;
+    &__name {
+      border-bottom: solid 1px lightgray;
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        text-decoration: none;
+        color: black;
+        @include hoverOrange();
+      }
+    }
+  }
+  #ladies-tree {
+    height: 647px;
+  }
+  #mens-tree {
+    height: 504px;
+  }
+  #baby-tree {
+    height: 540px;
+  }
+  .tree {
+    width: 240px;
+    font-size: 12px;
+    background-color: white;
+    &__name {
+      border-bottom: solid 1px lightgray;
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        text-decoration: none;
+        color: black;
+        @include hoverOrange();
+      }
+    }
+  }
+}
+
+.displayNone {
+  display: none;
+}
