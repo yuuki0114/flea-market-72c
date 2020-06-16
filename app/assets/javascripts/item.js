@@ -36,7 +36,7 @@ $(function(){
     $(".category-tree").removeClass("displayNone")
     $("#ladies-tree").removeClass("displayNone")
     }, function() {
-      $(".tree").addClass("displayNone")
+      $(".sub-tree").addClass("displayNone")
   });
 
   $("#ladies-tops").hover(function(){
