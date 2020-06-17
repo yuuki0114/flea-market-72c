@@ -1,71 +1,51 @@
-@mixin hoverOrange() {
-  &:hover {
-    color: orange;
-  }
-}
-
 .category-wrapper {
-  display: flex;
+  @include displayFlex();
   width: 720px;
   z-index: 1;
   position: fixed;
   position: absolute;
   top: 38px;
   .category-tree {
+    @include whiteBackGround();
     width: 240px;
-    height: 468px;
     font-size: 12px;
-    background-color: white;
     &__name {
-      border-bottom: solid 1px lightgray;
+      @include lightGrayUnderLine();
       height: 35px;
       line-height: 35px;
       padding-left: 5px;
       &--text-decoration_none {
-        text-decoration: none;
-        color: black;
+        @include blackLink();
         @include hoverOrange();
       }
     }
   }
   .sub-tree {
+    @include whiteBackGround();
     width: 240px;
-    height: 468px;
     font-size: 12px;
-    background-color: white;
     &__name {
-      border-bottom: solid 1px lightgray;
+      @include lightGrayUnderLine();
       height: 35px;
       line-height: 35px;
       padding-left: 5px;
       &--text-decoration_none {
-        text-decoration: none;
-        color: black;
+        @include blackLink();
         @include hoverOrange();
       }
     }
   }
-  #ladies-tree {
-    height: 647px;
-  }
-  #mens-tree {
-    height: 504px;
-  }
-  #baby-tree {
-    height: 540px;
-  }
   .tree {
+    @include whiteBackGround();
     width: 240px;
     font-size: 12px;
-    background-color: white;
     &__name {
-      border-bottom: solid 1px lightgray;
+      @include lightGrayUnderLine();
       height: 35px;
       line-height: 35px;
       padding-left: 5px;
       &--text-decoration_none {
-        text-decoration: none;
-        color: black;
+        @include blackLink();
         @include hoverOrange();
       }
     }

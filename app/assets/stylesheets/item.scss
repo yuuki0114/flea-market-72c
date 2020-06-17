@@ -1,11 +1,3 @@
-@mixin hoverWhiteFilter() {
-  &:hover {
-    opacity: 0.7;
-    filter: alpha(opacity=70);
-    -ms-filter: "alpha(opacity=70)";
-  }
-}
-
 .top-image {
   width: 100%;
   height: 560px;
@@ -23,11 +15,11 @@
       margin-top: 16px;
     }
     .apps {
-      display: flex;
+      @include displayFlex();
       margin-top: 24px;
       &__apple {
-        margin-right: 10px;
         @include hoverWhiteFilter();
+        margin-right: 10px;
       }
       &__google {
         @include hoverWhiteFilter();
@@ -36,22 +28,22 @@
   }
 }
 .top-contents {
+  background-color: $backGroundGray;
   height: 570px;
   padding: 60px 20px;
-  background-color: #f8f8f8;
   &__text {
+    @include bold();
     text-align: center;
     font-size: 26px;
-    font-weight: bold;
     &--underline {
+      background-color: $mainBlue;
       height: 4px;
       width: 70px;
-      background-color: #3CCACE;
       margin: 15px 0 0 660px;
     }
   }
   &__reasons {
-    display: flex;
+    @include displayFlex();
     padding: 60px 200px;
     .reason {
       position: relative;
@@ -62,24 +54,24 @@
         margin-bottom: 20px;
       }
       &__number {
+        background-color: $mainBlue;
         font-size: 25px;
         width: 50px;
         height: 45px;
         line-height: 45px;
         text-align: center;
         color: white;
-        background-color: #3CCACE;
         position: absolute;
         top: 0;
         left: 0;
       }
       &__main-text {
+        @include bold();
         text-align: center;
         font-size: 24px;
-        font-weight: bold;
         margin-bottom: 2px;
         &--color_blue {
-          color: #3CCACE;
+          color: $mainBlue;
         }
       }
       &__text {
@@ -105,7 +97,7 @@
     color: white;
     text-shadow: 0 0 5px rgba(0,0,0,0.4);
     .motto-l {
-      font-weight: bold;
+      @include bold();
       font-size: 27px;
     }
     .motto-s {
@@ -113,10 +105,10 @@
       font-size: 18px;
     }
     .apps {
-      display: flex;
+      @include displayFlex();
       &__apple {
-        margin-right: 10px;
         @include hoverWhiteFilter();
+        margin-right: 10px;
       }
       &__google {
         @include hoverWhiteFilter();
@@ -128,19 +120,19 @@
   height: 630px;
   padding: 60px 100px;
   &__text {
+    @include bold();
     font-size: 27px;
-    font-weight: bold;
     margin-bottom: 40px;
     text-align: center;
     &--underline {
+      background-color: $mainBlue;
       height: 4px;
       width: 70px;
-      background-color: #3CCACE;
       margin: 15px 0 0 580px;
     }
   }
   &__traits {
-    display: flex;
+    @include displayFlex();
     margin-left: 120px;
     .trait {
       padding: 0 20px;
@@ -148,8 +140,8 @@
         margin-left: 40px;
       }
       &__main-text {
+        @include bold();
         font-size: 19px;
-        font-weight: bold;
         margin: 38px 0 10px;
         text-align: center;
       }
@@ -157,33 +149,32 @@
   }
 }
 .items-list {
+  background-color: $backGroundGray;
   padding: 80px 0;
   height: 400px;
-  background-color: #f8f8f8;
   &__title {
+    @include bold();
     text-align: center;
     font-size: 28px;
-    font-weight: bold;
   }
   &__contents {
     width: 100%;
     .subtitle {
+      @include bold();
+      color: $mainBlue;
       font-size: 24px;
-      color: #3CCACE;
-      font-weight: bold;
       text-align: center;
     }
     .items {
+      @include displayFlex();
       margin: 26px auto;
       width: 880px;
-      display: flex;
       &--text-decoration_none {
-        text-decoration: none;
-        color: black;
+        @include blackLink();
       }
       &__item {
-        background-color: white;
         @include hoverWhiteFilter();
+        @include whiteBackGround();
         .image {
           width: 220px;
           height: 150px;
@@ -194,7 +185,7 @@
             font-size: 16px;
           }
           &__info {
-            display: flex;
+            @include displayFlex();
             justify-content: space-between;
             .favorate {
               width: 10px;
