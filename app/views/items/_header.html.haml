@@ -2,12 +2,12 @@
   .header__upside
     .logo
       = link_to "#" do
-        = image_tag src="/assets/logo.png", size: "140x40"
+        = image_tag "/assets/logo.png", size: "140x40"
     .search
       %input.search__input{placeholder: " キーワードから探す"}
       %label
         %input.search__submit{type: "submit", value: ""}
-        = image_tag src="/assets/search_btn.png", size: "21x21", class: "search__image"
+        = image_tag "/assets/search_btn.png", size: "21x21", class: "search__image"
   .header__downside
     .left
       .left__category
