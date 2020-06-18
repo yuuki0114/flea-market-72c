@@ -1,6 +1,8 @@
 @import "reset";
-@import "mixin/clearfix";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
+@import "./config/*";
+@import "./mixin/*";
+@import "items";
 @import "modules/buyers";
+
