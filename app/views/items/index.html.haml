@@ -1,2 +1,179 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.erb
+= render partial: "header"
+.top-image
+  .top-image__contents
+    .motto-l
+      人生を変えるフリマアプリ
+    .motto-s
+      FURIMAはだれでもかんたんに出品・購入できる
+      %br>/
+      フリマアプリです
+    .apps
+      .apps__apple
+        = link_to "#" do
+          = image_tag "/assets/apple.svg", size: "180x53"
+      .apps__google
+        = link_to "#" do
+          = image_tag "/assets/google.svg", size: "180x53"
+.top-contents
+  .top-contents__text
+    FURIMAが選ばれる３つの理由
+    .top-contents__text--underline
+  .top-contents__reasons
+    .reason
+      .reason__image
+        = image_tag "/assets/picture1.jpg", size: "306x306"
+      .reason__number
+        1
+      .reason__main-text
+        %span.reason__main-text--color_blue
+          3分
+        ですぐに出品
+      .reason__text
+        スマホで入力するだけで簡単に出品で
+        %br>/
+        きる！
+    .reason
+      .reason__image
+        = image_tag "/assets/picture2.jpg", size: "306x306"
+      .reason__number
+        2
+      .reason__main-text
+        %span.reason__main-text--color_blue
+          シンプル
+        で使いやすい
+      .reason__text
+        めんどくさい入力は必要なく、検索も
+        %br>/
+        購入もスムーズ！
+    .reason
+      .reason__image
+        = image_tag "/assets/picture3.jpg", size: "306x306"
+      .reason__number
+        3
+      .reason__main-text
+        手数料
+        %span.reason__main-text--color_blue
+          業界最安
+      .reason__text--middle
+        最大3%でお得に出品&購入！
+.middle-image
+  .middle-image__contents
+    .motto-l
+      会員数日本一位
+    .motto-s
+      FURIMAは、フリマアプリで最も人気。
+      %br>/
+      出品・購入回数も業界最多です！
+      %br>/
+      ほしかったあの商品に出会えるかもしれません。
+    .apps
+      .apps__apple
+        = link_to "#" do
+          = image_tag "/assets/apple.svg", size: "180x53"
+      .apps__google
+        = link_to "#" do
+          = image_tag "/assets/google.svg", size: "180x53"
+.middle-contents
+  .middle-contents__text
+    FURIMAの特徴
+    .middle-contents__text--underline
+  .middle-contents__traits
+    .trait
+      .trait__image
+        = image_tag "/assets/icon-01.png", size: "220x337"
+      .trait__main-text
+        簡単に売り買いできる
+      .trait__text
+        スマホひとつで、いつでもどこでも簡単
+        %br>/
+        に出品・購入が可能！
+    .trait
+      .trait__image
+        = image_tag "/assets/icon-03.png", size: "220x337"
+      .trait__main-text
+        売上金は即日振込みに対応
+      .trait__text
+        午前9時までに振込を依頼いただけれ
+        %br>/
+        ば、翌日に指定の口座に入金いたします!
+    .trait
+      .trait__image
+        = image_tag "/assets/icon-04.png", size: "220x337"
+      .trait__main-text
+        様々な支払いに対応
+      .trait__text
+        お支払いは、クレジットカードだけでな
+        %br>/
+        く、ポイントや売上金など多彩な方法が
+        %br>/
+        あります。
+.items-list
+  .items-list__title
+    商品一覧
+  .items-list__contents
+    .subtitle
+      ジャンル
+    .items
+      = link_to "#", class: "items--text-decoration_none" do
+        .items__item
+          .image
+            = image_tag "/assets/product.png", size: "220x150"
+          .detail
+            .detail__name
+              product
+            .detail__info
+              .price
+                3000円
+              .favorite
+                = icon("fas", "star")
+                0
+            .detail__tax
+              (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag "/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag "/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+        = link_to "#", class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag "/assets/product.png", size: "220x150"
+            .detail
+              .detail__name
+                product
+              .detail__info
+                .price
+                  3000円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+= render partial: "footer"
+= render partial: "post-btn"
+

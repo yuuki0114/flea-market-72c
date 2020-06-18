@@ -1,0 +1,26 @@
+.header
+  .header__upside
+    .logo
+      = link_to "#" do
+        = image_tag "/assets/logo.png", size: "140x40"
+    .search
+      %input.search__input{placeholder: " キーワードから探す"}
+      %label
+        %input.search__submit{type: "submit", value: ""}
+        = image_tag "/assets/search_btn.png", size: "21x21", class: "search__image"
+  .header__downside
+    .left
+      .left__category
+        = link_to "#", class: "left__category--text-decoration_none" do
+          カテゴリー
+        = render partial: "category-tree"
+      .left__brand
+        = link_to "#", class: "left__brand--text-decoration_none" do
+          ブランド
+    .right
+      .right__login
+        = link_to "#", class: "right__login--text-decoration_none" do
+          ログイン
+      .right__signup
+        = link_to "#", class: "right__signup--text-decoration_none" do
+          新規会員登録
