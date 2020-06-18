@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
   root 'items#index'
+  resources :users, only: [:index] do
+    collection do
+      get 'logout', to: 'users#logout'
+    end
+  end
+  resources :credit_cards, only: [:new]
 end
