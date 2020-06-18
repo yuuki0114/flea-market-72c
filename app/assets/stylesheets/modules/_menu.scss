@@ -7,8 +7,8 @@
   .menus {
     padding: 17px 0 16px;
     max-width: 1040px;
-    font-size: 14px;
-    margin: 0 auto;
+    font-size: $fontMainSize;
+    @include marginCenter();
     display: flex;
 
     &__list {
@@ -18,12 +18,12 @@
         text-decoration: none;
         color: #333;
         &:hover {
-          color: $light_blue;
+          color: $mainBlue;
         }
       }
 
       &--last {
-        font-weight: bold;
+        @include bold();
         width: 200px;
       }
     }
