@@ -1,6 +1,9 @@
 @import "reset";
+@import "config/variable";
+@import "mixin/marginCenter";
+@import "mixin/bold";
+@import "mixin/displayFlex";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "config/variable";
 @import "modules/item_detail";
 @import "modules/menu";
