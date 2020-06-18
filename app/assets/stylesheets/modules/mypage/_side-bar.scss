@@ -1,0 +1,45 @@
+.mypage-side-bar{
+  background-color: $mainWhiteColor;
+  float: left;
+  margin-right: 40px;
+  .nav--list{
+    width: 280px;  
+    font-size: 14px;
+    &__mypage{
+      background-color: lightblue;
+    }
+    li{
+      border-top: 3px solid $mainGrayColor;
+      position: relative;
+      a{
+        display: block;
+        padding: 16px;
+      }
+      &:hover{
+        background-color: lightblue;
+        cursor: pointer;
+        .angle-right-icon{
+          position: absolute;
+          right: 12px;
+          top: 40%;
+          color: $mainBlackColor;
+        }
+      }
+    }
+    .list__item{
+      color: #333333;
+      text-decoration: none;
+      .angle-right-icon{
+        position: absolute;
+        right: 16px;
+        top: 40%;
+        color: #ccc;
+      }
+    }
+  }
+  .nav--head{
+    background-color: $mainGrayColor;
+    font-weight: bold;
+    padding-top: 40px;
+  }
+}

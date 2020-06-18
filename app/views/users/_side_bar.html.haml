@@ -1,0 +1,51 @@
+.mypage-side-bar
+  .mypage-side-bar--nav
+    %ul.nav--list
+      %li.nav--list__mypage
+        = link_to users_path, class: "list__item" do
+          マイページ
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          出品する
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          出品した商品
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          購入した商品
+          = icon("fas", "angle-right", class: "angle-right-icon")
+
+    %h1.nav--head 
+      設定
+    %ul.nav--list
+      %li
+        = link_to "#", class: "list__item" do
+          プロフィール
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          発送元・お届け先住所変更
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to new_credit_card_path, class: "list__item" do
+          支払い方法
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          メール/パスワード
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          本人情報
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to "#", class: "list__item" do
+          電話番号の確認
+          = icon("fas", "angle-right", class: "angle-right-icon")
+      %li
+        = link_to logout_users_path, class: "list__item" do
+          ログアウト
+          = icon("fas", "angle-right", class: "angle-right-icon")
