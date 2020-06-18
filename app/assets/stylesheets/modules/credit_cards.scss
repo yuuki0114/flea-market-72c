@@ -1,0 +1,95 @@
+.credit-card-content{
+  width: 700px;
+  float: right;
+  &--head{
+    background-color: $mainWhiteColor;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 8px;
+    border-bottom: solid 3px $mainGrayColor;
+  }
+  &--form{
+    padding: 40px 40px 64px;
+    background-color: $mainWhiteColor;
+    .form-group{
+      margin: 0 auto;
+      width: 300px;
+      &--card-number{
+        .card-number{
+          font-weight: bold;
+        }
+        .card-number__form{
+          input{
+          background: $mainWhiteColor;
+          width: 300px;
+          height: 48px;
+          font-size: 16px;
+          padding: 10px 16px 8px;
+          margin: 8px 0;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          }
+        }
+      }
+      &--expiration-date{
+        margin-top: 32px;
+        .expiration-date{
+          font-weight: bold;
+        }
+        .expiration-date__form{
+          display: flex;
+          height: 48px;
+          font-size: 16px;
+          border-radius: 4px;
+          margin: 8px 0;
+          #expiration_year{
+            width: 120px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          }
+          #expiration_month{
+            width: 120px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+          }
+          .expiration-text{
+            font-size: 14px;
+            margin: 12px;
+          }
+        }
+      }
+      &--security-code{
+        margin-top: 32px;
+        .security-code{
+          font-weight: bold;
+        }
+        .security-code--form{
+          #security_code{
+            width: 300px;
+            height: 48px;
+            padding: 10px 16px 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+        }
+      }
+      .required{
+        @include required();
+
+      }
+    }
+    .submit-btn{
+      background-color: $mainBlueColor;
+      color: $mainWhiteColor;
+      width: 300px;
+      height: 48px;
+      border-radius: 4px;
+      border: none;
+      margin-top: 30px;
+    }
+  }
+}

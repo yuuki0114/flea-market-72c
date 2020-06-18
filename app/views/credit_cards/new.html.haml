@@ -1,0 +1,49 @@
+.heatter
+  部分テンプレート(ヘッター)
+
+.mypage
+  .wrapper
+    = render partial: "users/side_bar"
+
+  %section.credit-card-content
+    %h2.credit-card-content--head
+      クレジットカード情報入力
+    .credit-card-content--form
+      =form_with model: @モデルクラスのインスタンス, local: true do |f|
+        .form-group
+          .form-group--card-number
+            %label.card-number
+              カード番号
+            %span.required
+              必須
+            .card-number__form
+              = f.text_field :card_number, placeholder: "半角数字のみ"
+            .card-icon
+              %ul
+                %li
+                  = image_tag "logo_visa_ph001.png", size: "40x30"
+                  = image_tag "mc_vrt_pos.svg", size: "40x30"
+                  = image_tag "jcb-logomark-img-01.gif", size: "40x30"
+                  = image_tag "amex-logomark-img-04.gif", size: "40x30"
+                  = image_tag "diners-logomark-img-01.gif", size: "40x30"
+          .form-group--expiration-date
+            %label.expiration-date
+              有効期限
+            %span.required
+              必須
+            .expiration-date__form
+              = f.select :expiration_year, [["01", 0],["02", 1],["03", 2],["04",3],["05",4],["06",5],["07",6],["08",7],["09",8],["10",9],["11",10],["12",11]]
+              .expiration-text 月
+              = f.select :expiration_month, [["20", 0],["21", 1],["22", 2],["23",3],["24",4],["25",5],["26",6],["27",7],["28",8],["29",9],["30",10]]
+              .expiration-text 年
+          .form-group--security-code
+            %label.security-code
+              セキュリティーコード
+            %span.required
+              必須
+            .security-code--form
+              = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号"
+          =f.submit "追加する", class: "submit-btn"
+
+.footer
+  部分テンプレート（フッター）
