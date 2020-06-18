@@ -1,0 +1,101 @@
+%h1 ここには部分テンプレートのヘッダーが入ります。
+
+= render "menu"
+
+.main
+  .main__content
+    .main__content--inner
+      .item
+        %h2.item__name product1
+        .item__body
+          .images--outer
+            .images
+              = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "images--main"
+              %ul.images--sub
+                %li.images--sub__list
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png", class: "sub--add"
+                %li.images--sub__list
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/8/a002.png", class: "sub--add"
+                %li.images--sub__list
+                  = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/9/a003.png", class: "sub--add"
+        .item__price 
+          %span
+            ¥10000
+          .item__price--add
+            %span
+              (税込)
+            %span
+              送料込み
+        .item--detail
+          親譲りの無鉄砲で小供の時から損ばかりしている。
+          小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
+          なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。
+          新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。 
+          弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+        .item__table
+          %table.table
+            %tbody
+              %tr
+                %th.table__left 出品者
+                %td.table__right hoge
+              %tr
+                %th.table__left カテゴリー
+                %td.table__right
+                  = link_to "レディース", "#", class:"table__right--add"
+                  %br
+                  = link_to "トップス", "#", class:"table__right--add"
+                  %br
+                  = link_to "Tシャツ/カットソー(半袖/袖なし)", "#", class:"table__right--add"
+              %tr
+                %th.table__left ブランド
+                %td.table__right
+              %tr
+                %th.table__left 商品のサイズ
+                %td.table__right
+              %tr
+                %th.table__left 商品の状態
+                %td.table__right 新品/未使用
+              %tr
+                %th.table__left 配送料の負担
+                %td.table__right 送料込み (出品者負担)
+              %tr
+                %th.table__left 発送元の地域
+                %td.table__right
+                  = link_to "青森", "#", class:"table__right--add"
+              %tr
+                %th.table__left 発送日の目安
+                %td.table__right 1-2で発送
+        .option
+          .option__lists
+            .like__btn
+              = icon('fa','star')
+              お気に入り 1
+          .option__lists
+            .alert__btn
+              = link_to "#", class: "btn__content" do
+                = icon('fa','flag')
+                不適切な商品の通報
+      .comment
+        %form{action: "#", method: "post"}
+          %textarea.comment__body{name: "message"}
+          %p.comment__notice 
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br
+              深いな言葉遣いなどは利用制限や退会処分となることがあります。
+          %btn{type: "submit", name: "button", class: "comment__btn"} 
+            = icon('fa','comment')
+            コメントする
+      %ul.links
+        %li
+          = link_to "#", class: "links__btn" do
+            = icon('fa','angle-left')
+            前の商品
+        %li
+          = link_to "#", class: "links__btn" do
+            後ろの商品
+            = icon('fa','angle-right')
+      .relate-item
+        = link_to "#", class: "item__more" do
+          レディースをもっとみる
+
+%h1 ここには部分テンプレートのフッダーが入ります。

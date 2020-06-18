@@ -1,0 +1,71 @@
+.bottom-image {
+  height: 140px;
+  background-image: url("/assets/top-page3");
+  background-size: cover;
+  background-position: center;
+  padding: 110px 40px;
+  &__contents {
+    color: white;
+    text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    text-align: center;
+    .motto-s {
+      @include bold();
+      font-size: 24px;
+    }
+    .motto-l {
+      font-size: 35px;
+    }
+    .apps {
+      @include displayFlex();
+      margin-top: 24px;
+      margin-left: 480px;
+      &__apple {
+        margin-right: 10px;
+        @include hoverWhiteFilter();
+      }
+      &__google {
+        @include hoverWhiteFilter();
+      }
+    }
+  }
+}
+.footer {
+  height: 235px;
+  padding: 60px 0;
+  background-color: #272727;
+  &__lists {
+    @include displayFlex();
+    width: 840px;
+    height: 172px;
+    margin: 0 auto;
+    .contents {
+      width: 270px;
+      text-align: center;
+      &__title {
+        @include bold();
+        color: white;
+        margin-bottom: 20px;
+      }
+      &__list .content {
+        color: white;
+        font-size: 12px;
+        height: 32px;
+        line-height: 32px;
+        &--text-decoration_none {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+  &__logos {
+    width: 190px;
+    margin: 0 auto;
+    align-items: center;
+    .downside {
+      font-size: 14px;
+      color: white;
+      padding-left: 40px;
+    }
+  }
+}

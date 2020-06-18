@@ -1,0 +1,57 @@
+.category-wrapper {
+  @include displayFlex();
+  width: 720px;
+  z-index: 1;
+  position: fixed;
+  position: absolute;
+  top: 38px;
+  .category-tree {
+    @include whiteBackGround();
+    width: 240px;
+    font-size: 12px;
+    &__name {
+      @include lightGrayUnderLine();
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        @include blackLink();
+        @include hoverOrange();
+      }
+    }
+  }
+  .sub-tree {
+    @include whiteBackGround();
+    width: 240px;
+    font-size: 12px;
+    &__name {
+      @include lightGrayUnderLine();
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        @include blackLink();
+        @include hoverOrange();
+      }
+    }
+  }
+  .tree {
+    @include whiteBackGround();
+    width: 240px;
+    font-size: 12px;
+    &__name {
+      @include lightGrayUnderLine();
+      height: 35px;
+      line-height: 35px;
+      padding-left: 5px;
+      &--text-decoration_none {
+        @include blackLink();
+        @include hoverOrange();
+      }
+    }
+  }
+}
+
+.displayNone {
+  display: none;
+}
