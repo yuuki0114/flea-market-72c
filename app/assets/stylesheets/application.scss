@@ -1,8 +1,15 @@
 @import "reset";
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "./config/*";
 @import "./mixin/*";
+@import "modules/item_detail";
+@import "modules/menu";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "header";
+@import "category-tree";
+@import "footer";
+@import "post-btn";
+@import "item";
 @import 'modules/mypage/users';
 @import 'modules/mypage/side-bar';
 @import 'modules/mypage/content';
