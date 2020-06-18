@@ -1,8 +1,10 @@
-@import "font-awesome-sprockets";
-@import "font-awesome";
 @import "reset";
 @import "./config/*";
 @import "./mixin/*";
+@import "modules/item_detail";
+@import "modules/menu";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "header";
 @import "category-tree";
 @import "footer";
