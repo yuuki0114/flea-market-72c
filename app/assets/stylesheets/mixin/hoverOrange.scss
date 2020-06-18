@@ -1,0 +1,5 @@
+@mixin hoverOrange() {
+  &:hover {
+    color: orange;
+  }
+}
