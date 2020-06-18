@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+.heatter{
+  width: 100%;
+  height: 100px;
+}
+.mypage{
+  width: 100%;
+  background-color: $mainGrayColor;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  // 指定フォント
+  font-family: $baseFont;
+}
+.footer{
+  width: 100%;
+  height: 100px;
+}
