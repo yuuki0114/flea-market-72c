@@ -1,8 +1,8 @@
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import "config/variable";
-@import "mixin/required";
+@import "./config/*";
+@import "./mixin/*";
 @import 'modules/mypage/users';
 @import 'modules/mypage/side-bar';
 @import 'modules/mypage/content';
