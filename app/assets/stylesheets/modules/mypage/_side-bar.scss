@@ -1,45 +1,44 @@
 .mypage-side-bar{
-  background-color: $mainWhiteColor;
+  background-color:$white;
   float: left;
   margin-right: 40px;
   .nav--list{
     width: 280px;  
     font-size: 14px;
     &__mypage{
-      background-color: lightblue;
+      background-color: $mainBlue;
     }
     li{
-      border-top: 3px solid $mainGrayColor;
+      border-top: 3px solid $backGroundGray;
       position: relative;
       a{
         display: block;
         padding: 16px;
       }
       &:hover{
-        background-color: lightblue;
+        background-color: $mainBlue;
         cursor: pointer;
         .angle-right-icon{
           position: absolute;
           right: 12px;
           top: 40%;
-          color: $mainBlackColor;
+          color:black;
         }
       }
     }
     .list__item{
-      color: #333333;
-      text-decoration: none;
+      @include blackLink();
       .angle-right-icon{
         position: absolute;
         right: 16px;
         top: 40%;
-        color: #ccc;
+        color: $borderGray;
       }
     }
   }
   .nav--head{
-    background-color: $mainGrayColor;
-    font-weight: bold;
+    background-color: $backGroundGray;
+    @include bold();
     padding-top: 40px;
   }
 }

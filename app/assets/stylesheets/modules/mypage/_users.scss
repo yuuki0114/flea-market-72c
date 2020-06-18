@@ -8,11 +8,10 @@
 }
 .mypage{
   width: 100%;
-  background-color: $mainGrayColor;
-  display: flex;
+  background-color: $backGroundGray;
+  @include displayFlex();
   justify-content: center;
   padding: 40px 0;
-  // 指定フォント
   font-family: $baseFont;
 }
 .footer{

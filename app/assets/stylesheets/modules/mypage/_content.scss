@@ -1,36 +1,35 @@
 .mypage-content{
-  background-color: $mainWhiteColor;
+  background-color: $white;
   float: right;
   &--user-status{
     width: 700px;
     align-items: center;
-    display: flex;
+    @include displayFlex();
     justify-content: center;
     a{
-      color: $mainBlackColor;
-      text-decoration: none;
+      @include blackLink();
       padding: 50px;
       .user-status--icon{
         margin: 0;
         text-align: center;
       }
       .user-status--name{
-        font-weight: bold;
+        @include bold();
         text-align: center;
       }
       .user-status{
-        display: flex;
+        @include displayFlex();
         justify-content: center;
         &--reviews{
           &__bold{
-            font-weight: bold;
+            @include bold();
             margin-left: 8px;
           }
         }
         &--sell{
           margin-left: 16px;
           &__bold{
-            font-weight: bold;
+            @include bold();
             margin-left: 8px;
           }
         }

@@ -2,43 +2,43 @@
   width: 700px;
   float: right;
   &--head{
-    background-color: $mainWhiteColor;
+    background-color: $white;
     font-size: 22px;
-    font-weight: bold;
+    @include bold();
     text-align: center;
     padding: 8px;
-    border-bottom: solid 3px $mainGrayColor;
+    border-bottom: solid 3px $backGroundGray;
   }
   &--form{
     padding: 40px 40px 64px;
-    background-color: $mainWhiteColor;
+    background-color: $white;
     .form-group{
-      margin: 0 auto;
+      @include marginCenter();
       width: 300px;
       &--card-number{
         .card-number{
-          font-weight: bold;
+          @include bold();
         }
         .card-number__form{
           input{
-          background: $mainWhiteColor;
+          background-color: $white;
           width: 300px;
           height: 48px;
           font-size: 16px;
           padding: 10px 16px 8px;
           margin: 8px 0;
           border-radius: 4px;
-          border: 1px solid #ccc;
+          border: 1px solid $borderGray;
           }
         }
       }
       &--expiration-date{
         margin-top: 32px;
         .expiration-date{
-          font-weight: bold;
+          @include bold();
         }
         .expiration-date__form{
-          display: flex;
+          @include displayFlex();
           height: 48px;
           font-size: 16px;
           border-radius: 4px;
@@ -47,13 +47,13 @@
             width: 120px;
             padding: 0 16px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $borderGray;
           }
           #expiration_month{
             width: 120px;
             padding: 0 16px;
             border-radius: 4px;
-            border: 1px solid #ccc;
+            border: 1px solid $borderGray;
           }
           .expiration-text{
             font-size: 14px;
@@ -64,7 +64,7 @@
       &--security-code{
         margin-top: 32px;
         .security-code{
-          font-weight: bold;
+          @include bold();
         }
         .security-code--form{
           #security_code{
@@ -72,7 +72,7 @@
             height: 48px;
             padding: 10px 16px 8px;
             margin: 8px 0;
-            border: 1px solid #ccc;
+            border: 1px solid $borderGray;
             border-radius: 4px;
           }
         }
@@ -83,8 +83,8 @@
       }
     }
     .submit-btn{
-      background-color: $mainBlueColor;
-      color: $mainWhiteColor;
+      background-color: $mainBlue;
+      color: $white;
       width: 300px;
       height: 48px;
       border-radius: 4px;
