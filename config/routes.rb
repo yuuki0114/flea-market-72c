@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :items, only: :show
   get 'buyers/index'
   get 'buyers/done'
-  root 'items#index'
   resources :items do
     resources :buyers, only: [:index] do
       collection do
