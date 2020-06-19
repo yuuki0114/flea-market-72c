@@ -1,9 +1,9 @@
 $(function(){
-  $(".header,.top-image,.top-contents").hover(function() {
-    $(".category-tree").addClass("displayNone")
-    $(".sub-tree").addClass("displayNone")
-    $(".tree").addClass("displayNone")
+  $(".category-wrapper").hover(function() {
     }, function() {
+      $(".category-tree").addClass("displayNone")
+      $(".sub-tree").addClass("displayNone")
+      $(".tree").addClass("displayNone")
   });
 
   $(".left__category--text-decoration_none").hover(function(){
