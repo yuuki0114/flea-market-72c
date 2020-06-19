@@ -1,9 +1,9 @@
-部分テンプレート(ヘッター)
-
+= render partial: "items/header"
+= render partial: "items/menu"
 .mypage
   .wrapper
     = render "side_bar"
   .logout-content
     = link_to "ログアウト", "#", class: "logout-btn"
-
-部分テンプレート（フッター）
+= render partial: "items/footer"
+= render partial: "items/post-btn"

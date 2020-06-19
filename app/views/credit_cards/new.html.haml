@@ -1,5 +1,5 @@
-部分テンプレート(ヘッター)
-
+= render partial: "items/header"
+= render partial: "items/menu"
 .mypage
   .wrapper
     = render partial: "users/side_bar"
@@ -43,5 +43,5 @@
             .security-code--form
               = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号"
           =f.submit "追加する", class: "submit-btn"
-
-部分テンプレート（フッター）
+= render partial: "items/footer"
+= render partial: "items/post-btn"
