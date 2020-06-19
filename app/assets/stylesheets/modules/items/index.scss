@@ -182,7 +182,7 @@
       }
       &__item {
         @include hoverWhiteFilter();
-        @include whiteBackGround();
+        background-color: white;
         .image {
           width: 220px;
           height: 150px;

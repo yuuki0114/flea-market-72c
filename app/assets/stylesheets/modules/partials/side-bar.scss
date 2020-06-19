@@ -1,10 +1,10 @@
 .mypage-side-bar{
-  background-color:$white;
+  background-color: white;
   float: left;
   margin-right: 40px;
   .nav--list{
     width: 280px;  
-    font-size: 14px;
+    font-size: $fontMainSize;
     &__mypage{
       background-color: $mainBlue;
     }
