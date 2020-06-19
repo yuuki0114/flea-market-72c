@@ -1,0 +1,15 @@
+.logout-content{
+  width: 700px;
+  height: 200px;
+  background-color: $white;
+  text-align: center;
+  line-height: 200px;
+  .logout-btn{
+    padding: 20px 100px;
+    background-color: $mainBlue;
+    color: $white;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+}

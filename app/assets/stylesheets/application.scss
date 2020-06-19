@@ -1,14 +1,19 @@
 @import "reset";
 @import "./config/*";
 @import "./mixin/*";
-@import "modules/item_detail";
-@import "modules/menu";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "modules/item_detail";
+@import "modules/menu";
 @import "header";
 @import "category-tree";
 @import "footer";
 @import "post-btn";
 @import "item";
+@import 'modules/mypage/users';
+@import 'modules/mypage/side-bar';
+@import 'modules/mypage/content';
+@import 'modules/mypage/logout';
+@import 'modules/credit_cards';
 @import "buyers";
 

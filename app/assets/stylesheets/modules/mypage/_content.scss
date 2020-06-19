@@ -1,0 +1,39 @@
+.mypage-content{
+  background-color: $white;
+  float: right;
+  &--user-status{
+    width: 700px;
+    align-items: center;
+    @include displayFlex();
+    justify-content: center;
+    a{
+      @include blackLink();
+      padding: 50px;
+      .user-status--icon{
+        margin: 0;
+        text-align: center;
+      }
+      .user-status--name{
+        @include bold();
+        text-align: center;
+      }
+      .user-status{
+        @include displayFlex();
+        justify-content: center;
+        &--reviews{
+          &__bold{
+            @include bold();
+            margin-left: 8px;
+          }
+        }
+        &--sell{
+          margin-left: 16px;
+          &__bold{
+            @include bold();
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+}

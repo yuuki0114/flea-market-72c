@@ -1,0 +1,17 @@
+.mypage-content
+  %section.mypage-content--user-status
+    = link_to "#" do
+      %figure.user-status--icon
+        = image_tag "member_photo_noimage_thumb.png", size: "60x60"
+      .user-status--name
+        ニックネーム
+      .user-status
+        .user-status--reviews
+          評価
+          %span.user-status--reviews__bold
+            0
+        .user-status--sell
+          出品数
+          %span.user-status--sell__bold
+            0
+            

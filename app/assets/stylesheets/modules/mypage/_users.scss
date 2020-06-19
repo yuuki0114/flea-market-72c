@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+.mypage{
+  width: 100%;
+  background-color: $backGroundGray;
+  @include displayFlex();
+  justify-content: center;
+  padding: 40px 0;
+}
