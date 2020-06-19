@@ -1,0 +1,160 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.buy{
+  background: $backGroundGray;;
+  font-family: $baseFont;
+  .header{
+    text-align: center;
+    height: 128px;
+    &__logo{
+      padding: 40px 0 0;
+      .image{
+        width: 160px;
+      }
+    }
+  }
+  .content{
+  background-color: #fff;
+  width: 700px;
+  margin: 0 auto;
+  border-top: 1px solid $backGroundGray;;
+    .content-top{
+      text-align: center;
+      &__title{
+        padding: 32px;
+        font-size: 22px;
+      }
+    }
+    .content{ 
+      height: 700px;
+      &__item{
+        height: 145px;
+        .item-box{
+          margin: 0 auto;
+          padding: 32px 16px;
+          @include displayFlex();
+          max-width: 343px;
+          .item-image{
+            min-width: 80px;
+            height: 80px;
+            width: 80px;
+          }
+          .item-detail{
+            margin-left: 16px;
+            .detail-name{
+              font-size: 14px;
+              margin: 0;
+              padding: 0 0 8px;
+              line-height: 1.5;
+            }
+            .detail-price{
+              font-size: 16px;
+            }  
+          }
+        }
+      }
+      .content-user-info{
+        padding-bottom: 35px;
+        .content-inner{
+          padding-top: 15px;
+          max-width: 343px;
+          margin: 0 auto;
+          border-top: 1px solid $backGroundGray;
+          .price-table{
+            font-size: 25px;
+            width: 100%;
+            @include clearfix();
+            .price__left{
+              font-size: 18px;
+              float: left;
+            }
+            .price__right{
+              float: right;
+            }
+          }
+          .payment-table{
+            font-size: 14px;
+            @include clearfix();
+            .payment__left{
+              float: left;
+              font-size: 15px;
+            }
+            .payment__right{
+              float: right;
+            }
+          }
+          .user-info-text{
+            line-height: 1.5;
+            margin: 8px 0 0;
+            .card-logo{
+              height: 30px;
+              width: 30px;
+            }
+          }
+          .address-table{
+            font-size: 15px;
+            margin: 0;
+            .address__left{
+              float: left;
+            }
+            .address__right{
+              float: right;
+            }
+          }
+        }
+        .purchase{
+          background: $mainBlue;
+          border: 1px solid $mainBlue;
+          color: #fff;
+          width: 343px;
+          line-height: 48px;
+          font-size: 14px;
+          border-radius: 1px;
+          margin-top: 35px;
+          &:hover{
+            box-shadow: none;
+            color: rgb(104, 97, 97);
+            background: rgb(228, 221, 221);
+          }
+        } 
+      }
+    }
+  }
+  .sub-footer{
+    text-align: center;
+    z-index: 1;
+    padding: 40px 0;
+    ul{
+      line-height: 2.0;
+      li{
+        font-size: 14px;
+        display: inline-block;
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}
+.update-btn{
+  color: $mainBlue;
+  text-decoration: none;
+  font-size: 15px;
+  &:hover{
+    box-shadow: none;
+    color: gray;
+  }
+}
+.image1{
+  height: 65px;
+  width: 120px;
+}
+.sub-btn{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    box-shadow: none;
+    color: gray;
+  }
+}
