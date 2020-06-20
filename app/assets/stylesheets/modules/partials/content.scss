@@ -9,6 +9,8 @@
     a{
       @include blackLink();
       padding: 50px;
+      display: inline-block;
+      width: 700px;
       .user-status--icon{
         margin: 0;
         text-align: center;
