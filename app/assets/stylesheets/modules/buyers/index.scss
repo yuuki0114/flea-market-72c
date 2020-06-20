@@ -1,15 +1,5 @@
 .buy{
   background: $backGroundGray;
-  .header{
-    text-align: center;
-    height: 128px;
-    &__logo{
-      padding: 40px 0 0;
-      .image{
-        width: 160px;
-      }
-    }
-  }
   .content{
     background-color: white;
     width: 700px;
@@ -107,7 +97,8 @@
           line-height: 48px;
           font-size: $fontMainSize;
           border-radius: 1px;
-          margin-top: 35px;
+          padding: 2px 5px 5px;
+          height: 48px;
           &:hover{
             box-shadow: none;
             color: rgb(104, 97, 97);
@@ -117,36 +108,11 @@
       }
     }
   }
-  .sub-footer{
-    text-align: center;
-    z-index: 1;
-    padding: 40px 0;
-    ul{
-      line-height: 2.0;
-      li{
-        font-size: $fontMainSize;
-        display: inline-block;
-        margin-left: 0.5rem;
-      }
-    }
-  }
 }
 .update-btn{
   color: $mainBlue;
   text-decoration: none;
   font-size: 15px;
-  &:hover{
-    box-shadow: none;
-    color: gray;
-  }
-}
-.image1{
-  height: 65px;
-  width: 120px;
-}
-.sub-btn{
-  text-decoration: none;
-  color: black;
   &:hover{
     box-shadow: none;
     color: gray;
