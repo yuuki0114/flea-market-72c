@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :users, only: :index do
     collection do
       get 'logout', to: 'users#logout'
+      get 'user_page', to: 'users#user_page'
+      get 'personal_information', to: 'users#personal_information'
     end
   end
   resources :credit_cards, only: :new
