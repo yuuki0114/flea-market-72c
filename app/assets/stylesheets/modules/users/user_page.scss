@@ -1,0 +1,12 @@
+.mypage-content__user-page{
+  background-color: white;
+  .user-introduction{
+    // paddingの100pxを引いたもの
+    width: calc(700px - 100px);
+    font-size: 16px;
+    border-top: 3px solid $backGroundGray;;
+    padding: 30px 50px 60px;
+    // 折り返し
+    word-wrap: break-word;
+  }
+}

@@ -1,0 +1,24 @@
+= render partial: "items/header"
+= render partial: "items/menu"
+.mypage
+  .mypage-content__user-page
+    %section.mypage-content--user-status
+      = link_to user_page_users_path do
+        %figure.user-status--icon
+          = image_tag "/member_photo_noimage_thumb.png", size: "180x180"
+        .user-status--name
+          ニックネーム
+        .user-status
+          .user-status--reviews
+            評価
+            %span.user-status--reviews__bold
+              0
+          .user-status--sell
+            出品数
+            %span.user-status--sell__bold
+              0
+    .user-introduction
+      ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。
+      ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。ご覧いただきありがとうございます。
+= render partial: "items/footer"
+= render partial: "items/post-btn"
