@@ -1,0 +1,156 @@
+.signup-background
+  .contents
+    .contents__title
+      会員情報入力
+    .contents__content
+      .title
+        .title__name
+          ニックネーム
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　例)フリマ太郎"}
+    .contents__content
+      .title
+        .title__name
+          メールアドレス
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　PC・携帯どちらでも可"}
+    .contents__content
+      .title
+        .title__name
+          パスワード
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　7文字以上の半角英数字"}
+      .alert
+        ※ 英字と数字の両方を含めて設定してください
+    .contents__content
+      .sub-title
+        本人確認
+      .text
+        安心・安全にご利用いただくために、お客さまの本人
+        %br>/
+        情報の登録にご協力ください。他のお客さまに公開さ
+        %br>/
+        れることはありません。
+    .contents__content
+      .title
+        .title__name
+          お名前(全角)
+        .title__required
+          必須
+      .fields
+        .fields__last
+          %input.input{placeholder: "　例)山田"}
+        .fields__name
+          %input.input{placeholder: "　例)太郎"}
+    .contents__content
+      .title
+        .title__name
+          お名前カナ(全角)
+        .title__required
+          必須
+      .fields
+        .fields__last
+          %input.input{placeholder: "　例)ヤマダ"}
+        .fields__name
+          %input.input{placeholder: "　例)タロウ"}
+    .contents__content
+      .title
+        .title__name
+          生年月日
+        .title__required
+          必須
+      .multi-fields
+        %select.multi-fields__field
+        %span.multi-fields__text
+          年
+        %select.multi-fields__field
+        %span.multi-fields__text
+          月
+        %select.multi-fields__field
+        %span.multi-fields__text
+          日
+      .alert
+        ※ 本人情報は正しく入力してください。会員登録後、
+        %br>/
+        修正するにはお時間を頂く場合があります。
+    .contents__content
+      .sub-title
+        発送元・お届け先住所入力
+    .contents__content
+      .title
+        .title__name
+          お名前(全角)
+        .title__required
+          必須
+      .fields
+        .fields__last
+          %input.input{placeholder: "　例)山田"}
+        .fields__name
+          %input.input{placeholder: "　例)太郎"}
+    .contents__content
+      .title
+        .title__name
+          お名前カナ(全角)
+        .title__required
+          必須
+      .fields
+        .fields__last
+          %input.input{placeholder: "　例)ヤマダ"}
+        .fields__name
+          %input.input{placeholder: "　例)タロウ"}
+    .contents__content
+      .title
+        .title__name
+          郵便番号
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　例)123-4567"}
+    .contents__content
+      .title
+        .title__name
+          都道府県
+        .title__required
+          必須
+      .field
+        %select.field__input{value: "　北海道"}
+    .contents__content
+      .title
+        .title__name
+          市区町村
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　例)横浜市緑区"}
+    .contents__content
+      .title
+        .title__name
+          番地
+        .title__required
+          必須
+      .field
+        %input.field__input{placeholder: "　例)青山1-1-1"}
+    .contents__content
+      .title
+        .title__name
+          建物名
+        .title__optional
+          任意
+      .field
+        %input.field__input{placeholder: "　例)山田ビル101"}
+    .contents__content
+      .title
+        .title__name
+          電話番号
+        .title__optional
+          任意
+      .field
+        %input.field__input{placeholder: "　例)09012345678"}
+    .submit-box
+      %input.submit-box__btn{type: "submit", value: "登録する"}
