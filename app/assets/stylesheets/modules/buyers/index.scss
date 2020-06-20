@@ -1,11 +1,5 @@
-*{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .buy{
-  background: $backGroundGray;;
-  font-family: $baseFont;
+  background: $backGroundGray;
   .header{
     text-align: center;
     height: 128px;
@@ -17,10 +11,10 @@
     }
   }
   .content{
-  background-color: #fff;
-  width: 700px;
-  margin: 0 auto;
-  border-top: 1px solid $backGroundGray;;
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    border-top: 1px solid $backGroundGray;
     .content-top{
       text-align: center;
       &__title{
@@ -45,7 +39,7 @@
           .item-detail{
             margin-left: 16px;
             .detail-name{
-              font-size: 14px;
+              font-size: $fontMainSize;
               margin: 0;
               padding: 0 0 8px;
               line-height: 1.5;
@@ -76,7 +70,7 @@
             }
           }
           .payment-table{
-            font-size: 14px;
+            font-size: $fontMainSize;
             @include clearfix();
             .payment__left{
               float: left;
@@ -108,10 +102,10 @@
         .purchase{
           background: $mainBlue;
           border: 1px solid $mainBlue;
-          color: #fff;
+          color: white;
           width: 343px;
           line-height: 48px;
-          font-size: 14px;
+          font-size: $fontMainSize;
           border-radius: 1px;
           margin-top: 35px;
           &:hover{
@@ -130,7 +124,7 @@
     ul{
       line-height: 2.0;
       li{
-        font-size: 14px;
+        font-size: $fontMainSize;
         display: inline-block;
         margin-left: 0.5rem;
       }

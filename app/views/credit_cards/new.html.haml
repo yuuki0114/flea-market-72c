@@ -1,5 +1,5 @@
-部分テンプレート(ヘッター)
-
+= render partial: "items/header"
+= render partial: "items/menu"
 .mypage
   .wrapper
     = render partial: "users/side_bar"
@@ -20,11 +20,11 @@
             .card-icon
               %ul
                 %li
-                  = image_tag "logo_visa_ph001.png", size: "40x30"
-                  = image_tag "mc_vrt_pos.svg", size: "40x30"
-                  = image_tag "jcb-logomark-img-01.gif", size: "40x30"
-                  = image_tag "amex-logomark-img-04.gif", size: "40x30"
-                  = image_tag "diners-logomark-img-01.gif", size: "40x30"
+                  = image_tag "/logo_visa_ph001.png", size: "40x30"
+                  = image_tag "/mc_vrt_pos.svg", size: "40x30"
+                  = image_tag "/jcb-logomark-img-01.gif", size: "40x30"
+                  = image_tag "/amex-logomark-img-04.gif", size: "40x30"
+                  = image_tag "/diners-logomark-img-01.gif", size: "40x30"
           .form-group--expiration-date
             %label.expiration-date
               有効期限
@@ -43,5 +43,5 @@
             .security-code--form
               = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号"
           =f.submit "追加する", class: "submit-btn"
-
-部分テンプレート（フッター）
+= render partial: "items/footer"
+= render partial: "items/post-btn"

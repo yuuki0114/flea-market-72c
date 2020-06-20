@@ -2,7 +2,7 @@
   width: 700px;
   float: right;
   &--head{
-    background-color: $white;
+    background-color: white;
     font-size: 22px;
     @include bold();
     text-align: center;
@@ -11,9 +11,9 @@
   }
   &--form{
     padding: 40px 40px 64px;
-    background-color: $white;
+    background-color: white;
     .form-group{
-      @include marginCenter();
+      margin: 0 auto;
       width: 300px;
       &--card-number{
         .card-number{
@@ -21,7 +21,7 @@
         }
         .card-number__form{
           input{
-          background-color: $white;
+          background-color: white;
           width: 300px;
           height: 48px;
           font-size: 16px;
@@ -56,7 +56,7 @@
             border: 1px solid $borderGray;
           }
           .expiration-text{
-            font-size: 14px;
+            font-size: $fontMainSize;
             margin: 12px;
           }
         }
@@ -84,7 +84,7 @@
     }
     .submit-btn{
       background-color: $mainBlue;
-      color: $white;
+      color: white;
       width: 300px;
       height: 48px;
       border-radius: 4px;

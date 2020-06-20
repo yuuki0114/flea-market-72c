@@ -6,7 +6,7 @@
   position: absolute;
   top: 38px;
   .category-tree {
-    @include whiteBackGround();
+    background-color: white;
     width: 240px;
     font-size: 12px;
     &__name {
@@ -21,7 +21,7 @@
     }
   }
   .sub-tree {
-    @include whiteBackGround();
+    background-color: white;
     width: 240px;
     font-size: 12px;
     &__name {
@@ -36,7 +36,7 @@
     }
   }
   .tree {
-    @include whiteBackGround();
+    background-color: white;
     width: 240px;
     font-size: 12px;
     &__name {

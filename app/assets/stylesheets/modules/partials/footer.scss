@@ -1,6 +1,6 @@
 .bottom-image {
   height: 140px;
-  background-image: url("/assets/top-page3");
+  background-image: url("/top-page3.jpg");
   background-size: cover;
   background-position: center;
   padding: 110px 40px;
@@ -63,7 +63,7 @@
     margin: 0 auto;
     align-items: center;
     .downside {
-      font-size: 14px;
+      font-size: $fontMainSize;
       color: white;
       padding-left: 40px;
     }

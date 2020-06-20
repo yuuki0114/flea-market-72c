@@ -1,7 +1,5 @@
-%h1 ここには部分テンプレートのヘッダーが入ります。
-
-= render "menu"
-
+= render partial: "header"
+= render partial: "menu"
 .main
   .main__content
     .main__content--inner
@@ -97,5 +95,5 @@
       .relate-item
         = link_to "#", class: "item__more" do
           レディースをもっとみる
-
-%h1 ここには部分テンプレートのフッダーが入ります。
+= render partial: "footer"
+= render partial: "post-btn"

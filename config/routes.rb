@@ -1,20 +1,11 @@
 Rails.application.routes.draw do
   root 'items#index'
-  resources :users, only: [:index] do
+  resources :users, only: :index do
     collection do
       get 'logout', to: 'users#logout'
     end
   end
-  resources :credit_cards, only: [:new]
+  resources :credit_cards, only: :new
   resources :items, only: :show
-  get 'buyers/index'
-  get 'buyers/done'
-  resources :items do
-    resources :buyers, only: [:index] do
-      collection do
-        get 'done', to: 'buyers#done'
-        post 'pay', to: 'buyer#pay'
-      end
-    end
-  end
+  resources :buyers, only: :index
 end
