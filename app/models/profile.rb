@@ -4,4 +4,6 @@ class Profile < ApplicationRecord
             :first_name_kana,
             :last_name_kana,
             :birthday, presence: true
+
+  belongs_to :user, optional: true
 end

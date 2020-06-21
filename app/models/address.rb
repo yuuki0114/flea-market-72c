@@ -7,4 +7,6 @@ class Address < ApplicationRecord
             :prefectures,
             :municipalities,
             :street_number, presence: true
+
+  belongs_to :user, optional: true
 end
