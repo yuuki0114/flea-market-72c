@@ -1,0 +1,149 @@
+.signup-background {
+  background-color: $backGroundGray;
+  width: 100%;
+  height: 2450px;
+  position: relative;
+  .contents {
+    width: 620px;
+    height: max-content;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    padding: 40px 40px 64px;
+    &__title {
+      @include bold();
+      @include lightGrayUnderLine();
+      font-size: 22px;
+      padding: 32px;
+      text-align: center;
+    }
+    &__content {
+      width: max-content;
+      height: max-content;
+      padding: 10px;
+      margin: 0 auto;
+      margin-top: 20px;
+      .title {
+        @include displayFlex();
+        &__name {
+          font-weight: 600;
+        }
+        &__required {
+          @include required();
+          margin-left: 8px;
+        }
+        &__optional {
+          @include optional();
+          margin-left: 8px;
+        }
+      }
+      .field {
+        width: 340px;
+        height: 50px;
+        &__input {
+          width: 100%;
+          height: 100%;
+          font-size: 16px;
+          border-radius: 4px;
+          border: $borderGray solid 1px;
+          margin-top: 8px;
+        }
+      }
+      .alert {
+        margin-top: 20px;
+        font-size: $fontMainSize;
+        color: gray;
+      }
+      .sub-title {
+        @include bold();
+        font-size: 16px;
+        text-align: center;
+      }
+      .text {
+        font-size: $fontMainSize;
+        margin-top: 8px;
+      }
+      .fields {
+        @include displayFlex();
+        width: 340px;
+        height: 50px;
+        &__last {
+          width: calc(50% - 6px);
+          margin-right: 15px;
+          .input {
+            height: 100%;
+            width: 100%;
+            border-radius: 4px;
+            border: $borderGray solid 1px;
+            margin-top: 8px;
+          }
+        }
+        &__name {
+          width: calc(50% - 6px);
+          .input {
+            height: 100%;
+            width: 100%;
+            margin-right: 15px;
+            border-radius: 4px;
+            border: $borderGray solid 1px;
+            margin-top: 8px;
+          }
+        }
+      }
+      .multi-fields {
+        display: flex;
+        &__field {
+          margin-top: 8px;
+          margin-right: 5px;
+          width: 75px;
+          height: 48px;
+          border-radius: 4px;
+          border: $borderGray solid 1px;
+        }
+        &__text {
+          margin-right: 5px;
+          line-height: 65px;
+          font-size: $fontMainSize;
+          color: gray;
+        }
+      }
+    }
+    .submit-box {
+      width: 100%;
+      margin-top: 32px;
+      height: 48px;
+      position: relative;
+      &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        height: 100%;
+        width: 340px;
+        background-color: $mainBlue;
+        color: white;
+        border-radius: 1px;
+        border: none;
+      }
+    }
+  }
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(/down-arrow.png);
+  background-repeat: no-repeat;
+  background-size: 12px 10px;
+  background-position: right 10px center;
+}
