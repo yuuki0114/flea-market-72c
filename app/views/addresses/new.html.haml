@@ -42,6 +42,16 @@
           %label.form-group__label 番地
           %span.form-require 必須
           %input.input-default{placeholder:"例)青山1-1-1"}
+
+        .form-group
+          %label.form-group__label 建物名
+          %span.form-arbitrary 任意
+          %input.input-default{placeholder:'例)柳ビル103'}
+        
+        .form-group
+          %label.form-group__label 電話
+          %span.form-arbitrary 任意
+          %input.input-default{placeholder:'例)09012345678'}
         
         = submit_tag("変更する", class:"btn-blue")
      

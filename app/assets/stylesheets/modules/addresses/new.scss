@@ -25,7 +25,10 @@
     line-height: 1.4;
   }
   .form-require{
-    background: $mainBlue;
+    @include required();
+  }
+  .form-arbitrary{
+    background:$borderGray;
     margin: 0 2px 0 8px;
     padding: 2px 4px;
     color: white;
