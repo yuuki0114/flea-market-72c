@@ -1,37 +1,38 @@
 = render partial: "items/header"
 = render partial: "items/menu"
+
 .mypage
   .wrapper
     = render "side_bar"
   .mypage-content
-    %section.personal-infomation-content
-      %h2.personal-infomation-content--head
+    %section.mypage-content__personal-infomation
+      %h2.mypage-content__personal-infomation--head
         本人情報の登録
-      .personal-infomation-content--form
-        %p.personal-infomation-content--form__explanation
+      .personal-infomation__form
+        %p.personal-infomation__form--explanation
           お客さまの本人情報をご登録ください。
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             お名前
           %p
             hoge
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             お名前カナ
           %p
             ホゲ
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             生年月日
           %p
             2020/6/20
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             郵便番号
           %span.optional
             任意
           %input.input{placeholder: "　例）1234567"}
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             都道府県
           %span.optional
@@ -85,19 +86,19 @@
             %option{ value: "45"} 宮崎県
             %option{ value: "46"} 鹿児島県
             %option{ value: "47"} 沖縄県
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             市区町村
           %span.optional
             任意
           %input.input{placeholder: "　例）横浜市緑区"}
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             番地
           %span.optional
             任意
           %input.input{placeholder: "　例）青山１−１−１"}
-        .user-tittle
+        .personal-infomation__form--user-tittle
           %label
             建物名
           %span.optional
@@ -105,5 +106,6 @@
           %input.input{placeholder: "　例　柳ビル103"}
         .submit-box
           %input.submit-box__btn{type: "submit", value: "登録する"}
+
 = render partial: "items/footer"
 = render partial: "items/post-btn"
