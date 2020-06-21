@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_21_041504) do
+ActiveRecord::Schema.define(version: 2020_06_21_042422) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -41,6 +41,20 @@ ActiveRecord::Schema.define(version: 2020_06_21_041504) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "first_name_kana", null: false
+    t.string "last_name_kana", null: false
+    t.date "birthday", null: false
+    t.string "image"
+    t.text "introduction"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
     t.string "email", default: "", null: false
@@ -55,4 +69,5 @@ ActiveRecord::Schema.define(version: 2020_06_21_041504) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "profiles", "users"
 end
