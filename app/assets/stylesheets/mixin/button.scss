@@ -5,6 +5,7 @@
   border-radius: $border-radius;
   width: 100%;
   border: none;
+  outline-color: $mainBlue;
   @include bold();
   cursor: pointer;
 }

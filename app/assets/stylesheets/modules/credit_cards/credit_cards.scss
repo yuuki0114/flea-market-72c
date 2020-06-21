@@ -40,12 +40,14 @@
           border-radius: 4px;
           margin: 8px 0;
           #expiration_year{
+            @include outLine();
             width: 120px;
             padding: 0 16px;
             border-radius: 4px;
             border: 1px solid $borderGray;
           }
           #expiration_month{
+            @include outLine();
             width: 120px;
             padding: 0 16px;
             border-radius: 4px;

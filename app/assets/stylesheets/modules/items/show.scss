@@ -154,6 +154,7 @@
           min-height: 104px;
           padding: 10px;
           box-sizing: border-box;
+          @include outLine();
         }
 
         &__notice {

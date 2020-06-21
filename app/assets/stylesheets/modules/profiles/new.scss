@@ -37,6 +37,7 @@
       background-color: white;
       line-height: 1.5;
       font-size: 16px;
+      @include outLine();
     }
   }
   .profile-content{
@@ -52,6 +53,7 @@
   font-size: 16px;
   line-height: 1.5;
   min-height: 216px;
+  @include outLine();
 }
 .btn-default{
   display: block;

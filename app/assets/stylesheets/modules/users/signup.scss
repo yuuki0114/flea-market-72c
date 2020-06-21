@@ -47,6 +47,7 @@
           @include registerForm();
           font-size: 16px;
           margin-top: 8px;
+          @include outLine();
         }
       }
       .alert {
@@ -76,6 +77,7 @@
             border-radius: 4px;
             border: $borderGray solid 1px;
             margin-top: 8px;
+            @include outLine();
           }
         }
         &__name {
@@ -87,6 +89,7 @@
             border-radius: 4px;
             border: $borderGray solid 1px;
             margin-top: 8px;
+            @include outLine();
           }
         }
       }
@@ -99,6 +102,7 @@
           height: 48px;
           border-radius: 4px;
           border: $borderGray solid 1px;
+          @include outLine();
         }
         &__text {
           margin-right: 5px;
