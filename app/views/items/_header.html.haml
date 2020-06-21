@@ -17,10 +17,16 @@
       .left__brand
         = link_to "#", class: "left__brand--text-decoration_none" do
           ブランド
-    .right
-      .right__login
-        = link_to new_user_session_path, class: "right__login--text-decoration_none" do
-          ログイン
-      .right__signup
-        = link_to new_user_registration_path, class: "right__signup--text-decoration_none" do
-          新規会員登録
+    - if user_signed_in?
+      .right
+        .right__mypage
+          = link_to users_path, class: "right__mypage--text-decoration_none" do
+            マイページ
+    - else
+      .right
+        .right__login
+          = link_to new_user_session_path, class: "right__login--text-decoration_none" do
+            ログイン
+        .right__signup
+          = link_to new_user_registration_path, class: "right__signup--text-decoration_none" do
+            新規会員登録
