@@ -1,0 +1,59 @@
+.email-password-content{
+  width: 700px;
+  float: right;
+  input{
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    width: 285px;
+    border: 1px solid $borderGray;
+    height: 22px;
+    text-align: 22px;
+    margin: 8px 0 0;
+  }
+  &__head{
+    background-color: white;
+    font-size: 22px;
+    @include bold();
+    text-align: center;
+    padding: 8px;
+    border-bottom: solid 3px $backGroundGray;
+  }
+  &__form{
+    background-color: white;
+    padding: 64px;
+    .form-group{
+      max-width: 320px;
+      margin: 0 auto;
+      .form-group-password{
+        .password-field{
+          margin: 40px 0 0;
+        }
+      }
+    }
+  }
+}
+
+label{
+  @include bold();
+  font-size: 14px;
+}
+.form-text{
+  color: #888;
+  margin: 8px 0 0;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.btn{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: 40px 0 0;
+  background: #3ccace;
+  border: 1px solid #3ccace;
+  color: white;
+}
