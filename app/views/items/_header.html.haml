@@ -19,8 +19,8 @@
           ブランド
     .right
       .right__login
-        = link_to login_users_path, class: "right__login--text-decoration_none" do
+        = link_to new_user_session_path, class: "right__login--text-decoration_none" do
           ログイン
       .right__signup
-        = link_to signup_users_path, class: "right__signup--text-decoration_none" do
+        = link_to new_user_registration_path, class: "right__signup--text-decoration_none" do
           新規会員登録
