@@ -41,7 +41,6 @@
     line-height: 1.5;
     font-size: 16px;
     margin: 10px 0 0;
-    @include outLine();
   }
   .select-default{
     @include registerForm();
@@ -49,7 +48,6 @@
     line-height: 1.5;
     font-size: 16px;
     margin: 10px 0 0;
-    @include outLine();
  }
   .btn-blue{
     background:$mainBlue;

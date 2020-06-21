@@ -68,7 +68,6 @@
         .security-code--form{
           #security_code{
             @include registerForm();
-            @include outLine();
             margin: 8px 0;
           }
         }
