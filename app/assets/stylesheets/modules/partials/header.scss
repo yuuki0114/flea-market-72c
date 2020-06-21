@@ -13,6 +13,7 @@
       margin-top: 3px;
       position: relative;
       &__input {
+        @include outLine();
         width: 95%;
         height: 75%;
       }
