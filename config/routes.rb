@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :credit_cards, only: :new
   resources :items, only: :show
   resources :buyers, only: :index
+  resources :profiles, only: :new
+  resources :addresses, only: :new
 end

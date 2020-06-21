@@ -1,6 +1,15 @@
 .email-password-content{
   width: 700px;
   float: right;
+  input{
+    padding: 10px 16px 8px;
+    border-radius: 4px;
+    width: 285px;
+    border: 1px solid $borderGray;
+    height: 22px;
+    text-align: 22px;
+    margin: 8px 0 0;
+  }
   &__head{
     background-color: white;
     font-size: 22px;
@@ -34,15 +43,7 @@ label{
   line-height: 1.5;
   font-size: 14px;
 }
-input{
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  width: 285px;
-  border: 1px solid #ccc;
-  height: 22px;
-  text-align: 22px;
-  margin: 8px 0 0;
-}
+
 .btn{
   display: block;
   width: 100%;
@@ -54,5 +55,5 @@ input{
   margin: 40px 0 0;
   background: #3ccace;
   border: 1px solid #3ccace;
-  color: #fff;
+  color: white;
 }
