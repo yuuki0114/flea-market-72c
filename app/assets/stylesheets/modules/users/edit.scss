@@ -2,11 +2,7 @@
   width: 700px;
   float: right;
   input{
-    padding: 10px 16px 8px;
-    border-radius: 4px;
-    width: 285px;
-    border: 1px solid $borderGray;
-    height: 22px;
+    @include registerForm();
     text-align: 22px;
     margin: 8px 0 0;
   }
