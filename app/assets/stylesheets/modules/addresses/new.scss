@@ -12,7 +12,7 @@
     .content-form-registration{
       padding: 24px 16px 40px;
       max-width: 343px;
-        margin: 0 auto;
+      margin: 0 auto;
       .form-group{
         margin-bottom: 20px;
         &__label{
@@ -36,28 +36,20 @@
     font-size: 12px;
   }
   .input-default{
-    height: 26px;
-    padding: 10px 16px 8px;
-    border-radius: 4px;
-    border: 1px solid $borderGray;
+    @include registerForm();
     background-color: white;
     line-height: 1.5;
     font-size: 16px;
     margin: 10px 0 0;
-    width: 309px;
-    @include outLine;
+    @include outLine();
   }
- .select-default{
-   height: 46px;
-   padding: 10px 16px 8px;
-   border-radius: 4px;
-   border: 1px solid $borderGray;
-   background-color: white;
-   line-height: 1.5;
-   font-size: 16px;
-   margin: 10px 0 0;
-   width: 100%;
-   @include outLine;
+  .select-default{
+    @include registerForm();
+    background-color: white;
+    line-height: 1.5;
+    font-size: 16px;
+    margin: 10px 0 0;
+    @include outLine();
  }
   .btn-blue{
     background:$mainBlue;
