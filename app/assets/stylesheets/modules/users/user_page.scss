@@ -1,0 +1,10 @@
+.mypage-content__user-page{
+  background-color: white;
+  .user-introduction{
+    width: calc(700px - 100px);
+    font-size: 16px;
+    border-top: 3px solid $backGroundGray;;
+    padding: 30px 50px 60px;
+    word-wrap: break-word;
+  }
+}
