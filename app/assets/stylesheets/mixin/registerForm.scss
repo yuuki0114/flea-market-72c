@@ -5,4 +5,5 @@
   border: 1px solid $borderGray;
   box-sizing: border-box;
   width: 100%;
+  @include outLine();
 }

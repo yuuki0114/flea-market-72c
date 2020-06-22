@@ -5,7 +5,6 @@
     @include registerForm();
     text-align: 22px;
     margin: 8px 0 0;
-    @include outLine();
   }
   &__head{
     background-color: white;
