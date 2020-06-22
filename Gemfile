@@ -75,3 +75,5 @@ end
 gem "haml-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
+#カテゴリー機能実装
+gem 'ancestry'
