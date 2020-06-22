@@ -19,6 +19,10 @@
       font-size: 22px;
       padding: 32px;
       text-align: center;
+      .text {
+        font-size: $fontMainSize;
+        margin-top: 8px;
+      }
     }
     &__content {
       width: max-content;
@@ -57,15 +61,6 @@
         font-size: $fontMainSize;
         color: gray;
       }
-      .sub-title {
-        @include bold();
-        font-size: 16px;
-        text-align: center;
-      }
-      .text {
-        font-size: $fontMainSize;
-        margin-top: 8px;
-      }
       .fields {
         @include displayFlex();
         width: 340px;
@@ -93,21 +88,23 @@
           }
         }
       }
-      .multi-fields {
-        display: flex;
-        &__field {
-          margin-top: 8px;
-          margin-right: 5px;
-          width: 75px;
-          height: 48px;
+      #date-fields {
+        text-align: center;
+        height: 50px;
+        margin-top: 10px;
+        align-items: center;
+        > select {
           border-radius: 4px;
           border: $borderGray solid 1px;
-        }
-        &__text {
+          height: 100%;
+          width: 90px;
           margin-right: 5px;
-          line-height: 65px;
-          font-size: $fontMainSize;
-          color: gray;
+        }
+        #profile_birthday_2i {
+          margin-left: 5px;
+        }
+        #profile_birthday_3i {
+          margin-left: 5px;
         }
       }
     }
