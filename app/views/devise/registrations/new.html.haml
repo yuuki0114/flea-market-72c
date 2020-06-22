@@ -1,5 +1,5 @@
 部分テンプレート
-.signup-background
+.signup-background#user
   = form_for(@user, url: user_registration_path) do |f|
     .contents
       = render "devise/shared/error_messages", resource: @user
