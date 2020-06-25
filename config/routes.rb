@@ -9,7 +9,11 @@ Rails.application.routes.draw do
       get 'login', to: 'users#login'
     end
   end
-  resources :credit_cards, only: :new
+  resources :credit_cards, only: [:index, :new, :create, :destory, :show] do
+    member do
+      post 'pay'
+    end
+  end
   resources :items, only: [:show, :new]
   resources :buyers, only: :index
   resources :profiles, only: :new
