@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   end
   resources :credit_cards, only: [:index, :new, :create, :destory, :show] do
     member do
-      post 'pay'
+      post 'pay' #payは購入
     end
   end
   resources :items, only: [:show, :new]
