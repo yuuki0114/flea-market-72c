@@ -11,7 +11,8 @@
       .contents__line
       - if flash.any?
         - flash.each do |key, value|
-          = content_tag :div, value, class: "contents__error"
+          - if key == "alert"
+            = content_tag :div, value, class: "contents__error"
       .contents__content
         .field
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "　メールアドレス"
