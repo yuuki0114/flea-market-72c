@@ -11,6 +11,8 @@ class User < ApplicationRecord
   valid_email_ReGex = /\A\S+@\S+\.\S+\z/
   validates :email, format: { with: valid_email_ReGex }
 
+  validates :password, confirmation: true
+
   has_one :address
   has_one :profile
 end
