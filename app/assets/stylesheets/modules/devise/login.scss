@@ -5,7 +5,7 @@
   position: relative;
   .contents {
     width: 460px;
-    height: 350px;
+    height: 400px;
     background-color: white;
     position: absolute;
     top: 0;
@@ -77,7 +77,9 @@
   }
   .forget-password {
     @include blackLink();
-    margin-top: 20px;
     display: inline-block;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
   }
 }
