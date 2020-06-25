@@ -40,6 +40,11 @@
       background-color: $borderGray;
       margin-top: 30px;
     }
+    &__error {
+      color: red;
+      text-align: center;
+      padding-top: 30px;
+    }
     &__content {
       margin: 0 auto;
       width: 330px;
