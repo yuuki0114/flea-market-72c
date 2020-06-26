@@ -1,0 +1,59 @@
+= render partial: "items/header"
+= render partial: "items/menu"
+.mypage
+  .wrapper
+    = render partial: "users/side_bar"
+  .address-content
+    .content-form
+      %h2.content-form__top
+        発送元・お届け先住所変更
+      .content-form-registration
+        .form-group
+          %label.form-group__label お名前
+          %span.form-require 必須
+          %br
+          %input.input-default{placeholder:"例)山田"}
+          %input.input-default{placeholder:"例)彩"}
+          %br
+        .form-group
+          %label.form-group__label お名前カナ
+          %span.form-require 必須
+          %input.input-default{placeholder:"例)ヤマダ"}
+          %input.input-default{placeholder:"例)アヤ"}
+          %br
+        .form-group
+          %label.form-group__label 郵便番号
+          %span.form-require 必須
+          %input.input-default{placeholder:"例)123-4567"}
+          %br
+        .form-group
+          %label.form-group__label 都道府県
+          %span.form-require 必須
+          %br
+          %select.select-default
+          
+          %br
+        .form-group
+          %label.form-group__label 市区町村
+          %span.form-require 必須
+          %input.input-default{placeholder:"例)横浜市緑区"}
+          %br
+        .form-group
+          %label.form-group__label 番地
+          %span.form-require 必須
+          %input.input-default{placeholder:"例)青山1-1-1"}
+
+        .form-group
+          %label.form-group__label 建物名
+          %span.form-arbitrary 任意
+          %input.input-default{placeholder:'例)柳ビル103'}
+        
+        .form-group
+          %label.form-group__label 電話
+          %span.form-arbitrary 任意
+          %input.input-default{placeholder:'例)09012345678'}
+        
+        = submit_tag("変更する", class:"btn-blue")
+     
+= render partial: "items/footer"
+= render partial: "items/post-btn"

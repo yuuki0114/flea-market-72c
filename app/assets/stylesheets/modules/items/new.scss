@@ -1,0 +1,312 @@
+.sell-main {
+  background-color: $backGroundGray;
+  &__content {
+    width: 700px;
+    margin: 0 auto;
+    .form-content {
+      background-color: #fff;
+      .sell-photo {
+        padding: 40px;
+        border-bottom: 1px solid $backGroundGray;
+        .item-photo {
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &--description {
+            margin-top: 16px;
+            font-size: $fontMainSize;
+          }
+          &--label {
+            margin-top: 16px;
+            background-color: $backGroundGray;
+            height: 150px;
+            border-width: 1px;
+            border-style: dashed;
+            border-color: rgb(204, 204, 204);
+            display: block;
+            cursor: pointer;
+            .label-content {
+              padding: 40px;
+              text-align: center;
+              &--file {
+                display: none;
+              }
+              .photo-icon {
+                font-size: 20px;
+              }
+              &--text {
+                font-size: 12px;
+                line-height: 1.4em;
+                text-align: center;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+
+      .item-info {
+        padding: 40px;
+        border-bottom: 1px solid $backGroundGray;
+        label {
+          font-weight: 600;
+        }
+        .required {
+          @include required();
+          margin-left: 10px;
+        }
+        &__form {
+          margin-top: 16px;
+          .input-form {
+              @include registerForm();
+          }
+        }
+        &--description {
+          margin-top: 32px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__textarea {
+            @include registerForm(
+              $height: auto,
+              $padding: 13px 16px,
+              
+            );
+            margin-top: 16px;
+            
+          }
+          &__footer {
+            margin-top: 16px;
+            text-align: right;
+            color: $borderGray;
+            font-size: 12px;
+          }
+        }
+      }
+
+      .item-detail {
+        padding: 40px;
+        border-bottom: 1px solid $backGroundGray;
+        &__title {
+          font-size: $fontMainSize;
+          color: $borderGray;
+          @include bold();
+          margin-bottom: 24px;
+        }
+        .item-category {
+          margin-top: 32px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__form {
+            width: 100%;
+            margin-top: 16px;
+            .select-form {
+              @include registerForm();
+              @include outLine();
+            }
+          }
+        }
+        .item-brand {
+          margin-top: 32px;
+          label {
+            font-weight: 600;
+          }
+          .voluntary {
+            @include required();
+            background-color: $borderGray;
+            color: #fff;
+          }
+          &__form {
+            margin-top: 16px;
+            .input-form {
+              @include registerForm();
+              @include outLine();
+            }
+          }
+        }
+        .item-status {
+          margin-top: 32px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__form {
+            width: 100%;
+            margin-top: 16px;
+            .select-form {
+              @include outLine();
+              @include registerForm();
+            }
+          }
+        }
+      }
+
+      .delivery-info {
+        padding: 40px;
+        border-bottom: 1px solid $backGroundGray;
+        &__title {
+          font-size: $fontMainSize;
+          color: $borderGray;
+          @include bold();
+          margin-bottom: 24px;
+        }
+        .delivery-burden {
+          margin-top: 16px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__form {
+            width: 100%;
+            margin-top: 16px;
+            .select-form {
+              @include outLine();
+              @include registerForm();
+            }
+          }
+        }
+        .shipping-region {
+          margin-top: 16px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__form {
+            width: 100%;
+            margin-top: 16px;
+            .select-form {
+              @include outLine();
+              @include registerForm();
+            }
+          }
+        }
+        .shipping-days {
+          margin-top: 16px;
+          label {
+            font-weight: 600;
+          }
+          .required {
+            @include required();
+            margin-left: 10px;
+          }
+          &__form {
+            width: 100%;
+            margin-top: 16px;
+            .select-form {
+              @include outLine();
+              @include registerForm();
+            }
+          }
+        }
+      }
+
+      .price-info {
+        padding: 40px 40px 0;
+        &__title {
+          font-size: $fontMainSize;
+          color: $borderGray;
+          @include bold();
+          margin-bottom: 24px;
+        }
+        .selling-price {
+          margin: 16px 0 ;
+          @include displayFlex();
+          &__topic {
+            width: 50%;
+            line-height: 50px;
+            label {
+              font-weight: 600;
+            }
+            .required {
+              @include required();
+              margin-left: 10px;
+
+            }
+          }
+          &--detail {
+            @include displayFlex();
+            width: 50%;
+            &__currency {
+              font-size: $fontMainSize;
+              margin-right: 8px;
+              text-align: center;
+              line-height: 50px;
+            }
+            &__form {
+              @include registerForm();
+              text-align: right;
+              @include outLine();
+            }
+          }
+        }
+        .commission {
+          padding: 12px 0;
+          @include displayFlex();
+          justify-content: space-between;
+          &--rate {
+            font-size: $fontMainSize;
+          }
+        }
+        .profit {
+          padding: 12px 0;
+          @include displayFlex();
+          justify-content: space-between;
+          &--sale {
+            font-size: $fontMainSize;
+          }
+        }
+      }
+
+      .sell-footer {
+        width: 360px;
+        margin: 0 auto;
+        padding-bottom: 32px;
+        &__button--red {
+          @include button();
+        }
+        &__button--gray {
+          @include button(
+            $background-color: $borderGray,
+            $color: #222
+            );
+          margin-top: 24px;
+        }
+        .link-back {
+          display: block;
+          text-decoration: none;
+          margin-top: 24px;
+          color: $mainBlue;
+          text-align: center;
+        }
+      }
+      .caution {
+        padding: 0 40px 64px;
+        &--detail {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

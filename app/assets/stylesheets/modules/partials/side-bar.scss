@@ -7,6 +7,10 @@
     font-size: $fontMainSize;
     &__mypage{
       background-color: $mainBlue;
+      color: white;
+      #list-white{
+        color: white;
+      }
     }
     li{
       border-top: 3px solid $backGroundGray;
@@ -14,15 +18,19 @@
       a{
         display: block;
         padding: 16px;
+        &:hover{
+          color: white;
+        }
       }
       &:hover{
         background-color: $mainBlue;
         cursor: pointer;
+        
         .angle-right-icon{
           position: absolute;
           right: 12px;
           top: 40%;
-          color:black;
+          color:white;
         }
       }
     }

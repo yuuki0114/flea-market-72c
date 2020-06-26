@@ -1,0 +1,26 @@
+.sub-footer{
+  text-align: center;
+  z-index: 1;
+  padding: 40px 0;
+  background-color: #f8f8f8;
+  ul{
+    line-height: 2.0;
+    li{
+      font-size: $fontMainSize;
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+  }
+}
+.image1{
+  height: 65px;
+  width: 120px;
+}
+.sub-btn{
+  text-decoration: none;
+  color: black;
+  &:hover{
+    box-shadow: none;
+    color: gray;
+  }
+}

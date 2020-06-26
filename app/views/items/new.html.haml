@@ -1,0 +1,174 @@
+.buy
+  .header
+    = render partial: "/buyers/sub-header"
+  .sell-main
+    .sell-main__content
+      %form.form-content
+        .sell-photo
+          .item-photo
+            %label 出品画像
+            %span.required 必須 
+            %p.item-photo--description
+              最大10枚までアップロードできます
+            %label.item-photo--label
+              .label-content
+                %input.label-content--file{type: 'file'}
+                  = icon('fa','camera', class: "photo-icon")
+                %p.label-content--text
+                  ドラッグアンドドロップ
+                  %br
+                  またはクリックをしてファイルをアップロード
+        .item-info
+          %label 商品名
+          %span.required 必須
+          .item-info__form
+            %input.input-form{type: 'text', name: 'name', placeholder: '40字まで'}
+          .item-info--description
+            %label 商品の説明
+            %span.required 必須
+            %textarea.item-info--description__textarea{name: 'description',rows: '7', placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'}
+            .item-info--description__footer
+              %span 0/1000
+        .item-detail
+          %p.item-detail__title 商品の詳細
+          .item-category
+            %label カテゴリー
+            %span.required 必須 
+            .item-category__form
+              %select.select-form{name: "categoryId"}
+                %option.select-form--option{label:"選択してください"}
+                %option.select-form--option{label:"レディース", value: "1"}
+                %option.select-form--option{label:"メンズ", value: "2"}
+                %option.select-form--option{label:"ベビー・キッズ", value: "3"}
+                %option.select-form--option{label:"インテリア・住まい・小物", value: "4"}
+                %option.select-form--option{label:"本・音楽・ゲーム", value: "5"}
+                %option.select-form--option{label:"おもちゃ・ホビー・グッズ", value: "6"}
+                %option.select-form--option{label:"コスメ・香水・美容", value: "7"}
+                %option.select-form--option{label:"家電・スマホ・カメラ", value: "8"}
+                %option.select-form--option{label:"スポーツ・レジャー", value: "9"}
+                %option.select-form--option{label:"ハンドメイド", value: "10"}
+                %option.select-form--option{label:"チケット", value: "11"}
+                %option.select-form--option{label:"自転車・オートバイ", value: "12"}
+                %option.select-form--option{label:"その他", value: "13"}
+          .item-brand
+            %label ブランド
+            %span.voluntary 任意
+            .item-brand__form
+              %input.input-form{type: 'text', name: 'name', placeholder: '例)シャネル'}
+          .item-status
+            %label 商品の状態
+            %span.required 必須 
+            .item-status__form
+              %select.select-form{name: "status"}
+                %option.select-form--option{label:"選択してください"}
+                %option.select-form--option{label:"新品、未使用品", value: "1"}
+                %option.select-form--option{label:"未使用品に近い", value: "2"}
+                %option.select-form--option{label:"目立った傷や汚れなし", value: "3"}
+                %option.select-form--option{label:"やや傷や汚れあり", value: "4"}
+                %option.select-form--option{label:"傷や汚れあり", value: "5"}
+                %option.select-form--option{label:"全体的に状態が悪い", value: "6"}
+        .delivery-info
+          %p.delivery-info__title 
+            配送について
+            = link_to "#", class: "links__btn" do
+              = icon('fa','question-circle')
+          .delivery-burden
+            %label 配送料の負担
+            %span.required 必須 
+            .delivery-burden__form
+              %select.select-form{name: "delivery-burden"}
+                %option.select-form--option{label:"選択してください"}
+                %option.select-form--option{label:"送料込み(出品者負担)", value: "1"}
+                %option.select-form--option{label:"着払い(購入者負担)", value: "2"}
+          .shipping-region
+            %label 発送元の地域
+            %span.required 必須 
+            .delivery-burden__form
+              %select.select-form{name: "delivery-burden"}
+                %option.select-form--option{label:"選択してください"}
+                %option.select-form--option{label:"北海道", value: "1"}
+                %option.select-form--option{label:"青森県", value: "2"}
+                %option.select-form--option{label:"岩手県", value: "3"}
+                %option.select-form--option{label:"宮城県", value: "4"}
+                %option.select-form--option{label:"秋田県", value: "5"}
+                %option.select-form--option{label:"山形県", value: "6"}
+                %option.select-form--option{label:"福島県", value: "7"}
+                %option.select-form--option{label:"茨城県", value: "8"}
+                %option.select-form--option{label:"栃木県", value: "9"}
+                %option.select-form--option{label:"群馬県", value: "10"}
+                %option.select-form--option{label:"埼玉県", value: "11"}
+                %option.select-form--option{label:"千葉県", value: "12"}
+                %option.select-form--option{label:"東京都", value: "13"}
+                %option.select-form--option{label:"神奈川県", value: "14"}
+                %option.select-form--option{label:"新潟県", value: "15"}
+                %option.select-form--option{label:"富山県", value: "16"}
+                %option.select-form--option{label:"石川県", value: "17"}
+                %option.select-form--option{label:"福井県", value: "18"}
+                %option.select-form--option{label:"山梨県", value: "19"}
+                %option.select-form--option{label:"長野県", value: "20"}
+                %option.select-form--option{label:"岐阜県", value: "21"}
+                %option.select-form--option{label:"静岡県", value: "22"}
+                %option.select-form--option{label:"愛知県", value: "23"}
+                %option.select-form--option{label:"三重県", value: "24"}
+                %option.select-form--option{label:"滋賀県", value: "25"}
+                %option.select-form--option{label:"京都府", value: "26"}
+                %option.select-form--option{label:"大阪府", value: "27"}
+                %option.select-form--option{label:"兵庫県", value: "28"}
+                %option.select-form--option{label:"奈良県", value: "29"}
+                %option.select-form--option{label:"和歌山県", value: "30"}
+                %option.select-form--option{label:"鳥取県", value: "31"}
+                %option.select-form--option{label:"島根県", value: "32"}
+                %option.select-form--option{label:"岡山県", value: "33"}
+                %option.select-form--option{label:"広島県", value: "34"}
+                %option.select-form--option{label:"山口県", value: "35"}
+                %option.select-form--option{label:"徳島県", value: "36"}
+                %option.select-form--option{label:"香川県", value: "37"}
+                %option.select-form--option{label:"愛媛県", value: "38"}
+                %option.select-form--option{label:"高知県", value: "39"}
+                %option.select-form--option{label:"福岡県", value: "40"}
+                %option.select-form--option{label:"佐賀県", value: "41"}
+                %option.select-form--option{label:"長崎県", value: "42"}
+                %option.select-form--option{label:"熊本県", value: "43"}
+                %option.select-form--option{label:"大分県", value: "44"}
+                %option.select-form--option{label:"宮崎県", value: "45"}
+                %option.select-form--option{label:"鹿児島県", value: "46"}
+                %option.select-form--option{label:"沖縄県", value: "47"}
+                %option.select-form--option{label:"未定", value: "99"}
+          .shipping-days
+            %label 発送までの日数
+            %span.required 必須 
+            .shipping-days__form
+              %select.select-form{name: "delivery-burden"}
+                %option.select-form--option{label:"選択してください"}
+                %option.select-form--option{label:"1~2で発送", value: "1"}
+                %option.select-form--option{label:"3~4で発送", value: "2"}
+                %option.select-form--option{label:"4~7で発送", value: "3"}
+        .price-info
+          %p.price-info__title 
+            価格 (¥300〜9,999,999)
+            = link_to "#" do
+              = icon('fa','question-circle')
+          .selling-price
+            .selling-price__topic
+              %label 販売価格
+              %span.required 必須 
+            .selling-price--detail
+              %span.selling-price--detail__currency ¥
+              %input.selling-price--detail__form{type: 'number', name: 'price', placeholder: '0'}
+          .commission
+            .commission--rate 販売手数料 (10%)
+            .commission--amount ー
+          %hr
+          .profit
+            .profit--sale 販売利益
+            .commission--amount ー
+        .sell-footer
+          %button.sell-footer__button--red{type: "submit"} 出品する
+          %button.sell-footer__button--gray{type: "button"} 下書きに保存
+          = link_to root_path, class: "link-back" do
+            もどる
+        .caution
+          %p.caution--detail
+            禁止されている行為および出品物を必ずご確認ください。偽ブランド品や盗品物などの販売は犯罪であり、法律により処罰される可能性があります。 また、出品をもちまして加盟店規約に同意したことになります。
+  .sub-footer
+    = render partial: "buyers/sub-footer"

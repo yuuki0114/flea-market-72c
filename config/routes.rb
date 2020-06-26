@@ -9,12 +9,16 @@ Rails.application.routes.draw do
     post "addresses", to: "users/registrations#create_address"
   end
   root 'items#index'
-  resources :users, only: :index do
+  resources :users, only: [:index, :edit] do
     collection do
       get 'logout', to: 'users#logout'
+      get 'user_page', to: 'users#user_page'
+      get 'personal_information', to: 'users#personal_information'
     end
   end
   resources :credit_cards, only: :new
-  resources :items, only: :show
+  resources :items, only: [:show, :new]
   resources :buyers, only: :index
+  resources :profiles, only: :new
+  resources :addresses, only: :new
 end
