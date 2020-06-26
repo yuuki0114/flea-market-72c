@@ -45,9 +45,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.build_profile(@profile.attributes)
     @user.build_address(@address.attributes)
-    @user.save
-    sign_in(:user, @user)
-    redirect_to root_path
+    if @user.save
+      sign_in(:user, @user)
+      redirect_to root_path
+    else
+      redirect_to new_user_registration_path
+    end
   end
 
   # GET /resource/edit
