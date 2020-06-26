@@ -75,3 +75,6 @@ end
 gem "haml-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
+gem "devise"
+gem "rspec-rails"
+gem "factory_bot_rails"

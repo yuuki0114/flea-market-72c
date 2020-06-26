@@ -69,6 +69,12 @@
           @include blackLink();
         }
       }
+      &__mypage {
+        margin-right: 18px;
+        &--text-decoration_none {
+          @include blackLink();
+        }
+      }
     }
   }
 }

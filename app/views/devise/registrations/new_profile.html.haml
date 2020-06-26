@@ -1,0 +1,50 @@
+部分テンプレート
+.signup-background#profile
+  = form_for @profile do |f|
+    .contents
+      .contents__title
+        本人確認
+        .text
+          安心・安全にご利用いただくために、お客さまの本人
+          %br>/
+          情報の登録にご協力ください。他のお客さまに公開さ
+          %br>/
+          れることはありません。
+      .contents__content
+      .contents__content
+        .title
+          .title__name
+            お名前(全角)
+          .title__required
+            必須
+        .fields
+          .fields__last
+            = f.text_field :last_name, class: "field__input", placeholder: "　例)山田"
+          .fields__name
+            = f.text_field :first_name, class: "field__input", placeholder: "　例)太郎"
+      .contents__content
+        .title
+          .title__name
+            お名前カナ(全角)
+          .title__required
+            必須
+        .fields
+          .fields__last
+            = f.text_field :last_name_kana, class: "field__input", placeholder: "　例)ヤマダ"
+          .fields__name
+            = f.text_field :first_name_kana, class: "field__input", placeholder: "　例)タロウ"
+      .contents__content
+        .title
+          .title__name
+            生年月日
+          .title__required
+            必須
+        .fields#date-fields
+          != sprintf(f.date_select(:birthday, value: Time.now.strftime("%Y-%m-%d"), use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator: "%s"),"年","月")+"日"
+        .alert
+          ※ 本人情報は正しく入力してください。会員登録後、
+          %br>/
+          修正するにはお時間を頂く場合があります。
+      .submit-box
+        = f.submit "次に進む", class: "submit-box__btn"
+部分テンプレート

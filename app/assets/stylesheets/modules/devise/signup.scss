@@ -1,7 +1,6 @@
 .signup-background {
   background-color: $backGroundGray;
   width: 100%;
-  height: 2450px;
   position: relative;
   .contents {
     width: 620px;
@@ -20,13 +19,17 @@
       font-size: 22px;
       padding: 32px;
       text-align: center;
+      .text {
+        font-size: $fontMainSize;
+        margin-top: 8px;
+      }
     }
     &__content {
       width: max-content;
       height: max-content;
       padding: 10px;
       margin: 0 auto;
-      margin-top: 20px;
+      margin-top: 30px;
       .title {
         @include displayFlex();
         &__name {
@@ -50,18 +53,9 @@
         }
       }
       .alert {
-        margin-top: 20px;
+        margin-top: 5px;
         font-size: $fontMainSize;
         color: gray;
-      }
-      .sub-title {
-        @include bold();
-        font-size: 16px;
-        text-align: center;
-      }
-      .text {
-        font-size: $fontMainSize;
-        margin-top: 8px;
       }
       .fields {
         @include displayFlex();
@@ -92,22 +86,23 @@
           }
         }
       }
-      .multi-fields {
-        display: flex;
-        &__field {
-          margin-top: 8px;
-          margin-right: 5px;
-          width: 75px;
-          height: 48px;
+      #date-fields {
+        text-align: center;
+        height: 50px;
+        margin-top: 10px;
+        align-items: center;
+        > select {
           border-radius: 4px;
           border: $borderGray solid 1px;
-          @include outLine();
-        }
-        &__text {
+          height: 100%;
+          width: 90px;
           margin-right: 5px;
-          line-height: 65px;
-          font-size: $fontMainSize;
-          color: gray;
+        }
+        #profile_birthday_2i {
+          margin-left: 5px;
+        }
+        #profile_birthday_3i {
+          margin-left: 5px;
         }
       }
     }
@@ -145,4 +140,20 @@ select {
   background-repeat: no-repeat;
   background-size: 12px 10px;
   background-position: right 10px center;
+}
+
+#user {
+  height: 1000px;
+}
+#profile {
+  height: 1000px;
+}
+#address {
+  height: 1500px;
+}
+
+.has-error {
+  width: 100%;
+  height: 100%;
+  color: red;
 }
