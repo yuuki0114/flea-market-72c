@@ -112,6 +112,7 @@
       height: 48px;
       position: relative;
       &__btn {
+        @include hoverMouseFinger();
         position: absolute;
         top: 0;
         right: 0;
