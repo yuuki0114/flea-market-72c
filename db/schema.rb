@@ -51,11 +51,16 @@ ActiveRecord::Schema.define(version: 2020_06_25_110737) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+=======
+  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+>>>>>>> ef78111... mergeを取込むためのコンフリクト解消
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "first_name_kana", null: false
     t.string "last_name_kana", null: false
+<<<<<<< HEAD
     t.date "birthday", null: false
     t.string "image"
     t.text "introduction"
@@ -80,4 +85,19 @@ ActiveRecord::Schema.define(version: 2020_06_25_110737) do
 
   add_foreign_key "addresses", "users"
   add_foreign_key "profiles", "users"
+=======
+    t.string "postal_code", null: false
+    t.integer "prefectures", null: false
+    t.string "municipalities", null: false
+    t.string "street_number", null: false
+    t.string "detail_building"
+    t.string "telephone_number"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+
+>>>>>>> ef78111... mergeを取込むためのコンフリクト解消
 end

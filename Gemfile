@@ -76,9 +76,16 @@ gem "haml-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
 <<<<<<< HEAD
+<<<<<<< HEAD
 gem "devise"
 gem "rspec-rails"
 gem "factory_bot_rails"
 =======
 gem "payjp"
 >>>>>>> d0f5f8a... gem payjpのインストール
+=======
+gem "payjp"
+gem "devise"
+gem "rspec-rails"
+gem "factory_bot_rails"
+>>>>>>> ef78111... mergeを取込むためのコンフリクト解消
