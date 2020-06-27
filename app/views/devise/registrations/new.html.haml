@@ -1,4 +1,4 @@
-部分テンプレート
+= render partial: "buyers/sub-header"
 .signup-background#user
   = form_for(@user, url: user_registration_path) do |f|
     .contents
@@ -11,7 +11,7 @@
           .title__required
             必須
         .field
-          = f.text_field :nickname, class: "field__input", placeholder: "　例)フリマ太郎"
+          = f.text_field :nickname, class: "field__input", placeholder: "例)フリマ太郎"
       .contents__content
         .title
           .title__name
@@ -19,7 +19,7 @@
           .title__required
             必須
         .field
-          = f.text_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "　PC・携帯どちらでも可"
+          = f.text_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "PC・携帯どちらでも可"
       .contents__content
         .title
           .title__name
@@ -29,7 +29,7 @@
         .alert
           ※ 英字と数字の両方を含めて設定してください
         .field
-          = f.text_field :password, type: "password", autocomplete: "new-password", class: "field__input", placeholder: "　7文字以上の半角英数字"
+          = f.text_field :password, type: "password", autocomplete: "new-password", class: "field__input", placeholder: "7文字以上の半角英数字"
       .contents__content
         .title
           .title__name
@@ -37,7 +37,7 @@
           .title__required
             必須
         .field
-          = f.text_field :password_confirmation, type: "password", autocomplete: "new-password", class: "field__input", placeholder: "　7文字以上の半角英数字"
+          = f.text_field :password_confirmation, type: "password", autocomplete: "new-password", class: "field__input", placeholder: "7文字以上の半角英数字"
       .submit-box
         = f.submit "次に進む", class: "submit-box__btn"
-部分テンプレート
+= render partial: "buyers/sub-footer"

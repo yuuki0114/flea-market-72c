@@ -1,4 +1,4 @@
-部分テンプレート
+= render partial: "buyers/sub-header"
 .login-background
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .contents
@@ -15,12 +15,12 @@
             = content_tag :div, value, class: "contents__error"
       .contents__content
         .field
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "　メールアドレス"
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "field__input", placeholder: "メールアドレス"
       .contents__content
         .field
-          = f.password_field :password, autocomplete: "current-password", class: "field__input", placeholder: "　パスワード"
+          = f.password_field :password, autocomplete: "current-password", class: "field__input", placeholder: "パスワード"
       .contents__content
         .login-box
           = f.submit "ログイン", class: "login-box__btn"
       = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "forget-password"
-部分テンプレート
+= render partial: "buyers/sub-footer"
