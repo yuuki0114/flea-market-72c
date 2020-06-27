@@ -42,6 +42,6 @@
               必須
             .security-code--form
               = f.text_field :security_code, placeholder: "カード背面４桁もしくは３桁の番号"
-          =f.submit "追加する", class: "submit-btn"
+          =f.submit "追加する", class: "submit-btn", id: 'token_submit'
 = render partial: "items/footer"
 = render partial: "items/post-btn"
