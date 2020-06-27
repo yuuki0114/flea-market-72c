@@ -1,4 +1,4 @@
-部分テンプレート
+= render partial: "buyers/sub-header"
 .signup-background#address
   = form_for @address do |f|
     .contents
@@ -12,9 +12,9 @@
             必須
         .fields
           .fields__last
-            = f.text_field :last_name, class: "field__input", placeholder: "　例)山田"
+            = f.text_field :last_name, class: "field__input", placeholder: "例)山田"
           .fields__name
-            = f.text_field :first_name, class: "field__input", placeholder: "　例)太郎"
+            = f.text_field :first_name, class: "field__input", placeholder: "例)太郎"
       .contents__content
         .title
           .title__name
@@ -23,9 +23,9 @@
             必須
         .fields
           .fields__last
-            = f.text_field :last_name_kana, class: "field__input", placeholder: "　例)ヤマダ"
+            = f.text_field :last_name_kana, class: "field__input", placeholder: "例)ヤマダ"
           .fields__name
-            = f.text_field :first_name_kana, class: "field__input", placeholder: "　例)タロウ"
+            = f.text_field :first_name_kana, class: "field__input", placeholder: "例)タロウ"
       .contents__content
         .title
           .title__name
@@ -33,7 +33,7 @@
           .title__required
             必須
         .field
-          = f.text_field :postal_code, class: "field__input", placeholder: "　例)123-4567"
+          = f.text_field :postal_code, class: "field__input", placeholder: "例)123-4567"
       .contents__content
         .title
           .title__name
@@ -49,7 +49,7 @@
           .title__required
             必須
         .field
-          = f.text_field :municipalities, class: "field__input", placeholder: "　例)横浜市緑区"
+          = f.text_field :municipalities, class: "field__input", placeholder: "例)横浜市緑区"
       .contents__content
         .title
           .title__name
@@ -57,7 +57,7 @@
           .title__required
             必須
         .field
-          = f.text_field :street_number, class: "field__input", placeholder: "　例)青山1-1-1"
+          = f.text_field :street_number, class: "field__input", placeholder: "例)青山1-1-1"
       .contents__content
         .title
           .title__name
@@ -65,7 +65,7 @@
           .title__optional
             任意
         .field
-          = f.text_field :detail_building, class: "field__input", placeholder: "　例)山田ビル101"
+          = f.text_field :detail_building, class: "field__input", placeholder: "例)山田ビル101"
       .contents__content
         .title
           .title__name
@@ -73,7 +73,7 @@
           .title__optional
             任意
         .field
-          = f.text_field :telephone_number, class: "field__input", placeholder: "　例)09012345678"
+          = f.text_field :telephone_number, class: "field__input", placeholder: "例)09012345678"
       .submit-box
         = f.submit "登録する", class: "submit-box__btn"
-部分テンプレート
+= render partial: "buyers/sub-footer"

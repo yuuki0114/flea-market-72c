@@ -18,12 +18,14 @@
         height: 75%;
       }
       &__submit {
+        @include hoverMouseFinger();
         background-color: $mainBlue;
         width: 36px;
         height: 35px;
         border: none;
       }
       &__image {
+        @include hoverMouseFinger();
         position: absolute;
         right: 10px;
         top: 7px;

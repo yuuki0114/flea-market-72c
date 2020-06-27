@@ -1,4 +1,4 @@
-部分テンプレート
+= render partial: "buyers/sub-header"
 .signup-background#profile
   = form_for @profile do |f|
     .contents
@@ -19,9 +19,9 @@
             必須
         .fields
           .fields__last
-            = f.text_field :last_name, class: "field__input", placeholder: "　例)山田"
+            = f.text_field :last_name, class: "field__input", placeholder: "例)山田"
           .fields__name
-            = f.text_field :first_name, class: "field__input", placeholder: "　例)太郎"
+            = f.text_field :first_name, class: "field__input", placeholder: "例)太郎"
       .contents__content
         .title
           .title__name
@@ -30,9 +30,9 @@
             必須
         .fields
           .fields__last
-            = f.text_field :last_name_kana, class: "field__input", placeholder: "　例)ヤマダ"
+            = f.text_field :last_name_kana, class: "field__input", placeholder: "例)ヤマダ"
           .fields__name
-            = f.text_field :first_name_kana, class: "field__input", placeholder: "　例)タロウ"
+            = f.text_field :first_name_kana, class: "field__input", placeholder: "例)タロウ"
       .contents__content
         .title
           .title__name
@@ -47,4 +47,4 @@
           修正するにはお時間を頂く場合があります。
       .submit-box
         = f.submit "次に進む", class: "submit-box__btn"
-部分テンプレート
+= render partial: "buyers/sub-footer"
