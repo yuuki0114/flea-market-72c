@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_06_25_110737) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
 =======
@@ -97,6 +98,8 @@ ActiveRecord::Schema.define(version: 2020_06_25_110737) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
+=======
+>>>>>>> Stashed changes
 
 
 >>>>>>> ef78111... mergeを取込むためのコンフリクト解消
