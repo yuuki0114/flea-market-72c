@@ -97,14 +97,18 @@ GEM
     crass (1.0.6)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> ef78111... mergeを取込むためのコンフリクト解消
+=======
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+<<<<<<< HEAD
 <<<<<<< HEAD
     diff-lcs (1.4.2)
 =======
@@ -123,11 +127,22 @@ GEM
     factory_bot_rails (5.1.1)
       factory_bot (~> 5.1.0)
 =======
+=======
+    diff-lcs (1.3)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    erubi (1.9.0)
+    erubis (2.7.0)
+    execjs (2.7.0)
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     factory_bot (5.2.0)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.2.0)
       factory_bot (~> 5.2.0)
+<<<<<<< HEAD
 >>>>>>> ef78111... mergeを取込むためのコンフリクト解消
+=======
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
       railties (>= 4.2.0)
     ffi (1.12.2)
     font-awesome-sass (5.13.0)
@@ -191,6 +206,7 @@ GEM
       mini_portile2 (~> 2.4.0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     orm_adapter (0.5.0)
 =======
 =======
@@ -199,6 +215,11 @@ GEM
     payjp (0.0.7)
       rest-client (~> 2.0)
 >>>>>>> d0f5f8a... gem payjpのインストール
+=======
+    orm_adapter (0.5.0)
+    payjp (0.0.7)
+      rest-client (~> 2.0)
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -241,6 +262,7 @@ GEM
     regexp_parser (1.7.0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -267,14 +289,22 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
 >>>>>>> ef78111... mergeを取込むためのコンフリクト解消
+=======
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> d0f5f8a... gem payjpのインストール
 =======
+=======
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     rspec-core (3.9.2)
       rspec-support (~> 3.9.3)
     rspec-expectations (3.9.2)
@@ -292,7 +322,10 @@ GEM
       rspec-mocks (~> 3.9)
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
+<<<<<<< HEAD
 >>>>>>> ef78111... mergeを取込むためのコンフリクト解消
+=======
+>>>>>>> ef781113647413b53828ff5821d6343c890e60e3
     ruby_dep (1.5.0)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
