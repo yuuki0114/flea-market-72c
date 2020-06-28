@@ -8,12 +8,15 @@ class Item < ApplicationRecord
     validates :start_address, null: false
     validates :shipping_date, null: false
     validates :price,         null: false
+    validates :price,         null: false
   end
 
-
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :prefecture
 
   #-- 他のテーブルと紐付け
   belongs_to :brand
+  accepts_nested_attributes_for :brand
   belongs_to :category
   has_many   :images
 
