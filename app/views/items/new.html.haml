@@ -11,9 +11,13 @@
             %p.item-photo--description
               最大10枚までアップロードできます
             %label.item-photo--label
-              .label-content
+              #image-box
                 = f.fields_for :images do |i|
-                  = i.file_field :src
+                  .js-file_group{"data-index" => "#{i.index}"}
+                    = i.file_field :src, class: 'js-file'
+                    %br
+                    %span.js-remove削除
+                  
                 = icon('fa','camera', class: "photo-icon")
                 %p.label-content--text
                   ドラッグアンドドロップ
@@ -80,7 +84,7 @@
               %span.required 必須 
             .selling-price--detail
               %span.selling-price--detail__currency ¥
-              = f.text_field :price, placeholder: '0', class: "selling-price--detail__form"
+              = f.number_field :price, placeholder: '0', class: "selling-price--detail__form"
           .commission
             .commission--rate 販売手数料 (10%)
             .commission--amount ー
