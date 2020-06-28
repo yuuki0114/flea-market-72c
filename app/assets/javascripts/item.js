@@ -10,13 +10,30 @@ $(function(){
     $(".category-tree").removeClass("displayNone")
     }, function() {
   });
+  
+  $(".menu").hover(function(){
+    $(".category-tree").addClass("displayNone")
+    }, function() {
+    });
 
+  $(".header__upside").hover(function(){
+    $(".category-tree").addClass("displayNone")
+    }, function() {
+    });
 
+  $(".top-image").hover(function(){
+    $(".category-tree").addClass("displayNone")
+    }, function() {
+    });
+  $(".left__brand").hover(function(){
+    $(".category-tree").addClass("displayNone")
+    }, function() {
+    });
 
   $(".category-tree").hover(function(){
     $(".tree").addClass("displayNone")
     }, function() {
-  });
+    });
 
   $(".sub-tree").hover(function(){
     }, function() {

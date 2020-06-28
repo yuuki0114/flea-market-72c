@@ -90,6 +90,7 @@
           }
         }
         .purchase{
+          @include hoverMouseFinger();
           background: $mainBlue;
           border: 1px solid $mainBlue;
           color: white;

@@ -63,7 +63,6 @@
           margin-top: 16px;
           .input-form {
               @include registerForm();
-              @include outLine();
           }
         }
         &--description {
@@ -82,7 +81,7 @@
               
             );
             margin-top: 16px;
-            @include outLine();
+            
           }
           &__footer {
             margin-top: 16px;

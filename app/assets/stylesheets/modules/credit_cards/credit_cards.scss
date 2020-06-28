@@ -77,6 +77,7 @@
       }
     }
     .submit-btn{
+      @include hoverMouseFinger();
       background-color: $mainBlue;
       color: white;
       width: 300px;

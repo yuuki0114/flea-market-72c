@@ -5,13 +5,6 @@
   .nav--list{
     width: 280px;  
     font-size: $fontMainSize;
-    &__mypage{
-      background-color: $mainBlue;
-      color: white;
-      #list-white{
-        color: white;
-      }
-    }
     li{
       border-top: 3px solid $backGroundGray;
       position: relative;

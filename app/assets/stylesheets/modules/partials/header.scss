@@ -18,12 +18,14 @@
         height: 75%;
       }
       &__submit {
+        @include hoverMouseFinger();
         background-color: $mainBlue;
         width: 36px;
         height: 35px;
         border: none;
       }
       &__image {
+        @include hoverMouseFinger();
         position: absolute;
         right: 10px;
         top: 7px;
@@ -41,6 +43,7 @@
       padding-left: 20px;
       &__category {
         position: relative;
+     
         &--text-decoration_none {
           @include blackLink();
           @include hoverOrange();
@@ -68,6 +71,13 @@
           @include blackLink();
         }
       }
+      &__mypage {
+        margin-right: 18px;
+        &--text-decoration_none {
+          @include blackLink();
+        }
+      }
     }
   }
 }
+
