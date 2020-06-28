@@ -75,3 +75,7 @@ end
 gem "haml-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'pry-byebug'
+gem 'active_hash'
