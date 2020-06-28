@@ -10,19 +10,20 @@
             %span.required 必須 
             %p.item-photo--description
               最大10枚までアップロードできます
+            #previews
+              - if @item.persisted?
+                - @item.images.each_with_index do |image, i|
+                  = image_tag image.src.url, data: { index: i }, width: "100", height: '100'
             %label.item-photo--label
               #image-box
                 = f.fields_for :images do |i|
                   .js-file_group{"data-index" => "#{i.index}"}
                     = i.file_field :src, class: 'js-file'
-                    %br
-                    %span.js-remove削除
-                  
-                = icon('fa','camera', class: "photo-icon")
-                %p.label-content--text
-                  ドラッグアンドドロップ
-                  %br
-                  またはクリックをしてファイルをアップロード
+              = icon('fa','camera', class: "photo-icon")
+              %p.label-content--text
+                ドラッグアンドドロップ
+                %br
+                またはクリックをしてファイルをアップロード
         .item-info
           %label 商品名
           %span.required 必須
