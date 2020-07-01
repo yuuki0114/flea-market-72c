@@ -4,7 +4,7 @@ $(document).on('turbolinks:load', function() {
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file"
                     name="item[images_attributes][${index}][src]"
-                    id="item_images_attributes_${index}_src"><br>
+                    id="item_images_attributes_${index}_src">
                   </div>`;
     return html;
   }
@@ -17,10 +17,6 @@ $(document).on('turbolinks:load', function() {
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
-  // 既に使われているindexを除外
-  lastIndex = $('.js-file_group:last').data('index');
-  fileIndex.splice(0, lastIndex);
-  $('.hidden-destroy').hide();
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -28,16 +24,131 @@ $(document).on('turbolinks:load', function() {
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
 
+    // ラベルタグの更新
+    $('.item-photo__area--label').attr('for',`item_images_attributes_${fileIndex[0]}_src`)
+
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
       img.setAttribute('src', blobUrl);
-    } else {  // 新規画像追加の処理
+    } else {
+      // 新規画像追加の処理
       $('#previews').append(buildImg(targetIndex, blobUrl));
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
-      // 末尾の数に1足した数を追加する
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    }
+  });
+
+  //必須部分の検証
+  //画像
+  $('form').on('submit',function(e){
+    let imageLength = $('#previews').children().length;
+    if(imageLength ==''){
+      $('body, html').animate({ scrollTop: 0 }, 500);
+      $('#error-image').text('画像がありません');
+      return false;
+    }else if(imageLength >10){
+      $('body, html').animate({ scrollTop: 0 }, 500);
+      $('#error-image').text('画像を10枚以下にして下さい');
+      return false;
+    }else{
+      return true;
+    }
+  });
+
+  //商品名
+  $('#item_name').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-name').text('入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-name').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //商品説明
+  $('#item_detail').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-text').text('入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-text').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //カテゴリーのエラーハンドリング
+  $('#item_category_id').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-category').text('選択してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-category').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //状態
+  $('#item_status').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-condition').text('選択してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-condition').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+   //送料負担
+   $('#item_delivery_fee').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-deliveryburden').text('選択してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-deliveryburden').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+   //発送元
+   $('#item_start_address').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-area').text('選択してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-area').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //発送までの日数
+  $('#item_shipping_date').on('blur',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $('#error-shipping_date').text('選択してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-shipping_date').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+
+  //価格
+  $('#item_price').on('blur',function(){
+    let value = $(this).val();
+    if(value < 300 || value > 9999999){
+      $('#error-price').text('300以上9,999,999以下で入力してください');
+      $(this).css('border-color','red');
+    }else{
+      $('#error-price').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
     }
   });
 });
