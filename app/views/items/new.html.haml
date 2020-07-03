@@ -18,7 +18,7 @@
               %label.item-photo__area--label{for: "item_images_attributes_0_src"}
                 #image-box
                   = f.fields_for :images do |i|
-                    .js-file_group{"data-index" => "#{i.index}"}
+                    .js-file_group{"data-index": "#{i.index}"}
                       = i.file_field :src, class: 'js-file'
                 = icon('fa','camera', class: "photo-icon")
                 %p.label-text
@@ -104,7 +104,7 @@
             .commission--amount ー
         = f.text_field :trading_status, value: "出品中", class: "trading_status"
         .sell-footer
-          = f.submit class: "sell-footer__button--red", value: "出品する", id: "form__submit"
+          = f.submit class: "sell-footer__button--blue", value: "出品する", id: "form__submit"
           %button.sell-footer__button--gray{type: "button"} 下書きに保存
           = link_to "#", class: "link-back" do
             もどる
