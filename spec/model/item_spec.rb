@@ -1,6 +1,7 @@
 require 'rails_helper'
 describe Item do
   describe '#create' do
+
     it "nameがない場合は登録できないこと" do
       item = build(:item, name: "")
       item.valid?
@@ -43,10 +44,5 @@ describe Item do
       expect(item.errors[:price]).to include("can't be blank")
     end
 
-    it "category_idがない場合は登録できないこと" do
-      item = build(:item, category_id: "")
-      item.valid?
-      expect(item.errors[:category_id]).to include("can't be blank")
-    end
   end
 end
