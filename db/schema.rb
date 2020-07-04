@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_06_27_080903) do
+=======
+ActiveRecord::Schema.define(version: 2020_07_04_023616) do
+>>>>>>> 3d73c70... userテーブルとitemテーブルの紐付け
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -48,6 +52,16 @@ ActiveRecord::Schema.define(version: 2020_06_27_080903) do
     t.integer "price", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
+=======
+    t.bigint "brand_id"
+    t.bigint "category_id"
+    t.string "trading_status"
+    t.bigint "user_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+    t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+>>>>>>> 3d73c70... userテーブルとitemテーブルの紐付け
   end
 
   create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,6 +92,13 @@ ActiveRecord::Schema.define(version: 2020_06_27_080903) do
   end
 
   add_foreign_key "addresses", "users"
+<<<<<<< HEAD
   add_foreign_key "credit_cards", "users"
+=======
+  add_foreign_key "images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "categories"
+  add_foreign_key "items", "users"
+>>>>>>> 3d73c70... userテーブルとitemテーブルの紐付け
   add_foreign_key "profiles", "users"
 end
