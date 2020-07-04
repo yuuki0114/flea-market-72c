@@ -17,28 +17,43 @@
             margin-left: 10px;
           }
           &--description {
-            margin-top: 16px;
+            margin: 16px 0;
             font-size: $fontMainSize;
           }
-          &--label {
-            margin-top: 16px;
-            background-color: $backGroundGray;
-            height: 150px;
-            border-width: 1px;
-            border-style: dashed;
-            border-color: rgb(204, 204, 204);
-            display: block;
-            cursor: pointer;
-            .label-content {
-              padding: 40px;
+          &__area {
+            display: flex;
+            #previews {
+              height: 150px;
+              background-color: $backGroundGray;
+              display: flex;
+              overflow: scroll;
+              white-space:nowrap;
+            }
+            &--label {
+              background-color: $backGroundGray;
+              height: 150px;
+              border-width: 1px;
+              border-style: dashed;
+              border-color: rgb(204, 204, 204);
+              display: block;
+              width: 100%;
+              min-width: 100px;
               text-align: center;
-              &--file {
-                display: none;
+              margin: 0 2px;
+              cursor: pointer;
+              #image-box{
+                padding: 20px;
+                .js-file_group {
+                  position: relative;
+                  z-index: 1;
+                  display: none;
+                }
               }
               .photo-icon {
                 font-size: 20px;
               }
-              &--text {
+              .label-text {
+                margin-top: 5px;
                 font-size: 12px;
                 line-height: 1.4em;
                 text-align: center;
@@ -46,6 +61,9 @@
               }
             }
           }
+        }
+        .error-messages {
+          color: red;
         }
       }
 
@@ -63,6 +81,9 @@
           margin-top: 16px;
           .input-form {
               @include registerForm();
+          }
+          .error-messages {
+            color: red;
           }
         }
         &--description {
@@ -88,6 +109,9 @@
             text-align: right;
             color: $borderGray;
             font-size: 12px;
+          }
+          .error-messages {
+            color: red;
           }
         }
       }
@@ -130,6 +154,9 @@
               @include outLine();
             }
           }
+          .error-messages {
+            color: red;
+          }
         }
         .item-brand {
           margin-top: 32px;
@@ -166,6 +193,9 @@
               @include registerForm();
             }
           }
+          .error-messages {
+            color: red;
+          }
         }
       }
 
@@ -195,6 +225,9 @@
               @include registerForm();
             }
           }
+          .error-messages {
+            color: red;
+          }
         }
         .shipping-region {
           margin-top: 16px;
@@ -213,6 +246,9 @@
               @include registerForm();
             }
           }
+          .error-messages {
+            color: red;
+          }
         }
         .shipping-days {
           margin-top: 16px;
@@ -230,6 +266,9 @@
               @include outLine();
               @include registerForm();
             }
+          }
+          .error-messages {
+            color: red;
           }
         }
       }
@@ -273,6 +312,10 @@
             }
           }
         }
+        .error-messages {
+          color: red;
+          text-align: right;
+        }
         .commission {
           padding: 12px 0;
           @include displayFlex();
@@ -295,7 +338,7 @@
         width: 360px;
         margin: 0 auto;
         padding-bottom: 32px;
-        &__button--red {
+        &__button--blue {
           @include button();
         }
         &__button--gray {
@@ -318,6 +361,9 @@
         &--detail {
           font-size: 12px;
         }
+      }
+      .trading_status {
+        display: none;
       }
     }
   }

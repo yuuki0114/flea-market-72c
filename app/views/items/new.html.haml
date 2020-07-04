@@ -10,27 +10,35 @@
             %span.required 必須 
             %p.item-photo--description
               最大10枚までアップロードできます
-            %label.item-photo--label
-              .label-content
-                = f.fields_for :images do |i|
-                  = i.file_field :src
+            .item-photo__area
+              #previews
+                - if @item.persisted?
+                  - @item.images.each_with_index do |image, i|
+                    = image_tag image.src.url, data: { index: i }
+              %label.item-photo__area--label{for: "item_images_attributes_0_src"}
+                #image-box
+                  = f.fields_for :images do |i|
+                    .js-file_group{"data-index": "#{i.index}"}
+                      = i.file_field :src, class: 'js-file'
                 = icon('fa','camera', class: "photo-icon")
-                %p.label-content--text
+                %p.label-text
                   ドラッグアンドドロップ
                   %br
                   またはクリックをしてファイルをアップロード
+          .error-messages#error-image
         .item-info
           %label 商品名
           %span.required 必須
           .item-info__form
             = f.text_field :name, placeholder: '40字まで', class: "input-form"
-
+            .error-messages#error-name
           .item-info--description
             %label 商品の説明
             %span.required 必須
             = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
             .item-info--description__footer
               %span 0/1000
+            .error-messages#error-text
         .item-detail
           %p.item-detail__title 商品の詳細
           .item-category
@@ -48,7 +56,7 @@
             %label 商品の状態
             %span.required 必須 
             .item-status__form
-              = f.select :status, [['選択してください','選択してください'],['新品、未使用','新品、未使用'],['未使用に近い','未使用に近い'],["目立った傷やよごれなし","目立った傷やよごれなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]] ,{}, { class: "select-form" }
+              = f.select :status, [['新品、未使用','新品、未使用'],['未使用に近い','未使用に近い'],["目立った傷やよごれなし","目立った傷やよごれなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]] ,{prompt: "選択してください"}, { class: "select-form" }
         .delivery-info
           %p.delivery-info__title 
             配送について
@@ -58,17 +66,20 @@
             %label 配送料の負担
             %span.required 必須 
             .delivery-burden__form
-              = f.select :delivery_fee,  [['選択してください','選択してください'],['送料込み(出品者負担)','送料込み(出品者負担)'],['着払い(購入者負担)','着払い(購入者負担)']] ,{}, { class: "select-form" }
+              = f.select :delivery_fee,  [['送料込み(出品者負担)','送料込み(出品者負担)'],['着払い(購入者負担)','着払い(購入者負担)']] ,{prompt: "選択してください"}, { class: "select-form" }
+            .error-messages#error-deliveryburden
           .shipping-region
             %label 発送元の地域
             %span.required 必須 
-            .delivery-burden__form
+            .shipping-region__form
               = f.collection_select :start_address, Prefecture.all, :id, :name, {prompt: "選択してください"}, class: 'select-form'
+            .error-messages#error-area
           .shipping-days
             %label 発送までの日数
             %span.required 必須 
             .shipping-days__form
-              = f.select :shipping_date,  [['選択してください','選択してください'],['1~2で発送','1~2で発送'],['3~4で発送','3~4で発送'],['4~7で発送','4~7で発送']] ,{}, { class: "select-form" }
+              = f.select :shipping_date,  [['1~2で発送','1~2で発送'],['3~4で発送','3~4で発送'],['4~7で発送','4~7で発送']] ,{prompt: "選択してください"}, { class: "select-form" }
+            .error-messages#error-shipping_date
         .price-info
           %p.price-info__title 
             価格 (¥300〜9,999,999)
@@ -80,7 +91,8 @@
               %span.required 必須 
             .selling-price--detail
               %span.selling-price--detail__currency ¥
-              = f.text_field :price, placeholder: '0', class: "selling-price--detail__form"
+              = f.number_field :price, placeholder: '0', class: "selling-price--detail__form"
+          .error-messages#error-price
           .commission
             .commission--rate 販売手数料 (10%)
             .commission--amount ー
@@ -88,8 +100,9 @@
           .profit
             .profit--sale 販売利益
             .commission--amount ー
+        = f.text_field :trading_status, value: "出品中", class: "trading_status"
         .sell-footer
-          = f.submit class: "sell-footer__button--red", value: "出品する"
+          = f.submit class: "sell-footer__button--blue", value: "出品する", id: "form__submit"
           %button.sell-footer__button--gray{type: "button"} 下書きに保存
           = link_to root_path, class: "link-back" do
             もどる
