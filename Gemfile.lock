@@ -343,10 +343,9 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
-  factory_bot_rails
-  fog-aws
   devise
   factory_bot_rails
+  fog-aws
   font-awesome-sass
   haml-rails
   jbuilder (~> 2.5)
