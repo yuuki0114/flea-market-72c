@@ -41,7 +41,7 @@ $(function() {
 
   //必須部分の検証
   //画像
-  $('form').on('submit',function(e){
+  $('.form-content').on('submit',function(e){
     let imageLength = $('#previews').children().length;
     if(imageLength ==''){
       $('body, html').animate({ scrollTop: 0 }, 500);
