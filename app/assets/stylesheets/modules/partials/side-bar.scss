@@ -5,24 +5,25 @@
   .nav--list{
     width: 280px;  
     font-size: $fontMainSize;
-    &__mypage{
-      background-color: $mainBlue;
-    }
     li{
       border-top: 3px solid $backGroundGray;
       position: relative;
       a{
         display: block;
         padding: 16px;
+        &:hover{
+          color: white;
+        }
       }
       &:hover{
         background-color: $mainBlue;
         cursor: pointer;
+        
         .angle-right-icon{
           position: absolute;
           right: 12px;
           top: 40%;
-          color:black;
+          color:white;
         }
       }
     }

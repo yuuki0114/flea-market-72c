@@ -1,8 +1,9 @@
-@mixin registerForm($height: 48px, $padding: 0 16px, $border-radius: 4px) {
+@mixin registerForm($height: 48px, $padding: 10px 16px 8px, $border-radius: 4px) {
   height: $height;
   padding: $padding;
   border-radius: $border-radius;
   border: 1px solid $borderGray;
   box-sizing: border-box;
   width: 100%;
+  @include outLine();
 }

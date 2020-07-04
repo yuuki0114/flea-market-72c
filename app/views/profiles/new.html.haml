@@ -1,0 +1,19 @@
+= render partial: "items/header"
+= render partial: "items/menu"
+.mypage
+  .wrapper
+    = render partial: "users/side_bar"
+  .profile
+    .right-profile
+      %selection.my-profile-container
+        %h2.profile-head プロフィール
+        %form{action: "#", method: "post"}
+          .profile-icon
+            = image_tag "/member_photo_noimage_thumb.png", size: "60x60",class: 'icon'
+            %input.input-default{placeholder: "例)AYA☆セールス中"}
+          .profile-content
+            %textarea.textarea-default{placeholder:"例)こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィシャルカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるように心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"}
+            %btn{type: "submit", class:"btn-default"}
+              変更する
+= render partial: "items/footer"
+= render partial: "items/post-btn"

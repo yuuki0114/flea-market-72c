@@ -82,3 +82,6 @@ gem 'mini_magick'
 gem 'pry-byebug'
 gem 'active_hash'
 gem 'fog-aws'
+gem "devise"
+gem "rspec-rails"
+gem "factory_bot_rails"

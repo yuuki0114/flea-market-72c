@@ -106,7 +106,7 @@
         .sell-footer
           = f.submit class: "sell-footer__button--blue", value: "出品する", id: "form__submit"
           %button.sell-footer__button--gray{type: "button"} 下書きに保存
-          = link_to "#", class: "link-back" do
+          = link_to root_path, class: "link-back" do
             もどる
         .caution
           %p.caution--detail

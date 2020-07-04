@@ -99,8 +99,10 @@
             @include registerForm(
               $height: auto,
               $padding: 13px 16px,
+              
             );
             margin-top: 16px;
+            
           }
           &__footer {
             margin-top: 16px;
@@ -137,6 +139,7 @@
             margin-top: 16px;
             .select-form {
               @include registerForm();
+              @include outLine();
             }
           }
           .error-messages {
@@ -157,6 +160,7 @@
             margin-top: 16px;
             .input-form {
               @include registerForm();
+              @include outLine();
             }
           }
         }
@@ -173,6 +177,7 @@
             width: 100%;
             margin-top: 16px;
             .select-form {
+              @include outLine();
               @include registerForm();
             }
           }
@@ -204,6 +209,7 @@
             width: 100%;
             margin-top: 16px;
             .select-form {
+              @include outLine();
               @include registerForm();
             }
           }
@@ -224,6 +230,7 @@
             width: 100%;
             margin-top: 16px;
             .select-form {
+              @include outLine();
               @include registerForm();
             }
           }
@@ -244,6 +251,7 @@
             width: 100%;
             margin-top: 16px;
             .select-form {
+              @include outLine();
               @include registerForm();
             }
           }
@@ -273,6 +281,7 @@
             .required {
               @include required();
               margin-left: 10px;
+
             }
           }
           &--detail {
@@ -287,6 +296,7 @@
             &__form {
               @include registerForm();
               text-align: right;
+              @include outLine();
             }
           }
         }

@@ -22,11 +22,11 @@
       設定
     %ul.nav--list
       %li
-        = link_to "#", class: "list__item" do
+        = link_to new_profile_path, class: "list__item" do
           プロフィール
           = icon("fas", "angle-right", class: "angle-right-icon")
       %li
-        = link_to "#", class: "list__item" do
+        = link_to new_address_path, class: "list__item" do
           発送元・お届け先住所変更
           = icon("fas", "angle-right", class: "angle-right-icon")
       %li
@@ -34,11 +34,11 @@
           支払い方法
           = icon("fas", "angle-right", class: "angle-right-icon")
       %li
-        = link_to "#", class: "list__item" do
+        = link_to edit_user_path(:user_id), class: "list__item" do
           メール/パスワード
           = icon("fas", "angle-right", class: "angle-right-icon")
       %li
-        = link_to "#", class: "list__item" do
+        = link_to personal_information_users_path, class: "list__item" do
           本人情報
           = icon("fas", "angle-right", class: "angle-right-icon")
       %li

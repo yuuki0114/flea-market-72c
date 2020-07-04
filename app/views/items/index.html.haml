@@ -114,7 +114,7 @@
     .subtitle
       ジャンル
     .items
-      = link_to "#", class: "items--text-decoration_none" do
+      = link_to item_path(:item_id), class: "items--text-decoration_none" do
         .items__item
           .image
             = image_tag "/product.png", size: "220x150"
@@ -129,7 +129,7 @@
                 0
             .detail__tax
               (税込)
-        = link_to "#", class: "items--text-decoration_none" do
+        = link_to item_path(:item_id), class: "items--text-decoration_none" do
           .items__item
             .image
               = image_tag "/product.png", size: "220x150"
@@ -144,7 +144,7 @@
                   0
               .detail__tax
                 (税込)
-        = link_to "#", class: "items--text-decoration_none" do
+        = link_to item_path(:item_id), class: "items--text-decoration_none" do
           .items__item
             .image
               = image_tag "/product.png", size: "220x150"
@@ -159,7 +159,7 @@
                   0
               .detail__tax
                 (税込)
-        = link_to "#", class: "items--text-decoration_none" do
+        = link_to item_path(:item_id), class: "items--text-decoration_none" do
           .items__item
             .image
               = image_tag "/product.png", size: "220x150"
