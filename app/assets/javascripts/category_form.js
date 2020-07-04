@@ -8,7 +8,7 @@ $(function(){
     let childrenSelectHtml = '';
     childrenSelectHtml =
       `<div class="item-category__form">
-        <select class="select-form__add" id="category-children">
+        <select class="select-form__add" id="category-children" name="">
           <option value="" data-category="" >選択してください</option>
         ${insertHTML}</select>
       </div>`;
@@ -19,7 +19,7 @@ $(function(){
     let grandchildrenSelectHtml = '';
     grandchildrenSelectHtml =
       `<div class="item-category__form">
-        <select class="select-form__add" id="category-grandchildren">
+        <select class="select-form__add" id="category-grandchildren" name="item[category_id]" >
           <option value="" data-category="" >選択してください</option>
         ${insertHTML}</select>
       </div>`;
