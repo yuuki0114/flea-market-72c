@@ -19,6 +19,7 @@ class Item < ApplicationRecord
   accepts_nested_attributes_for :brand
   belongs_to :category
   has_many   :images
+  belongs_to :user
 
   #-- 複数の画像を登録するための記述
   accepts_nested_attributes_for :images
