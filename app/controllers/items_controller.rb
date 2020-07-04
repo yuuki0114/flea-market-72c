@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
 
   def index
+    @items = Item.order(id: :desc)
+    groupedImages = Image.group(:item_id)
+    @images = groupedImages.order(id: :desc)
   end
 
   def show
