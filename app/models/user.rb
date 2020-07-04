@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   validates :password, confirmation: true
 
-  has_one :address
-  has_one :profile
+  has_one   :address
+  has_one   :profile
+  has_many  :items
 end
