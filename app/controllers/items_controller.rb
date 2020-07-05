@@ -7,7 +7,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
-    # binding.pry
   end
 
   def new
