@@ -58,23 +58,33 @@
                 %th.table__left 発送日の目安
                 %td.table__right
                   = @item.shipping_date
-        .option
-          .option__lists
-            .like__btn
-              = icon('fa','star')
-              お気に入り 1
-          .option__lists
-            .alert__btn
-              = link_to "#", class: "btn__content" do
-                = icon('fa','flag')
-                不適切な商品の通報
-      .comment
-        %form{action: "#", method: "post"}
-          %textarea.comment__body{name: "message"}
-          %p.comment__notice 
-            相手のことを考え丁寧なコメントを心がけましょう。
-            %br
-              深いな言葉遣いなどは利用制限や退会処分となることがあります。
+        - if user_signed_in? && current_user.id == @item.user_id
+          .item-option
+            %button{onclick: "location.href='#'", class: "item-option__edit"}
+              商品を編集する
+            %button{onclick: "location.href='#'", class: "item-option__delete"}
+              商品を削除する
+        - else
+          .item-buy
+            %button{onclick: "location.href='#'", class: "item-buy__btn"}
+              購入画面に進む
+          .option
+            .option__lists
+              .like__btn
+                = icon('fa','star')
+                お気に入り 1
+            .option__lists
+              .alert__btn
+                = link_to "#", class: "btn__content" do
+                  = icon('fa','flag')
+                  不適切な商品の通報
+        .comment
+          %form{action: "#", method: "post"}
+            %textarea.comment__body{name: "message"}
+            %p.comment__notice 
+              相手のことを考え丁寧なコメントを心がけましょう。
+              %br
+                深いな言葉遣いなどは利用制限や退会処分となることがあります。
           %btn{type: "submit", name: "button", class: "comment__btn"} 
             = icon('fa','comment')
             コメントする
