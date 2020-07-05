@@ -109,6 +109,53 @@
             } 
           }
         }
+        .item-option {
+          @include displayFlex();
+          justify-content: space-around;
+          margin-bottom: 15px;
+
+          &__edit {
+            line-height: 48px;
+            background-color: $mainBlue;
+            border: 1px solid $mainBlue;
+            color: white;
+            width: 30%;
+            font-size: 18px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+          }
+          &__delete {
+            line-height: 48px;
+            background-color: $borderGray;
+            border: 1px solid $borderGray;
+            color: white;
+            width: 30%;
+            font-size: 18px;
+            border-radius: 100px;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+          }
+        }
+
+        .item-buy {
+          margin-bottom: 16px;
+          text-align: center;
+          &__btn {
+            line-height: 48px;
+            background-color: $mainBlue;
+            border: 1px solid $mainBlue;
+            color: white;
+            width: 60%;
+            font-size: 18px;
+            border-radius: 100px;
+            display: inline-block;
+            margin: 0 auto;
+            cursor: pointer;
+          }
+        }
 
         .option {
           @include displayFlex();
