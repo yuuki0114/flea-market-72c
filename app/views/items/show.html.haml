@@ -64,7 +64,7 @@
               商品を編集する
             %button{onclick: "location.href='#'", class: "item-option__delete"}
               商品を削除する
-        - else
+        - elsif user_signed_in?
           .item-buy
             %button{onclick: "location.href='#'", class: "item-buy__btn"}
               購入画面に進む
