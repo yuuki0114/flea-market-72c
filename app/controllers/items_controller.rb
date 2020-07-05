@@ -7,6 +7,9 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
+    @show_category_grandchild = Category.find("#{@item.category_id}")
+    @show_category_children = @show_category_grandchild.parent
+    @show_category_parent = @show_category_children.parent
   end
 
   def new
