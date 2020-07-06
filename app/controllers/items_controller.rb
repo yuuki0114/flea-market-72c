@@ -5,6 +5,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item = Item.find(params[:id])
+    @images = @item.images.where(params[:id])
+    @prefecture = Prefecture.find(@item.start_address)
   end
 
   def new
