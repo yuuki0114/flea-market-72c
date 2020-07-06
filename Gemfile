@@ -77,6 +77,8 @@ end
 gem "haml-rails"
 gem "font-awesome-sass"
 gem "jquery-rails"
+#カテゴリー
+gem 'ancestry'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'pry-byebug'

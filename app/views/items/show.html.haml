@@ -34,7 +34,12 @@
               %tr
                 %th.table__left カテゴリー
                 %td.table__right
-                  = link_to "#{@item.category.name}", "#", class:"table__right--add"
+                  %p
+                    = link_to "#{@show_category_parent.name}", "#", class:"table__right--add"
+                  %p
+                    = link_to "#{@show_category_children.name}", "#", class:"table__right--add"
+                  %p
+                    = link_to "#{@show_category_grandchild.name}", "#", class:"table__right--add"
               %tr
                 %th.table__left ブランド
                 %td.table__right
