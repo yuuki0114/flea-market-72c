@@ -112,63 +112,21 @@
     商品一覧
   .items-list__contents
     .subtitle
-      ジャンル
+      新規出品商品
     .items
-      = link_to item_path(:item_id), class: "items--text-decoration_none" do
-        .items__item
-          .image
-            = image_tag "/product.png", size: "220x150"
-          .detail
-            .detail__name
-              product
-            .detail__info
-              .price
-                3000円
-              .favorite
-                = icon("fas", "star")
-                0
-            .detail__tax
-              (税込)
-        = link_to item_path(:item_id), class: "items--text-decoration_none" do
+      - @items.each do |item|
+        = link_to item_path(item.id), class: "items--text-decoration_none" do
           .items__item
             .image
-              = image_tag "/product.png", size: "220x150"
+              = image_tag item.images[0].src.url, size: "220x150"
             .detail
               .detail__name
-                product
+                = item.name
               .detail__info
                 .price
-                  3000円
-                .favorite
-                  = icon("fas", "star")
-                  0
-              .detail__tax
-                (税込)
-        = link_to item_path(:item_id), class: "items--text-decoration_none" do
-          .items__item
-            .image
-              = image_tag "/product.png", size: "220x150"
-            .detail
-              .detail__name
-                product
-              .detail__info
-                .price
-                  3000円
-                .favorite
-                  = icon("fas", "star")
-                  0
-              .detail__tax
-                (税込)
-        = link_to item_path(:item_id), class: "items--text-decoration_none" do
-          .items__item
-            .image
-              = image_tag "/product.png", size: "220x150"
-            .detail
-              .detail__name
-                product
-              .detail__info
-                .price
-                  3000円
+                  = item.price
+                  %span<>
+                  円
                 .favorite
                   = icon("fas", "star")
                   0
