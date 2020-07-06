@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.order(id: :desc).where(trading_status: "出品中").includes(:images)
+    @items = Item.order(id: :desc).where(trading_status: "出品中").limit(4).includes(:images)
   end
 
   def show
