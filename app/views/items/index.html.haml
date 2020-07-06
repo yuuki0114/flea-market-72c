@@ -115,7 +115,7 @@
       新規出品商品
     .items
       - @items.first(4).each do |item|
-        = link_to item_path(:item_id), class: "items--text-decoration_none" do
+        = link_to "/items/#{item.id}", class: "items--text-decoration_none" do
           .items__item
             .image
               = image_tag item.images[0].src.url, size: "220x150"
