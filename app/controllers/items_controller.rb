@@ -1,9 +1,7 @@
 class ItemsController < ApplicationController
 
   def index
-    @items = Item.order(id: :desc)
-    groupedImages = Image.group(:item_id)
-    @images = groupedImages.order(id: :desc)
+    @items = Item.order(id: :desc).where(trading_status: "出品中").includes(:images)
   end
 
   def show
