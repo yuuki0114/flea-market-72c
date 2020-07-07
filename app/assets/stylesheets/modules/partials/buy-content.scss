@@ -1,105 +1,3 @@
-.credit-card-content{
-  width: 700px;
-  float: right;
-  &--head{
-    background-color: white;
-    font-size: 22px;
-    @include bold();
-    text-align: center;
-    padding: 8px;
-    border-bottom: solid 3px $backGroundGray;
-  }
-  &--form{
-    padding: 40px 40px 64px;
-    background-color: white;
-    .form-group{
-      margin: 0 auto;
-      width: 300px;
-      &--card-number{
-        .card-number{
-          @include bold();
-        }
-        .card-number__form{
-          input{
-          @include registerForm();
-          background-color: white;
-          font-size: 16px;
-          margin: 8px 0;
-          }
-        }
-      }
-      &--expiration-date{
-        margin-top: 32px;
-        .expiration-date{
-          @include bold();
-        }
-        .expiration-date__form{
-          @include displayFlex();
-          height: 48px;
-          font-size: 16px;
-          border-radius: 4px;
-          margin: 8px 0;
-          #exp_year{
-            @include outLine();
-            width: 120px;
-            padding: 0 16px;
-            border-radius: 4px;
-            border: 1px solid $borderGray;
-          }
-          #exp_month{
-            @include outLine();
-            width: 120px;
-            padding: 0 16px;
-            border-radius: 4px;
-            border: 1px solid $borderGray;
-          }
-          .expiration-text{
-            font-size: $fontMainSize;
-            margin: 12px;
-          }
-        }
-      }
-      &--security-code{
-        margin-top: 32px;
-        .security-code{
-          @include bold();
-        }
-        .security-code--form{
-          #cvc{
-            @include registerForm();
-            margin: 8px 0;
-          }
-        }
-      }
-      .required{
-        @include required();
-
-      }
-    }
-    .submit-btn{
-      @include hoverMouseFinger();
-      background-color: $mainBlue;
-      color: white;
-      width: 300px;
-      height: 48px;
-      border-radius: 4px;
-      border: none;
-      margin-top: 30px;
-    }
-    .delete-btn{
-      background-color: $mainBlue;
-      color:white;
-      width: 300px;
-      height: 40px;
-      text-align: center;
-      margin-top: 25px;
-      padding-top: 15px;
-      text-decoration: none;
-      @include hoverMouseFinger();
-    }
-  }
-}
-
 .buy{
   background: $backGroundGray;
   .content{
@@ -191,19 +89,21 @@
             }
           }
         }
-         .purchase-btn{
+        .purchase{
           @include hoverMouseFinger();
           background: $mainBlue;
+          border: 1px solid $mainBlue;
+          color: white;
+          width: 343px;
           line-height: 48px;
-          text-align: center;
+          font-size: $fontMainSize;
+          border-radius: 1px;
+          padding: 2px 5px 5px;
+          height: 48px;
           &:hover{
             box-shadow: none;
             color: rgb(104, 97, 97);
             background: rgb(228, 221, 221);
-          }
-          a{
-            color: white;
-            text-decoration: none;
           }
         } 
       }

@@ -1,6 +1,5 @@
 .buy
-  .sub-header
-    = render partial: "sub-header"
+  = render partial: "buyers/sub-header"
   .content
     .content-top
       %h2.content-top__title 購入内容の確認
@@ -28,16 +27,23 @@
             %li.payment__left
               支払方法
             %li.payment__right
-              = link_to "変更する", "#", method: :delete, class:"update-btn"
+              = link_to "変更する", credit_card_path(current_user.id), method: :get, class:"update-btn"
             %br
           .user-info-text
             クレジットカード
-            %br
-            ************2788
-            %br
-            有効期限07/23
-            .card-logo
-              = image_tag src='/visa-4.svg', class: 'card-logo'
+          .form-group--card-number
+            .card-number
+              = "**** **** **** " + @card_info.last4
+            .card__body__main__data
+              = "有効期限" + @card_info.exp_month.to_s + " / " + @card_info.exp_year.to_s.slice(2,3) 
+            .form-group--credit_logo
+              = image_tag "/#{@card_src}", alt: @card_info.brand, width:"40", height: "25"
+            -# %br
+            -# ************4242
+            -# %br
+            -# 有効期限5/2021
+            -# .card-logo
+            -#   = image_tag src='/visa-4.svg', class: 'card-logo'
 
       .content-user-info
         .content-inner
@@ -56,10 +62,7 @@
       .content-user-info
         .content-inner
           .purchase-btn
-          = submit_tag("購入する", class:"purchase")
+            = link_to '購入する', pay_credit_card_path(current_user.id), method: :post
+          -# = submit_tag("購入する", class:"purchase")
 
-  .sub-footer
-    = render partial: "sub-footer"
-
-                
-
+    = render partial: "buyers/sub-footer"
