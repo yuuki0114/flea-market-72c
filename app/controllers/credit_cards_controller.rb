@@ -82,10 +82,7 @@ def buy
 end
 
 def pay
-  if @item.trading_status  == "売れ切れ"
-    redirect_to buy_card_path(@item)
-  else
-    if current_user.card.present?
+  if current_user.card.present?
     Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
     # customer = Payjp::Customer.create(
     #   card: params['payjp-token'],
@@ -98,8 +95,10 @@ def pay
       customer: customer,
       currency: 'jpy'
     )
-    @item.update!(trading_status: 2)
-  
+    @item.update!(trading_status: "売却済")
+  else
+    redirect_to action: :new
+  end
 end
 
 
@@ -131,5 +130,4 @@ end
   # def set_item
   #   @item = Item.find(params[:id])
   # end
-
 end
