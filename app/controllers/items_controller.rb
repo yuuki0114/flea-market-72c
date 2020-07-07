@@ -7,8 +7,6 @@ class ItemsController < ApplicationController
   end
 
   def new
-<<<<<<< HEAD
-=======
     @item = Item.new
     @item.images.new
     @item.build_brand
@@ -20,14 +18,11 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       redirect_to controller: 'items', action: 'new'
-    end 
+    end
   end
 
   private
-
   def item_params
     params.require(:item).permit(:name, :detail, :category_id, :status, :delivery_fee, :start_address, :shipping_date, :price, :trading_status, brand_attributes: [:name], images_attributes: [:src]).merge(user_id: current_user.id)
->>>>>>> 3d73c70... userテーブルとitemテーブルの紐付け
   end
-  
 end

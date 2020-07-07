@@ -13,13 +13,9 @@ class User < ApplicationRecord
 
   validates :password, confirmation: true
 
-<<<<<<< HEAD
-  has_one :address
-  has_one :profile
-  has_one :credit_card, dependent: :destroy
-=======
+
   has_one   :address
   has_one   :profile
   has_many  :items
->>>>>>> 3d73c70... userテーブルとitemテーブルの紐付け
+  has_one :credit_card, dependent: :destroy
 end
