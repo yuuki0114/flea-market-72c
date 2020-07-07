@@ -26,8 +26,8 @@ Rails.application.routes.draw do
       post 'pay'
     end
   end
-
-  resources :items, only: [:show, :new]
+  resources :credit_cards, only: :new
+  resources :items, only: [:show, :new, :create]
   resources :buyers, only: :index
   resources :profiles, only: :new
   resources :addresses, only: :new

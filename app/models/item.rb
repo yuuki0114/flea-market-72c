@@ -9,8 +9,6 @@ class Item < ApplicationRecord
     validates :shipping_date, null: false
     validates :price,         null: false
   end
-
-  #-- active_hashで定義したデータを読み込む
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
@@ -24,4 +22,5 @@ class Item < ApplicationRecord
   #-- 複数の画像を登録するための記述
   accepts_nested_attributes_for :images
   
+
 end
