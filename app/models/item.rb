@@ -9,6 +9,8 @@ class Item < ApplicationRecord
     validates :shipping_date, null: false
     validates :price,         null: false
   end
+
+  #-- active_hashで定義したデータを読み込む
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 

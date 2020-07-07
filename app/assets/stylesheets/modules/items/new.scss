@@ -141,6 +141,18 @@
               @include registerForm();
               @include outLine();
             }
+            .select-form__add#category-children{
+              width: 100%;
+              margin-top: 16px;
+              @include registerForm();
+              @include outLine();
+            }
+            .select-form__add#category-grandchildren{
+              width: 100%;
+              margin-top: 16px;
+              @include registerForm();
+              @include outLine();
+            }
           }
           .error-messages {
             color: red;
@@ -326,7 +338,7 @@
         width: 360px;
         margin: 0 auto;
         padding-bottom: 32px;
-        &__button--red {
+        &__button--blue {
           @include button();
         }
         &__button--gray {

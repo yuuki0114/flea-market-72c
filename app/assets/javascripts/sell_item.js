@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
   // 画像用のinputを生成する関数
   const buildFileField = function(index) {
     const html = `<div data-index="${index}" class="js-file_group">
@@ -41,7 +41,7 @@ $(document).on('turbolinks:load', function() {
 
   //必須部分の検証
   //画像
-  $('form').on('submit',function(e){
+  $('.form-content').on('submit',function(e){
     let imageLength = $('#previews').children().length;
     if(imageLength ==''){
       $('body, html').animate({ scrollTop: 0 }, 500);

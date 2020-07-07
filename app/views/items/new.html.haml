@@ -18,7 +18,7 @@
               %label.item-photo__area--label{for: "item_images_attributes_0_src"}
                 #image-box
                   = f.fields_for :images do |i|
-                    .js-file_group{"data-index" => "#{i.index}"}
+                    .js-file_group{"data-index": "#{i.index}"}
                       = i.file_field :src, class: 'js-file'
                 = icon('fa','camera', class: "photo-icon")
                 %p.label-text
@@ -32,7 +32,6 @@
           .item-info__form
             = f.text_field :name, placeholder: '40字まで', class: "input-form"
             .error-messages#error-name
-
           .item-info--description
             %label 商品の説明
             %span.required 必須
@@ -46,8 +45,7 @@
             %label カテゴリー
             %span.required 必須 
             .item-category__form
-              = f.collection_select :category_id, Category.all, :id, :name, {prompt: "選択してください"}, class: "select-form"
-            .error-messages#error-category
+              = f.collection_select :category_id, @category_parents, :id, :name, {prompt: "選択してください"}, class: "select-form", id: "category-parent", name: ""
           .item-brand
             %label ブランド
             %span.voluntary 任意
@@ -104,7 +102,7 @@
             .commission--amount ー
         = f.text_field :trading_status, value: "出品中", class: "trading_status"
         .sell-footer
-          = f.submit class: "sell-footer__button--red", value: "出品する", id: "form__submit"
+          = f.submit class: "sell-footer__button--blue", value: "出品する", id: "form__submit"
           %button.sell-footer__button--gray{type: "button"} 下書きに保存
           = link_to root_path, class: "link-back" do
             もどる

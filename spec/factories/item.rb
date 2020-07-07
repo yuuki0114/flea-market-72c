@@ -8,7 +8,6 @@ FactoryBot.define do
     start_address    {"沖縄"}
     shipping_date    {"4~7で発送"}
     price            {"3000"}
-    category_id      {"1"}
   end
 
 end
