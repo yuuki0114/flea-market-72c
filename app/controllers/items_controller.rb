@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.order(id: :desc).where(trading_status: "出品中").limit(4).includes(:images)
   end
 
   def show
-    @item = Item.find(params[:id])
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
     @show_category_grandchild = Category.find("#{@item.category_id}")
@@ -29,6 +29,14 @@ class ItemsController < ApplicationController
     end 
   end
 
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render "show"
+    end
+  end
+
   #モデルから子カテゴリー取得
   def category_children
     @category_children = Category.find(params[:parent_name]).children
@@ -42,6 +50,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:name, :detail, :category_id, :status, :delivery_fee, :start_address, :shipping_date, :price, :trading_status, brand_attributes: [:name], images_attributes: [:src]).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
   
 end
