@@ -29,6 +29,12 @@ class ItemsController < ApplicationController
     end 
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+    redirect_to root_path
+  end
+
   #モデルから子カテゴリー取得
   def category_children
     @category_children = Category.find(params[:parent_name]).children
