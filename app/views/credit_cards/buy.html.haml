@@ -1,0 +1,66 @@
+.buy
+  = render partial: "buyers/sub-header"
+  .content
+    .content-top
+      %h2.content-top__title 購入内容の確認
+    .content
+      .content__item
+        .item-box
+          .item-image
+            = image_tag '/example1.jpg', class: 'item-image'
+          .item-detail
+            %p.detail-name
+              古着 NIKE ナイキ Tシャツ デカロゴ ビッグプリント ネイビー紺
+            %p.detail-price
+              ¥10,000 (税込) 送料込み
+
+      .content-user-info
+        .content-inner
+          %ul.price-table
+            %li.price__left
+              支払い金額
+            %li.price__right
+              ¥10,000
+      .content-user-info      
+        .content-inner
+          %ul.payment-table
+            %li.payment__left
+              支払方法
+            %li.payment__right
+              = link_to "変更する", credit_card_path(current_user.id), method: :get, class:"update-btn"
+            %br
+          .user-info-text
+            クレジットカード
+          .form-group--card-number
+            .card-number
+              = "**** **** **** " + @card_info.last4
+            .card__body__main__data
+              = "有効期限" + @card_info.exp_month.to_s + " / " + @card_info.exp_year.to_s.slice(2,3) 
+            .form-group--credit_logo
+              = image_tag "/#{@card_src}", alt: @card_info.brand, width:"40", height: "25"
+            -# %br
+            -# ************4242
+            -# %br
+            -# 有効期限5/2021
+            -# .card-logo
+            -#   = image_tag src='/visa-4.svg', class: 'card-logo'
+      .content-user-info
+        .content-inner
+          %ul.address-table
+            %li.address__left
+              配送先
+            %li.address__right
+              = link_to "変更する", "/addresses", class:"update-btn"
+            %br
+          .user-info-text
+            〒662-0864
+            %br
+            兵庫県西宮市越水町13-6
+            %br
+            織田 直宏
+      .content-user-info
+        .content-inner
+          .purchase-btn
+            = link_to '購入する', pay_credit_card_path(current_user.id), method: :post
+          -# = submit_tag("購入する", class:"purchase")
+    = render partial: "buyers/sub-footer"
