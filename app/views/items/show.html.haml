@@ -69,7 +69,7 @@
               商品を編集する
             = link_to item_path(@item.id), method: :delete, class: "item-option__delete" do
               商品を削除する
-        - elsif user_signed_in?
+        - elsif user_signed_in? && current_user.id != @item.user_id
           .item-buy
             %button{onclick: "location.href='#'", class: "item-buy__btn"}
               購入画面に進む
