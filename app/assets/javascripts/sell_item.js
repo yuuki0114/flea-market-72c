@@ -57,6 +57,12 @@ $(function() {
     );
   });
 
+  // 商品説明の字数カウント
+  $(".item-info--description__textarea").keyup(function(){
+    let count = $(this).val().length;
+    $("#words-count").text(count);
+  });
+
   //必須部分の検証
   //画像
   $('.form-content').on('submit',function(e){

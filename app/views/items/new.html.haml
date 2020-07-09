@@ -38,7 +38,8 @@
             %span.required 必須
             = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
             .item-info--description__footer
-              %span 0/1000
+              %span#words-count 0
+              &#47 1000
             .error-messages#error-text
         .item-detail
           %p.item-detail__title 商品の詳細
