@@ -1,11 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.order(id: :desc).where(trading_status: "出品中").limit(4).includes(:images)
   end
 
   def show
-    set_item
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
     @show_category_grandchild = Category.find("#{@item.category_id}")
@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    set_item
     @item.destroy
     redirect_to root_path
   end
