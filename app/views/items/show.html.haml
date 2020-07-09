@@ -67,7 +67,7 @@
           .item-option
             %button{onclick: "location.href='#'", class: "item-option__edit"}
               商品を編集する
-            %button{onclick: "location.href='#'", class: "item-option__delete"}
+            = link_to item_path(@item.id), method: :delete, class: "item-option__delete" do
               商品を削除する
         - elsif user_signed_in?
           .item-buy
