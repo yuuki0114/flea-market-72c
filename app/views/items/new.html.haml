@@ -36,7 +36,7 @@
           .item-info--description
             %label 商品の説明
             %span.required 必須
-            = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+            = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: '商品の説明（必須 1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
             .item-info--description__footer
               %span#words-count 0
               &#47 1000
@@ -102,7 +102,7 @@
           %hr
           .profit
             .profit--sale 販売利益
-            .commission--amount ー
+            .profit--amount ー
         = f.text_field :trading_status, value: "出品中", class: "trading_status"
         .sell-footer
           = f.submit class: "sell-footer__button--blue", value: "出品する", id: "form__submit"

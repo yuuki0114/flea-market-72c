@@ -45,7 +45,6 @@ $(function() {
       //プレビュー要素とinput要素を取得
       var preview_num = $(this).parent();
       var target_num = $(preview_num).data('preview')
-      console.log(target_num)
 
       //プレビュー要素を削除
       preview_num.remove();
@@ -61,6 +60,21 @@ $(function() {
   $(".item-info--description__textarea").keyup(function(){
     let count = $(this).val().length;
     $("#words-count").text(count);
+  });
+
+  //販売手数料の計算
+  $('#item_price').on('change',function(){
+    let value = $(this).val();
+    if(value >= 300 && value <= 9999999){
+      let commission = Math.floor(value * 0.1);
+      let profit = (value - commission);
+      $('.commission--amount').text('¥' + commission);
+      $('.profit--amount').text('¥' + profit);
+    }else{
+      $('.commission--amount').html('ー');
+      $('.profit--amount').html('ー');
+      
+    }
   });
 
   //必須部分の検証
