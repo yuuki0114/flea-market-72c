@@ -84,25 +84,23 @@ end
 def pay
   Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
   customer = Payjp::Customer.retrieve(@card.customer_id)
-  Payjp::Charge.create(
-    amount: @item.price,
-    customer: customer,
-    currency: 'jpy'
-  )
-  @item.update!(trading_status: "売却済")
+  if Payjp::Charge.create(amount: @item.price, customer: customer, currency: 'jpy' )
+    @item.update!(trading_status: "売却済")
+  else
+    render action: :buy
+  end
 end
 
 
 
   def destroy
-    if @card.blank?
-    else
-      Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
-      customer = Payjp::Customer.retrieve(@card.customer_id)
-      customer.delete
-      @card.delete
-    end
+    Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
+    customer = Payjp::Customer.retrieve(@card.customer_id)
+    if customer.delete && @card.delete
       redirect_to delete_done_credit_cards_path
+    else
+      render action: :show
+    end
   end
 
   def delete_done

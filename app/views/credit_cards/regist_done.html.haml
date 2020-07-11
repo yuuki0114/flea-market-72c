@@ -7,7 +7,7 @@
       .done__title
         クレジットカードの登録が完了しました！
       .done__backlink
-        = link_to '商品購入ページへ', buy_credit_card_path(current_user.id), class: 'link' #商品詳細ページをマージしていないため、後程トップページへ戻るに書き換えるroo_path
+        = link_to 'トップページへ', root_path, class: 'link'
       .done__backlink
         = link_to 'マイページに戻る', users_path(current_user.id), class: 'link'
 
