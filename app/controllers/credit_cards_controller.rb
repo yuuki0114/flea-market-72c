@@ -1,7 +1,7 @@
 class CreditCardsController < ApplicationController
   before_action :move_to_root
   before_action :set_card, only: [:new, :show, :destroy, :buy, :pay ]
-  # before_action :set_item, only: [:buy, :pay]
+  before_action :set_item, only: [:buy, :pay]
 
   require "payjp"
 
@@ -82,14 +82,14 @@ def buy
 end
 
 def pay
-    Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
-    customer = Payjp::Customer.retrieve(@card.customer_id)
-    Payjp::Charge.create(
-      amount: 10000,  #後程itemテーブルと紐付ける
-      customer: customer,
-      currency: 'jpy'
-    )
-    # @item.update!(trading_status: "売却済")
+  Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
+  customer = Payjp::Customer.retrieve(@card.customer_id)
+  Payjp::Charge.create(
+    amount: @item.price,  #後程itemテーブルと紐付ける
+    customer: customer,
+    currency: 'jpy'
+  )
+  @item.update!(trading_status: "売却済")
 end
 
 
@@ -118,8 +118,8 @@ end
     @card = CreditCard.find_by(user_id: current_user.id)
   end
 
-  # def set_item
-  #   @item = Item.find(params[:id])
-  # end
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
 end

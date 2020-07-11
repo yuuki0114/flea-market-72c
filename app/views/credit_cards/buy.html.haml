@@ -7,12 +7,14 @@
       .content__item
         .item-box
           .item-image
-            = image_tag '/example1.jpg', class: 'item-image'
+            = image_tag "#{@item.images[0].src}", class: 'item-image'
+            -# = image_tag '/example1.jpg', class: 'item-image'
           .item-detail
             %p.detail-name
-              古着 NIKE ナイキ Tシャツ デカロゴ ビッグプリント ネイビー紺
+              =@item.name
             %p.detail-price
-              ¥10,000 (税込) 送料込み
+              =@item.price
+              (税込) 送料込み
 
       .content-user-info
         .content-inner
@@ -20,7 +22,7 @@
             %li.price__left
               支払い金額
             %li.price__right
-              ¥10,000
+              =@item.price
       .content-user-info      
         .content-inner
           %ul.payment-table
@@ -61,6 +63,6 @@
       .content-user-info
         .content-inner
           .purchase-btn
-            = link_to '購入する', pay_credit_card_path(current_user.id), method: :post
+            = link_to '購入する', pay_credit_card_path(@item.id), method: :post
           -# = submit_tag("購入する", class:"purchase")
     = render partial: "buyers/sub-footer"
