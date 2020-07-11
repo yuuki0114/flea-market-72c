@@ -11,12 +11,15 @@ $(function() {
 
   // プレビュー用のimgタグを生成する関数
   const buildImg = function(index, url) {
-    const html = `<img data-index="${index}" src="${url}" width="100px" height="100px">`;
+    const html = `<div id="previews-box" data-preview="${index}">
+                    <img data-index="${index}" src="${url}" width="100px" height="100px">
+                    <div class="js-remove">削除</div>
+                  </div>`;
     return html;
   }
 
   // file_fieldのnameに動的なindexをつける為の配列
-  let fileIndex = [1,2,3,4,5,6,7,8,9,10];
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -36,6 +39,41 @@ $(function() {
       // fileIndexの先頭の数字を使ってinputを作る
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
+    }
+    // 削除機能
+    $('#previews').on('click', '.js-remove', function() {
+      //プレビュー要素とinput要素を取得
+      var preview_num = $(this).parent();
+      var target_num = $(preview_num).data('preview')
+
+      //プレビュー要素を削除
+      preview_num.remove();
+
+    //input要素を削除
+      $(`#item_images_attributes_${target_num}_src`).remove();
+      $('').prop("checked", true);
+    }
+    );
+  });
+
+  // 商品説明の字数カウント
+  $(".item-info--description__textarea").keyup(function(){
+    let count = $(this).val().length;
+    $("#words-count").text(count);
+  });
+
+  //販売手数料の計算
+  $('#item_price').on('change',function(){
+    let value = $(this).val();
+    if(value >= 300 && value <= 9999999){
+      let commission = Math.floor(value * 0.1);
+      let profit = (value - commission);
+      $('.commission--amount').text('¥' + commission);
+      $('.profit--amount').text('¥' + profit);
+    }else{
+      $('.commission--amount').html('ー');
+      $('.profit--amount').html('ー');
+      
     }
   });
 
