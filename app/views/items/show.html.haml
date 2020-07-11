@@ -71,7 +71,7 @@
               商品を削除する
         - elsif user_signed_in? && current_user.id != @item.user_id
           .item-buy
-            %button{onclick: "location.href='#'", class: "item-buy__btn"}
+            %button{onclick: "location.href='/credit_cards/#{@item.id}/buy'", class: "item-buy__btn"}
               購入画面に進む
           .option
             .option__lists
