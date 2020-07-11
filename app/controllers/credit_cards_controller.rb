@@ -85,7 +85,7 @@ def pay
   Payjp.api_key = Rails.application.credentials[:PAYJP_SECRET_KEY]
   customer = Payjp::Customer.retrieve(@card.customer_id)
   Payjp::Charge.create(
-    amount: @item.price,  #後程itemテーブルと紐付ける
+    amount: @item.price,
     customer: customer,
     currency: 'jpy'
   )
