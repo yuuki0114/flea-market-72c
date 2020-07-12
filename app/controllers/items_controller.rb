@@ -8,9 +8,6 @@ class ItemsController < ApplicationController
   def show
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
-    @show_category_grandchild = Category.find("#{@item.category_id}")
-    @show_category_children = @show_category_grandchild.parent
-    @show_category_parent = @show_category_children.parent
   end
 
   def new
@@ -41,7 +38,7 @@ class ItemsController < ApplicationController
   def category_children
     @category_children = Category.find(params[:parent_name]).children
   end
-
+#3
   # モデルから孫カテゴリー取得
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:children_id]}").children
