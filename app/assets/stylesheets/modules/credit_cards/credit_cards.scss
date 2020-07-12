@@ -13,10 +13,14 @@
     padding: 40px 40px 64px;
     background-color: white;
     .form-group{
+      &--credit_logo{
+        padding-top: 10px;
+      }
       margin: 0 auto;
       width: 300px;
       &--card-number{
         .card-number{
+          padding-top: 5px;
           @include bold();
         }
         .card-number__form{
