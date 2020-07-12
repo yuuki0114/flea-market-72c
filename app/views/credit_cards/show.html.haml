@@ -17,7 +17,9 @@
             .card__body__main__data
               = @card_info.exp_month.to_s + " / " + @card_info.exp_year.to_s.slice(2,3) 
           .delete-btn
-            = link_to "削除する", credit_card_path, method: :delete, class: "delete-btn"
+            = link_to credit_card_path, method: :delete do
+              .delete-btn
+                削除する
+
     
 = render partial: "items/footer"
-= render partial: "items/post-btn"
