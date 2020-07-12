@@ -80,6 +80,7 @@ $(function() {
   //必須部分の検証
   //画像
   $('.form-content').on('submit',function(e){
+
     let imageLength = $('#previews').children().length;
     if(imageLength ==''){
       $('body, html').animate({ scrollTop: 0 }, 500);
@@ -92,6 +93,10 @@ $(function() {
     }else{
       return true;
     }
+  });
+  $('.form-content').on('submit',function(e){
+    $(".sell-footer__button--blue").prop("disabled", false);  // submitボタンのdisableを解除
+    $(".sell-footer__button--blue").removeAttr("data-disable-with");  // submitボタンのdisableを解除(Rails5.0以降はこちらも必要)
   });
 
   //商品名
