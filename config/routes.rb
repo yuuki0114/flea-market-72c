@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     end
   end
   resources :credit_cards, only: :new
-  resources :items, only: [:show, :new, :create] do
+  resources :items, only: [:show, :new, :create, :edit, :update] do
     collection do
       get 'category_children', to: 'items#category_children', defaults: { format: 'json' }
       get 'category_grandchildren', to: 'items#category_grandchildren', defaults: { format: 'json' }
