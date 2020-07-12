@@ -35,11 +35,11 @@
                 %th.table__left カテゴリー
                 %td.table__right
                   %p
-                    = link_to "#{@show_category_parent.name}", "#", class:"table__right--add"
+                    = link_to "#{@parent_category.name}", "#", class:"table__right--add"
                   %p
-                    = link_to "#{@show_category_children.name}", "#", class:"table__right--add"
+                    = link_to "#{@child_category.name}", "#", class:"table__right--add"
                   %p
-                    = link_to "#{@show_category_grandchild.name}", "#", class:"table__right--add"
+                    = link_to "#{@grandchild_category.name}", "#", class:"table__right--add"
               %tr
                 %th.table__left ブランド
                 %td.table__right
@@ -65,7 +65,7 @@
                   = @item.shipping_date
         - if user_signed_in? && current_user.id == @item.user_id
           .item-option
-            %button{onclick: "location.href='#'", class: "item-option__edit"}
+            = link_to edit_item_path(@item.id), method: :get, class: "item-option__edit" do
               商品を編集する
             %button{onclick: "location.href='#'", class: "item-option__delete"}
               商品を削除する
