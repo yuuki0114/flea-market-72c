@@ -80,18 +80,41 @@ $(function() {
     }
   });
 
-  //カテゴリーのエラーハンドリング
-  $('#item_category_id').on('blur',function(){
+  //親カテゴリーのエラーハンドリング
+  $('#category-parent').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-category').text('選択してください');
       $(this).css('border-color','red');
-    }else{
+      }
+    else{
       $('#error-category').text('');
       $(this).css('border-color','rgb(204, 204, 204)');
     }
   });
-
+  // 子カテゴリーのエラーハンドル
+  $(document).on('blur','#category-children',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $(this).css('border-color','red');
+      }
+    else{
+      $('#error-category').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+  // 孫カテゴリーのエラーハンドル
+  $(document).on('blur','#category-grandchildren',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $(this).css('border-color','red');
+      }
+    else{
+      $('#error-category').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+    
   //状態
   $('#item_status').on('blur',function(){
     let value = $(this).val();
@@ -105,7 +128,7 @@ $(function() {
   });
 
    //送料負担
-   $('#item_delivery_fee').on('blur',function(){
+  $('#item_delivery_fee').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-deliveryburden').text('選択してください');
@@ -117,7 +140,7 @@ $(function() {
   });
 
    //発送元
-   $('#item_start_address').on('blur',function(){
+  $('#item_start_address').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-area').text('選択してください');
