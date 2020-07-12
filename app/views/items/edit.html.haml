@@ -35,9 +35,10 @@
           .item-info--description
             %label 商品の説明
             %span.required 必須
-            = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: '商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。'
+            = f.text_area :detail,rows: '7', class: "item-info--description__textarea", placeholder: "商品の説明（必須 1,000文字以内）\r\n（色、素材、重さ、定価、注意点など）\r\n \r\n例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
             .item-info--description__footer
-              %span 0/1000
+              %span#words-count 0
+              &#47 1000
             .error-messages#error-text
         .item-detail
           %p.item-detail__title 商品の詳細
@@ -50,6 +51,7 @@
               = f.collection_select :category_id, @category_children, :id, :name, {selected: @child_category.id}, class: "select-form__add", id: "category-children", name: ""  
             .item-category__form
               = f.collection_select :category_id, @category_grandchildren, :id, :name, {selected: @grandchild_category.id}, class: "select-form__add", id: "category-grandchildren"
+            #error-category
           .item-brand
             %label ブランド
             %span.voluntary 任意
@@ -61,6 +63,7 @@
             %span.required 必須 
             .item-status__form
               = f.select :status, [['新品、未使用','新品、未使用'],['未使用に近い','未使用に近い'],["目立った傷やよごれなし","目立った傷やよごれなし"],["やや傷や汚れあり","やや傷や汚れあり"],["傷や汚れあり","傷や汚れあり"],["全体的に状態が悪い","全体的に状態が悪い"]] ,{prompt: "選択してください"}, { class: "select-form" }
+            #error-condition
         .delivery-info
           %p.delivery-info__title 
             配送について
@@ -103,10 +106,11 @@
           %hr
           .profit
             .profit--sale 販売利益
-            .commission--amount ー
+            .profit--amount ー
         = f.text_field :trading_status, value: "出品中", class: "trading_status"
         .sell-footer
           = f.submit class: "sell-footer__button--blue", value: "商品を編集する", id: "form__submit"
+          %button.sell-footer__button--gray{type: "button"} 下書きに保存
           = link_to root_path, class: "link-back" do
             もどる
         .caution
