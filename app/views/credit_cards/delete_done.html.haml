@@ -1,0 +1,15 @@
+= render partial: "items/header"
+= render partial: "items/menu"
+.mypage
+  .wrapper
+    = render partial: "users/side_bar"
+    .done
+      .done__title
+        登録のクレジット情報を削除しました!
+      .done__backlink
+        = link_to 'クレジットカードを登録', new_credit_card_path, class: 'link'
+      .done__backlink
+        = link_to 'マイページへ戻る', users_path(current_user.id), class: 'link' 
+
+= render partial: "items/footer"
+= render partial: "items/post-btn"

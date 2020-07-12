@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :destroy]
 
   def index
     @items = Item.order(id: :desc).where(trading_status: "出品中").limit(4).includes(:images)
@@ -46,15 +47,12 @@ class ItemsController < ApplicationController
     end
   end
 
-  def set_item
-    #出品商品のデータ取得
-    @item = Item.find(params[:id])
-    #孫のデータ取得
-    @grandchild_category = @item.category
-    #子のデータ取得
-    @child_category = @grandchild_category.parent
-    #親のデータ取得
-    @parent_category = @child_category.parent
+  def destroy
+    if @item.destroy
+      redirect_to root_path
+    else
+      render "show"
+    end
   end
 
   #モデルから子カテゴリー取得
@@ -71,5 +69,16 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(:name, :detail, :category_id, :status, :delivery_fee, :start_address, :shipping_date, :price, :trading_status, brand_attributes: [:name], images_attributes: [:src]).merge(user_id: current_user.id)
   end
-  
+
+  def set_item
+    #出品商品のデータ取得
+    @item = Item.find(params[:id])
+    #孫のデータ取得
+    @grandchild_category = @item.category
+    #子のデータ取得
+    @child_category = @grandchild_category.parent
+    #親のデータ取得
+    @parent_category = @child_category.parent
+  end
+
 end

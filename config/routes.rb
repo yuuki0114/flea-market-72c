@@ -16,8 +16,18 @@ Rails.application.routes.draw do
       get 'personal_information', to: 'users#personal_information'
     end
   end
-  resources :credit_cards, only: :new
-  resources :items, only: [:show, :new, :create, :edit, :update] do
+
+  resources :credit_cards, except: :index do
+    collection do                  #id無
+      get 'regist_done'            #登録済
+      get 'delete_done'            #削除済
+    end
+    member do                      #id有
+      get 'buy'
+      post 'pay'
+    end
+  end
+  resources :items, only: [:show, :new, :create, :edit, :update, :destroy] do
     collection do
       get 'category_children', to: 'items#category_children', defaults: { format: 'json' }
       get 'category_grandchildren', to: 'items#category_grandchildren', defaults: { format: 'json' }
