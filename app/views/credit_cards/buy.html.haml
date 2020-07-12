@@ -61,7 +61,8 @@
             =current_user.address.first_name
       .content-user-info
         .content-inner
-          .purchase-btn
-            = link_to '購入する', pay_credit_card_path(@item.id), method: :post
+          = link_to pay_credit_card_path(@item.id),method: :post do
+            .purchase-btn
+              購入する
 
     = render partial: "buyers/sub-footer"
