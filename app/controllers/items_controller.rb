@@ -5,12 +5,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    set_item
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
-    @show_category_grandchild = Category.find("#{@item.category_id}")
-    @show_category_children = @show_category_grandchild.parent
-    @show_category_parent = @show_category_children.parent
   end
 
   def new
@@ -27,6 +24,37 @@ class ItemsController < ApplicationController
     else
       redirect_to controller: 'items', action: 'new'
     end 
+  end
+
+  def edit
+    set_item
+    # 親の配列
+    @category_parents = Category.where(ancestry: nil)
+    # 子の配列
+    @category_children = @item.category.parent.parent.children
+    # 孫の配列
+    @category_grandchildren = @item.category.parent.children
+  end
+
+  def update
+    item = Item.find(params[:id])
+    if 
+      item.update(item_params)
+      redirect_to root_path
+    else
+      redirect_to controller: 'items', action: 'edit'
+    end
+  end
+
+  def set_item
+    #出品商品のデータ取得
+    @item = Item.find(params[:id])
+    #孫のデータ取得
+    @grandchild_category = @item.category
+    #子のデータ取得
+    @child_category = @grandchild_category.parent
+    #親のデータ取得
+    @parent_category = @child_category.parent
   end
 
   #モデルから子カテゴリー取得
