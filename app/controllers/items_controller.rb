@@ -41,7 +41,6 @@ class ItemsController < ApplicationController
   def category_children
     @category_children = Category.find(params[:parent_name]).children
   end
-#3
   # モデルから孫カテゴリー取得
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:children_id]}").children
