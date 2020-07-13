@@ -132,6 +132,10 @@
                   0
               .detail__tax
                 (税込)
-= render partial: "footer"
-= render partial: "post-btn"
+- if user_signed_in?
+  = render partial: "footer"
+  = render partial: "items/post-btn"
+- else
+  = render partial: "footer"
+
 
