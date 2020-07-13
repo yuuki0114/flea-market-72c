@@ -26,8 +26,17 @@
               height: 150px;
               background-color: $backGroundGray;
               display: flex;
-              overflow: scroll;
               white-space:nowrap;
+              flex-wrap: wrap;
+              #previews-box {
+                height: 151px;
+                width: 123px;
+                background-color: $backGroundGray;
+                .js-remove {
+                  text-align: center;
+                  font-weight: bold;
+                }
+              }
             }
             &--label {
               background-color: $backGroundGray;
@@ -36,10 +45,10 @@
               border-style: dashed;
               border-color: rgb(204, 204, 204);
               display: block;
-              width: 100%;
+              width: 615px;
               min-width: 100px;
               text-align: center;
-              margin: 0 2px;
+              margin: 2px 2px;
               cursor: pointer;
               #image-box{
                 padding: 20px;
@@ -50,6 +59,7 @@
                 }
               }
               .photo-icon {
+                margin-top: 10px;
                 font-size: 20px;
               }
               .label-text {

@@ -12,8 +12,8 @@ $(function() {
   // プレビュー用のimgタグを生成する関数
   const buildImg = function(index, url) {
     const html = `<div id="previews-box" data-preview="${index}">
-                    <img data-index="${index}" src="${url}" width="100px" height="100px">
-                    <div class="js-remove">削除</div>
+                    <img data-index="${index}" src="${url}" width="123px" height="100px">
+                    <div class="js-remove">削除する</div>
                   </div>`;
     return html;
   }
@@ -29,6 +29,32 @@ $(function() {
 
     // ラベルタグの更新
     $('.item-photo__area--label').attr('for',`item_images_attributes_${fileIndex[0]}_src`)
+    
+    // ラベルのサイズ変更
+    let num = $("#previews").children().length + 1
+    let items_width = num*123.5
+    let label_width = 615 - items_width
+    let down_num = $("#previews").children().length - 4
+    let down_items_width = down_num*123.5
+    let down_label_width = 615 - down_items_width
+    if (num == 10) {
+      $(".item-photo__area--label").css("display", "none")
+    } else if (num > 5){
+      $(".item-photo__area").css({"display":"block", "position":"relative"})
+      $(".item-photo__area--label").css({"width":down_label_width, "position":"absolute", "right":"0"})
+      $(".label-text").css("display", "none")
+      $("#previews").css("display", "flex")
+    } else if (num == 5){
+      $(".item-photo__area").css("display", "block")
+      $(".item-photo__area--label").css({"width":"100%", "top":""})
+      $(".label-text").css("display", "block")
+      $("#previews").css("width", "100%")
+      $(".sell-photo").css("height", "417px")
+    } else {
+      $(".item-photo__area--label").css("width", label_width)
+      $(".label-text").css("display", "none")
+      $("#previews").css({"display":"flex", "width":items_width})
+    }
 
     // 該当indexを持つimgがあれば取得して変数imgに入れる(画像変更の処理)
     if (img = $(`img[data-index="${targetIndex}"]`)[0]) {
@@ -49,11 +75,31 @@ $(function() {
       //プレビュー要素を削除
       preview_num.remove();
 
-    //input要素を削除
+      //input要素を削除
       $(`#item_images_attributes_${target_num}_src`).remove();
       $('').prop("checked", true);
+
+      //削除時のラベルのサイズ変更
+      let remove_num = $("#previews").children().length
+      let remove_items_width = remove_num*123.5
+      let remove_label_width = 615 - remove_items_width
+      let remove_down_num = $("#previews").children().length - 5
+      let remove_down_items_width = remove_down_num*123.5
+      let remove_down_label_width = 615 - remove_down_items_width
+      if (remove_num == 0 || remove_num == 5) {
+        $(".item-photo__area--label").css("width", "100%")
+        $("#previews").css("width", remove_items_width)
+        $(".label-text").css("display", "block")
+      } else if (remove_num >= 1 && remove_num <= 4){
+        $(".item-photo__area--label").css({"width":remove_label_width, "position":"absolute", "right":"0", "top":"0"})
+        $("#previews").css("width", remove_items_width)
+        $(".item-photo__area").css("position", "relative")
+        $(".sell-photo").css("height", "231px")
+      } else {
+        $(".item-photo__area--label").css({"width":remove_down_label_width, "display":"block"})
+      }
     }
-    );
+  );
   });
 
   // 商品説明の字数カウント
