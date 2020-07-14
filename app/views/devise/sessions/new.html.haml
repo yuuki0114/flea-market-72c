@@ -6,8 +6,17 @@
         .text
           アカウントをお持ちでない方はこちら
         .box
-          = link_to new_user_registration_path, class: "box--text-decoration_none" do
-            新規会員登録
+          = link_to new_user_registration_path, class: "box--email-decoration_none" do
+            .box__email
+              新規会員登録
+          = link_to new_user_registration_path, class: "box--google-decoration_none" do
+            .box__google
+              = icon("fab", "google")
+              Googleでの登録
+          = link_to new_user_registration_path, class: "box--facebook-decoration_none" do
+            .box__facebook
+              = icon("fab", "facebook-square")
+              Facebookでの登録
       .contents__line
       - if flash.any?
         - flash.each do |key, value|
