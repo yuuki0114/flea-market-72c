@@ -47,7 +47,7 @@
             %li.address__left
               配送先
             %li.address__right
-              = link_to "変更する", "/addresses", class:"update-btn"
+              = link_to "変更する", new_address_path, class:"update-btn"
             %br
           .user-info-text
             〒
@@ -61,7 +61,8 @@
             =current_user.address.first_name
       .content-user-info
         .content-inner
-          .purchase-btn
-            = link_to '購入する', pay_credit_card_path(@item.id), method: :post
+          = link_to pay_credit_card_path(@item.id),method: :post do
+            .purchase-btn
+              購入する
 
     = render partial: "buyers/sub-footer"

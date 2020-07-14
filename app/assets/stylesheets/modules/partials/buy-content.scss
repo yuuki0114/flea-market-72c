@@ -95,14 +95,11 @@
           line-height: 48px;
           font-size: $fontMainSize;
           text-align: center;
+          color: white;
           &:hover{
             box-shadow: none;
             color: rgb(104, 97, 97);
             background: rgb(228, 221, 221);
-          }
-          a{
-            text-decoration: none;
-            color: white;
           }
         } 
       }
@@ -117,4 +114,7 @@
     box-shadow: none;
     color: gray;
   }
+}
+a{
+  text-decoration: none;
 }

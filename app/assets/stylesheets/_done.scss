@@ -27,5 +27,10 @@
       font-size: 18px;
       line-height: 50px;
     }
+    &:hover{
+      box-shadow: none;
+      color: rgb(104, 97, 97);
+      background: rgb(228, 221, 221);
+    }
   }
 }
