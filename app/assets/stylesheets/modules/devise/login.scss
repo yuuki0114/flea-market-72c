@@ -1,11 +1,11 @@
 .login-background {
   background-color: $backGroundGray;
   width: 100%;
-  height: 725px;
+  height: 855px;
   position: relative;
   .contents {
     width: 460px;
-    height: 550px;
+    height: 680px;
     background-color: white;
     position: absolute;
     top: 0;
@@ -101,6 +101,48 @@
           background-color: $mainBlue;
           border-radius: 4px;
           border: none;
+        }
+      }
+    }
+    &--google-decoration_none {
+      text-decoration: none;
+      .login-google {
+        width: 330px;
+        height: 50px;
+        margin-top: 15px;
+        line-height: 50px;
+        border: black solid 2px;
+        color: black;
+        border-radius: 4px;
+        text-align: center;
+        position: relative;
+        margin: 15px auto 0;
+        .fa-google {
+          font-size: 25px;
+          position: absolute;
+          left: 17px;
+          top: 12px;
+        }
+      }
+    }
+    &--facebook-decoration_none {
+      text-decoration: none;
+      .login-facebook {
+        width: 330px;
+        height: 50px;
+        margin-top: 15px;
+        text-align: center;
+        line-height: 50px;
+        background-color: darkblue;
+        color: white;
+        border-radius: 4px;
+        position: relative;
+        margin: 15px auto 0;
+        .fa-facebook-square {
+          font-size: 25px;
+          position: absolute;
+          left: 17px;
+          top: 12px;
         }
       }
     }
