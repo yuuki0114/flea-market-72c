@@ -1,0 +1,32 @@
+= render partial: "header"
+.items-result
+  .items-result__title
+    商品一覧
+  .items-result__contents
+    .headline
+      商品の検索結果一覧
+    .items
+      - @items.each do |item|
+        = link_to item_path(item.id), class: "items--text-decoration_none" do
+          .items__item
+            .image
+              = image_tag item.images[0].src.url, size: "220x150"
+            .detail
+              .detail__name
+                = item.name
+              .detail__info
+                .price
+                  = item.price
+                  %span<>
+                  円
+                .favorite
+                  = icon("fas", "star")
+                  0
+              .detail__tax
+                (税込)
+    = paginate(@items)
+- if user_signed_in?
+  = render partial: "footer"
+  = render partial: "items/post-btn"
+- else
+  = render partial: "footer"

@@ -1,0 +1,65 @@
+.items-result{
+  background-color: $backGroundGray;
+  padding: 60px 0;
+  &__title{
+    @include bold();
+    text-align: center;
+    font-size: 28px;
+  }
+  &__contents{
+    width: 100%;
+    .headline{
+      @include bold();
+      color: $mainBlue;
+      font-size: 24px;
+      text-align: center;
+      padding-top: 10px;
+    }
+    .items{
+      @include displayFlex();
+      flex-wrap: wrap;
+      padding: 30px 30px;
+      &--text-decoration_none{
+        @include blackLink();
+        padding: 20px;
+      }
+      &__item{
+        @include hoverWhiteFilter();
+        background-color: white;
+        border: solid 1px rgba(211, 211, 211, 0.616);
+        .image{
+          width: 220px;
+          height:150px;
+          border-bottom: solid 1px rgba(194, 188, 188, 0.719);
+        }
+        .detail{
+          padding: 16px;
+          &__name{
+            font-size: 16px;
+          }
+          &__info{
+            @include displayFlex();
+            justify-content: space-between;
+            .favorate{
+              width: 10px;
+            }
+          }
+          &__tax{
+            font-size: 10px;
+          }
+        }
+
+      }
+    }
+    .pagination{
+      text-align: center;
+ 
+      a{
+        color: $mainBlue();
+        
+      }
+    }
+
+  }
+
+}
