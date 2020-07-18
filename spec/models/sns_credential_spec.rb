@@ -19,17 +19,4 @@ describe SnsCredential do
       expect(sns.errors[:uid]).to include("・入力してください")
     end
   end
-  describe "from_omniauthメソッド" do
-    it "" do
-      sns = build(:sns_credential)
-      sns.valid?
-      expect(sns).to be_valid
-    end
-
-    it "" do
-      sns = build(:sns_credential, provider: "")
-      sns.valid?
-      expect(sns.errors[:provider]).to include("・入力してください")
-    end
-  end
 end
