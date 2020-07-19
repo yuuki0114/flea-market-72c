@@ -21,6 +21,17 @@ $(function() {
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
+  $(document).ready(function(){
+    let preview_count = $("#previews").children().length
+    if(preview_count != 0){
+      // 新しく画像を追加するタグを生成
+      $('#image-box').append(buildFileField(preview_count));
+      // 追加要素のラベルタグを読み込む
+      $('.item-photo__area--label').attr('for',`item_images_attributes_${preview_count}_src`)
+      // file_fieldの不要な配列要素の削除
+      fileIndex.splice(0, preview_count);
+    }});
+
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
@@ -40,20 +51,23 @@ $(function() {
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
     }
-    // 削除機能
-    $('#previews').on('click', '.js-remove', function() {
-      //プレビュー要素とinput要素を取得
-      var preview_num = $(this).parent();
-      var target_num = $(preview_num).data('preview')
+  });
+  // 削除機能
+  $('#previews').on('click', '.js-remove', function() {
+  //プレビュー要素とinput要素を取得
+    var preview_num = $(this).parent();
+    var target_num = $(preview_num).data('preview')
 
-      //プレビュー要素を削除
-      preview_num.remove();
+  //プレビュー要素を削除
+    preview_num.remove();
 
-    //input要素を削除
-      $(`#item_images_attributes_${target_num}_src`).remove();
-      $('').prop("checked", true);
-    }
-    );
+  //input要素を削除
+    $(`#item_images_attributes_${target_num}_src`).remove();
+    $('').prop("checked", true);
+
+    // db保存済みの画像を削除
+    var destroy_num = $(`#destroy-box_${target_num}`)
+    destroy_num.prop("checked", true);
   });
 
   // 商品説明の字数カウント
