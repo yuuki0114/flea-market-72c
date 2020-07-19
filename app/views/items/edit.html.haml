@@ -14,12 +14,16 @@
               #previews
                 - if @item.persisted?
                   - @item.images.each_with_index do |image, i|
-                    = image_tag image.src.url, data: { index: i }
+                    #previews-box{ data: { preview: i }}
+                      = image_tag image.src.url, data: { index: i }, class: 'preview_image'
+                      .js-remove 削除
+
               %label.item-photo__area--label{for: "item_images_attributes_0_src"}
                 #image-box
                   = f.fields_for :images do |i|
                     .js-file_group{"data-index": "#{i.index}"}
                       = i.file_field :src, class: 'js-file'
+                      = i.check_box :_destroy , id: "destroy-box_#{i.index}"
                 = icon('fa','camera', class: "photo-icon")
                 %p.label-text
                   ドラッグアンドドロップ
