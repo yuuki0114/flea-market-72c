@@ -22,8 +22,8 @@
               .detail__tax
                 (税込)
     = paginate(@items)
-- if user_signed_in?
   = render partial: "footer"
+- if user_signed_in?
   = render partial: "items/post-btn"
 - else
-  = render partial: "footer"
+  = render partial: ""
