@@ -4,10 +4,12 @@
       = link_to root_path do
         = image_tag "/logo.png", size: "140x40"
     .search
-      %input.search__input{placeholder: " キーワードから探す"}
-      %label
-        %input.search__submit{type: "submit", value: ""}
-        = image_tag "/search_btn.png", size: "21x21", class: "search__image"
+      = form_with(url: search_items_path, local: true, method: :get, class: "search") do |f|
+        = f.search_field :keyword, placeholder: "キーワードから探す", class: "search__input"
+        %label
+          = f.submit "" , class: "search__submit"
+          = image_tag "/search_btn.png", size: "21x21", class: "search__image"
+
   .header__downside
     .left
       .left__category

@@ -13,10 +13,14 @@
     padding: 40px 40px 64px;
     background-color: white;
     .form-group{
+      &--credit_logo{
+        padding-top: 10px;
+      }
       margin: 0 auto;
       width: 300px;
       &--card-number{
         .card-number{
+          padding-top: 5px;
           @include bold();
         }
         .card-number__form{
@@ -85,6 +89,11 @@
       border-radius: 4px;
       border: none;
       margin-top: 30px;
+      &:hover{
+        box-shadow: none;
+        color: rgb(104, 97, 97);
+        background: rgb(228, 221, 221);
+      }
     }
   }
 }
@@ -92,10 +101,15 @@
   background-color: $mainBlue;
   color:white;
   width: 300px;
-  height: 40px;
+  height: 48px;
+  line-height: 48px;
   text-align: center;
-  margin-top: 25px;
-  padding-top: 15px;
+  margin-top: 30px;
   text-decoration: none;
   @include hoverMouseFinger();
+  &:hover{
+    box-shadow: none;
+    color: rgb(104, 97, 97);
+    background: rgb(228, 221, 221);
+  }
 }

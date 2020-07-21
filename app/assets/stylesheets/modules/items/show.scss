@@ -158,6 +158,11 @@
             display: inline-block;
             margin: 0 auto;
             cursor: pointer;
+            &:hover{
+              box-shadow: none;
+              color: rgb(104, 97, 97);
+              background: rgb(228, 221, 221);
+            }
           }
         }
 
@@ -226,6 +231,11 @@
           border-radius: 100px;
           display: inline-block;
           margin-top: 10px;
+          &:hover{
+            box-shadow: none;
+            color: rgb(104, 97, 97);
+            background: rgb(228, 221, 221);
+          }
         }
       }
     }
