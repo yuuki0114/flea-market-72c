@@ -1,3 +1,31 @@
+$(document).ready(function(){
+      // ラベルのサイズ変更
+      let num = $("#previews").children().length + 1
+      let items_width = num*123.5
+      let label_width = 615 - items_width
+      let down_num = $("#previews").children().length - 4
+      let down_items_width = down_num*123.5
+      let down_label_width = 615 - down_items_width
+      if (num == 10) {
+        $(".item-photo__area--label").css("display", "none")
+      } else if (num > 5){
+        $(".item-photo__area").css({"display":"block", "position":"relative"})
+        $(".item-photo__area--label").css({"width":down_label_width, "position":"absolute", "right":"0"})
+        $(".label-text").css("display", "none")
+        $("#previews").css("display", "flex")
+      } else if (num == 5){
+        $(".item-photo__area").css("display", "block")
+        $(".item-photo__area--label").css({"width":"100%", "top":""})
+        $(".label-text").css("display", "block")
+        $("#previews").css("width", "100%")
+        $(".sell-photo").css("height", "417px")
+      } else {
+        $(".item-photo__area--label").css("width", label_width)
+        $(".label-text").css("display", "none")
+        $("#previews").css({"display":"flex", "width":items_width})
+      }  
+});
+
 $(function() {
   // 画像用のinputを生成する関数
   const buildFileField = function(index) {
