@@ -41,7 +41,7 @@ class ItemsController < ApplicationController
     item = Item.find(params[:id])
     if 
       item.update(item_params)
-      redirect_to root_path
+      redirect_to item_path
     else
       redirect_to controller: 'items', action: 'edit'
     end
