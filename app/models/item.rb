@@ -24,4 +24,12 @@ class Item < ApplicationRecord
   #-- 複数の画像を登録するための記述
   accepts_nested_attributes_for :images
 
+  def self.search(search)
+    if search
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end

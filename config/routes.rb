@@ -27,10 +27,11 @@ Rails.application.routes.draw do
       post 'pay'
     end
   end
-  resources :items, only: [:show, :new, :create, :destroy] do
+  resources :items, only: [:show, :new, :create, :destroy, :search] do
     collection do
       get 'category_children', to: 'items#category_children', defaults: { format: 'json' }
       get 'category_grandchildren', to: 'items#category_grandchildren', defaults: { format: 'json' }
+      get 'search'
     end
   end
   resources :buyers, only: :index

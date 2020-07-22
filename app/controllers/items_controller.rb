@@ -37,11 +37,14 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @items = Item.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(30)
+  end
+
   #モデルから子カテゴリー取得
   def category_children
     @category_children = Category.find(params[:parent_name]).children
   end
-
   # モデルから孫カテゴリー取得
   def category_grandchildren
     @category_grandchildren = Category.find("#{params[:children_id]}").children
