@@ -84,15 +84,28 @@
                   = icon('fa','flag')
                   不適切な商品の通報
         .comment
-          %form{action: "#", method: "post"}
-            %textarea.comment__body{name: "message"}
-            %p.comment__notice 
-              相手のことを考え丁寧なコメントを心がけましょう。
-              %br
-                深いな言葉遣いなどは利用制限や退会処分となることがあります。
-          %btn{type: "submit", name: "button", class: "comment__btn"} 
-            = icon('fa','comment')
-            コメントする
+          - if current_user
+            = form_with(model: [@item, @comment], local: true) do |f|
+              = f.text_area :text, class: "comment__body", rows: "2"
+              %p.comment__notice 
+                相手のことを考え丁寧なコメントを心がけましょう。
+                %br
+                  不快な言葉遣いなどは利用制限や退会処分となることがあります。
+                  
+              = f.submit class: "comment__btn fas fa-comment", value: "コメントする"
+              
+          .comment__area
+            .comment__area--topic ＜コメント一覧＞
+            - if @comments
+              - @comments.each do |comment|
+                .comments
+                  .comments--contributor
+                    = comment.user.nickname
+                  .comments--content
+                    = comment.text
+                    .comments--content__time
+                      = comment.created_at.strftime('%Y/%m/%d %H:%M:%S')
+
       %ul.links
         %li
           = link_to "", class: "links__btn" do
