@@ -21,8 +21,8 @@ class Item < ApplicationRecord
   has_many   :images, dependent: :destroy
   belongs_to :user
 
-  #-- 複数の画像を登録するための記述
-  accepts_nested_attributes_for :images
+  #-- 複数の画像を登録するための記述（修正箇所）
+  accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.search(search)
     if search

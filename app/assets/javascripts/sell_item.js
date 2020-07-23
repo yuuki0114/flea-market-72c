@@ -1,3 +1,31 @@
+$(document).ready(function(){
+      // ラベルのサイズ変更
+      let num = $("#previews").children().length + 1
+      let items_width = num*123.5
+      let label_width = 615 - items_width
+      let down_num = $("#previews").children().length - 4
+      let down_items_width = down_num*123.5
+      let down_label_width = 615 - down_items_width
+      if (num == 10) {
+        $(".item-photo__area--label").css("display", "none")
+      } else if (num > 5){
+        $(".item-photo__area").css({"display":"block", "position":"relative"})
+        $(".item-photo__area--label").css({"width":down_label_width, "position":"absolute", "right":"0"})
+        $(".label-text").css("display", "none")
+        $("#previews").css("display", "flex")
+      } else if (num == 5){
+        $(".item-photo__area").css("display", "block")
+        $(".item-photo__area--label").css({"width":"100%", "top":""})
+        $(".label-text").css("display", "block")
+        $("#previews").css("width", "100%")
+        $(".sell-photo").css("height", "417px")
+      } else {
+        $(".item-photo__area--label").css("width", label_width)
+        $(".label-text").css("display", "none")
+        $("#previews").css({"display":"flex", "width":items_width})
+      }  
+});
+
 $(function() {
   // 画像用のinputを生成する関数
   const buildFileField = function(index) {
@@ -20,6 +48,17 @@ $(function() {
 
   // file_fieldのnameに動的なindexをつける為の配列
   let fileIndex = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+  $(document).ready(function(){
+    let preview_count = $("#previews").children().length
+    if(preview_count != 0){
+      // 新しく画像を追加するタグを生成
+      $('#image-box').append(buildFileField(preview_count));
+      // 追加要素のラベルタグを読み込む
+      $('.item-photo__area--label').attr('for',`item_images_attributes_${preview_count}_src`)
+      // file_fieldの不要な配列要素の削除
+      fileIndex.splice(0, preview_count);
+    }});
 
   $('#image-box').on('change', '.js-file', function(e) {
     const targetIndex = $(this).parent().data('index');
@@ -66,41 +105,46 @@ $(function() {
       $('#image-box').append(buildFileField(fileIndex[0]));
       fileIndex.shift();
     }
-    // 削除機能
-    $('#previews').on('click', '.js-remove', function() {
-      //プレビュー要素とinput要素を取得
-      var preview_num = $(this).parent();
-      var target_num = $(preview_num).data('preview')
+  });
 
-      //プレビュー要素を削除
-      preview_num.remove();
+  // 削除機能
+  $('#previews').on('click', '.js-remove', function() {
+  //プレビュー要素とinput要素を取得
+    var preview_num = $(this).parent();
+    var target_num = $(preview_num).data('preview')
 
-      //input要素を削除
-      $(`#item_images_attributes_${target_num}_src`).remove();
-      $('').prop("checked", true);
+  //プレビュー要素を削除
+    preview_num.remove();
 
-      //削除時のラベルのサイズ変更
-      let remove_num = $("#previews").children().length
-      let remove_items_width = remove_num*123.5
-      let remove_label_width = 615 - remove_items_width
-      let remove_down_num = $("#previews").children().length - 5
-      let remove_down_items_width = remove_down_num*123.5
-      let remove_down_label_width = 615 - remove_down_items_width
-      if (remove_num == 0 || remove_num == 5) {
-        $(".item-photo__area--label").css("width", "100%")
-        $("#previews").css("width", remove_items_width)
-        $(".label-text").css("display", "block")
-      } else if (remove_num >= 1 && remove_num <= 4){
-        $(".item-photo__area--label").css({"width":remove_label_width, "position":"absolute", "right":"0", "top":"0"})
-        $("#previews").css("width", remove_items_width)
-        $(".item-photo__area").css("position", "relative")
-        $(".sell-photo").css("height", "231px")
-      } else {
-        $(".item-photo__area--label").css({"width":remove_down_label_width, "display":"block"})
+  //input要素を削除
+    $(`#item_images_attributes_${target_num}_src`).remove();
+    $('').prop("checked", true);
+
+    // db保存済みの画像を削除
+    var destroy_num = $(`#destroy-box_${target_num}`)
+    destroy_num.prop("checked", true);
+
+    //削除時のラベルのサイズ変更
+    let remove_num = $("#previews").children().length
+    let remove_items_width = remove_num*123.5
+    let remove_label_width = 615 - remove_items_width
+    let remove_down_num = $("#previews").children().length - 5
+    let remove_down_items_width = remove_down_num*123.5
+    let remove_down_label_width = 615 - remove_down_items_width
+    if (remove_num == 0 || remove_num == 5) {
+      $(".item-photo__area--label").css("width", "100%")
+      $("#previews").css("width", remove_items_width)
+      $(".label-text").css("display", "block")
+    } else if (remove_num >= 1 && remove_num <= 4){
+      $(".item-photo__area--label").css({"width":remove_label_width, "position":"absolute", "right":"0", "top":"0"})
+      $("#previews").css("width", remove_items_width)
+      $(".item-photo__area").css("position", "relative")
+      $(".sell-photo").css("height", "231px")
+    } else {
+      $(".item-photo__area--label").css({"width":remove_down_label_width, "display":"block"})
       }
     }
   );
-  });
 
   // 商品説明の字数カウント
   $(".item-info--description__textarea").keyup(function(){
@@ -169,18 +213,41 @@ $(function() {
     }
   });
 
-  //カテゴリーのエラーハンドリング
-  $('#item_category_id').on('blur',function(){
+  //親カテゴリーのエラーハンドリング
+  $('#category-parent').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-category').text('選択してください');
       $(this).css('border-color','red');
-    }else{
+      }
+    else{
       $('#error-category').text('');
       $(this).css('border-color','rgb(204, 204, 204)');
     }
   });
-
+  // 子カテゴリーのエラーハンドル
+  $(document).on('blur','#category-children',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $(this).css('border-color','red');
+      }
+    else{
+      $('#error-category').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+  // 孫カテゴリーのエラーハンドル
+  $(document).on('blur','#category-grandchildren',function(){
+    let value = $(this).val();
+    if(value == ""){
+      $(this).css('border-color','red');
+      }
+    else{
+      $('#error-category').text('');
+      $(this).css('border-color','rgb(204, 204, 204)');
+    }
+  });
+    
   //状態
   $('#item_status').on('blur',function(){
     let value = $(this).val();
@@ -194,7 +261,7 @@ $(function() {
   });
 
    //送料負担
-   $('#item_delivery_fee').on('blur',function(){
+  $('#item_delivery_fee').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-deliveryburden').text('選択してください');
@@ -206,7 +273,7 @@ $(function() {
   });
 
    //発送元
-   $('#item_start_address').on('blur',function(){
+  $('#item_start_address').on('blur',function(){
     let value = $(this).val();
     if(value == ""){
       $('#error-area').text('選択してください');
