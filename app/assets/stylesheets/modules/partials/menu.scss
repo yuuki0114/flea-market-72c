@@ -3,29 +3,14 @@
   box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
   position: relative;
   padding: 0 60px;
-
   .menus {
     padding: 17px 0 16px;
     max-width: 1040px;
     font-size: $fontMainSize;
     margin: 0 auto;
     @include displayFlex();
-
-    &__list {
-      padding: 0 10px 0 0;
-
-      &--add {
-        text-decoration: none;
-        color: #333;
-        &:hover {
-          color: $mainBlue;
-        }
-      }
-
-      &--last {
-        @include bold();
-        width: 200px;
-      }
+    .fa.fa-angle-right{
+      padding: 0 10px;
     }
   }
 }
