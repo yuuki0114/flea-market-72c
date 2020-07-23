@@ -1,7 +1,6 @@
 require 'rails_helper'
 describe Item do
   describe '#create' do
-
     it "nameがない場合は登録できないこと" do
       item = build(:item, name: "")
       item.valid?
@@ -43,16 +42,10 @@ describe Item do
       item.valid?
       expect(item.errors[:price]).to include("・入力してください")
     end
+  end
 
 
-
-
-
-
-
-
-    describe '#update' do
-
+  describe '#update' do
     it "nameがない場合は登録できないこと" do
       item = build(:item, name: "")
       item.valid?
