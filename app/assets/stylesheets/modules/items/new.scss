@@ -90,7 +90,7 @@
         &__form {
           margin-top: 16px;
           .input-form {
-              @include registerForm();
+            @include registerForm();
           }
           .error-messages {
             color: red;
@@ -163,9 +163,9 @@
               @include registerForm();
               @include outLine();
             }
-          }
-          .error-messages {
-            color: red;
+            #error-category{
+              color: red;
+            }
           }
         }
         .item-brand {
@@ -203,7 +203,7 @@
               @include registerForm();
             }
           }
-          .error-messages {
+          #error-condition{
             color: red;
           }
         }

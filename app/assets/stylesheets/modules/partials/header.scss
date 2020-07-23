@@ -21,13 +21,13 @@
         @include hoverMouseFinger();
         background-color: $mainBlue;
         width: 36px;
-        height: 35px;
+        height: 33px;
         border: none;
       }
       &__image {
         @include hoverMouseFinger();
         position: absolute;
-        right: 10px;
+        right: 13px;
         top: 7px;
       }
     }

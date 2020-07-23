@@ -20,9 +20,17 @@ class Item < ApplicationRecord
   belongs_to :user
   has_many   :images, dependent: :destroy
   has_many   :comments
-
+  
   #-- 複数の画像を登録するための記述
-  accepts_nested_attributes_for :images
+  accepts_nested_attributes_for :images, allow_destroy: true
   accepts_nested_attributes_for :brand
+
+  def self.search(search)
+    if search
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
 
 end

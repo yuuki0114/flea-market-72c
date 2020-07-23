@@ -6,8 +6,17 @@
         .text
           アカウントをお持ちでない方はこちら
         .box
-          = link_to new_user_registration_path, class: "box--text-decoration_none" do
-            新規会員登録
+          = link_to new_user_registration_path, class: "box--email-decoration_none" do
+            .box__email
+              新規会員登録
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "box--google-decoration_none" do
+            .box__google
+              = icon("fab", "google")
+              Googleでの登録
+          = link_to user_facebook_omniauth_authorize_path, method: :post, class: "box--facebook-decoration_none" do
+            .box__facebook
+              = icon("fab", "facebook-square")
+              Facebookでの登録
       .contents__line
       - if flash.any?
         - flash.each do |key, value|
@@ -22,5 +31,13 @@
       .contents__content
         .login-box
           = f.submit "ログイン", class: "login-box__btn"
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: "contents--google-decoration_none" do
+        .login-google
+          = icon("fab", "google")
+          Googleでログイン
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: "contents--facebook-decoration_none" do
+        .login-facebook
+          = icon("fab", "facebook-square")
+          Facebookでログイン
       = link_to "パスワードをお忘れの方", new_password_path(resource_name), class: "forget-password"
 = render partial: "buyers/sub-footer"
