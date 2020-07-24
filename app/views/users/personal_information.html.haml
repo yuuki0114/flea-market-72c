@@ -16,17 +16,19 @@
           %label
             お名前
           %p
-            hoge
+            = current_user.profile.last_name
+            = current_user.profile.first_name
         .personal-infomation__form--user-tittle
           %label
             お名前カナ
           %p
-            ホゲ
+            = current_user.profile.last_name_kana
+            = current_user.profile.first_name_kana
         .personal-infomation__form--user-tittle
           %label
             生年月日
           %p
-            2020/6/20
+            =current_user.profile.birthday
         .personal-infomation__form--user-tittle
           %label
             郵便番号

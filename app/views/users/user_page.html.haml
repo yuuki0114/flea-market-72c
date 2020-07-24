@@ -8,7 +8,7 @@
         %figure.user-status--icon
           = image_tag "/member_photo_noimage_thumb.png", size: "180x180"
         .user-status--name
-          ニックネーム
+          = current_user.nickname
         .user-status
           .user-status--reviews
             評価
