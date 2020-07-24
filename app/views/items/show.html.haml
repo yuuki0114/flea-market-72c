@@ -1,3 +1,6 @@
+.notification
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
 = render partial: "header"
 = render partial: "menu"
 .main

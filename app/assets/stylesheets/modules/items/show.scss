@@ -1,3 +1,17 @@
+.notification {
+  .notice {
+    background-color: $mainBlue;
+    color: white;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: $backGroundGray;
+    color: black;
+    text-align: center;
+  }
+}
+
 .main {
   background-color: $backGroundGray;
 
