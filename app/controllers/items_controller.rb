@@ -61,7 +61,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(30)
+    @items = Item.search(params[:keyword]).where(trading_status: "出品中").order("created_at DESC").page(params[:page]).per(30)
   end
 
   #モデルから子カテゴリー取得
