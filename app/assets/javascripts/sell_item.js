@@ -1,5 +1,7 @@
 $(document).ready(function(){
   // 画像の初期表示
+  $(".preview_image").css({"height":"100px", "width":"123px"})
+  $(".js-remove").text("削除する")
   let num = $("#previews").children().length
   let items_width = num*123.5
   let label_width = 615 - items_width
