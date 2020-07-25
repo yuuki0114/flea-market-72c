@@ -1,3 +1,17 @@
+.notification {
+  .notice {
+    background-color: $mainBlue;
+    color: white;
+    text-align: center;
+  }
+
+  .alert {
+    background-color: $backGroundGray;
+    color: black;
+    text-align: center;
+  }
+}
+
 .main {
   background-color: $backGroundGray;
 
@@ -204,6 +218,29 @@
         background-color: white;
         margin: 10px 0;
         text-align: center;
+        &__area {
+          margin-top: 16px;
+          text-align: left;
+          &--topic {
+            margin: 10px;
+          }
+          .comments {
+            margin: 10px;
+            &--contributor {
+              color: $mainBlue;
+            }
+            &--content {
+              padding: 16px;
+              background-color: $backGroundGray;
+              border-radius: 15px;
+              line-height: 1.5;
+              &__time {
+                text-align: right;
+                font-size: $fontMainSize;
+              }
+            }
+          }
+        }
 
         &__body {
           width: 100%;

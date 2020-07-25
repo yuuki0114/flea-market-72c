@@ -16,13 +16,14 @@ class Item < ApplicationRecord
 
   #-- 他のテーブルと紐付け
   belongs_to :brand, optional: true, dependent: :destroy
-  accepts_nested_attributes_for :brand
   belongs_to :category, dependent: :destroy
-  has_many   :images, dependent: :destroy
   belongs_to :user
-
-  #-- 複数の画像を登録するための記述（修正箇所）
+  has_many   :images, dependent: :destroy
+  has_many   :comments
+  
+  #-- 複数の画像を登録するための記述
   accepts_nested_attributes_for :images, allow_destroy: true
+  accepts_nested_attributes_for :brand
 
   def self.search(search)
     if search

@@ -9,6 +9,11 @@ class ItemsController < ApplicationController
     set_item
     @images = @item.images.where(params[:id])
     @prefecture = Prefecture.find(@item.start_address)
+    @show_category_grandchild = Category.find("#{@item.category_id}")
+    @show_category_children = @show_category_grandchild.parent
+    @show_category_parent = @show_category_children.parent
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def new
