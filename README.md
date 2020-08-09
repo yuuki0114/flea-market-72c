@@ -119,3 +119,5 @@ accept_nested_attributes_for :images
 - has_many :items
 
 
+
+
